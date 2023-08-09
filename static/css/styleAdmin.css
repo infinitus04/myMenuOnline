@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Jost:ital,wght@1,300&family=Lato:wght@300&family=Noto+Sans+JP:wght@100&family=Ubuntu:wght@300&display=swap');
+/* pop */
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Jost:ital,wght@1,300&family=Lato:wght@300&family=Noto+Sans+JP:wght@100&family=Poppins:wght@200&family=Ubuntu:wght@300&display=swap');
+  /* FONTS FOR LOGO */
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,800&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+
+:root{
+    --text: #3f3f3f;
+    --background: #f6f6f6;
+    --primary: #7e4cff;
+    --primaryDark : rgb(69, 45, 132);
+    --navPrimaryDark : #1b1037 ;
+    --secondary: #e1e9fb;
+    --accent: #0082ce;
+
+}
+
+*{
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    scrollbar-color: var(--background);
+    scroll-behavior: smooth;
+   
+    
+}
+
+body{
+    color: var(--text);
+    background-color: var(--primaryDark) !important;
+    /* background-color: #0082ce; */
+}
+.navbar-brand > h2{
+    font-family: 'Bodoni Moda', serif;
+}
+.navbar{
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+.offcanvas{
+    background-color: var(--navPrimaryDark) !important;
+}
+.myMMOlogo{
+    height: 3rem;
+    /* filter: invert(1); */
+    mix-blend-mode: lighten;
+    /* width: 100%; */
+    position: relative;
+    /* right: 5px;
+    top: 2px; */
+    /* margin: 0.4rem; */
+    z-index: 1;
+    /* margin-left: 4.5rem; */
+
+
+}
+
+.container{
+    max-width: 1140px;
+    /* height: 480px; */
+
+    z-index: 11;
+    background-color: whitesmoke;
+    margin: 5% 20%;
+    border: 1px solid gray;
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09);
+
+}
+.container > h2{
+    font-weight: bolder;
+    margin-left: 5rem;
+}
+.container > h1{
+    font-weight: bolder;
+    /* margin-left: 5rem; */
+}
+.myleftright{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.leftBlock{
+
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: center;
+    /* border:1px solid black; */
+    padding: 1rem;
+
+}
+.leftBlock:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.rightBlock{
+    
+    /* height: 8.5rem; */
+    width: 100%;
+    /* overflow: scroll; */
+    padding: 1rem;
+    display: flex;
+    /* justify-content: left; */
+    flex-direction: column;
+    align-items: center;
+    /* border:1px solid black; */
+    height: 25rem;
+    /* background-color: var(--secondary); */
+
+
+}
+
+.grayBlock{
+    border-radius: 1rem;
+    height: 80%;
+    width: 80%;
+    background-color: gray;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.imgSpan{
+    color: #333;
+    font-size: 4rem;
+    margin: auto;
+}
+.form-outline{
+    outline: gray;
+}
+.inputArea{
+    background-color: var(--background);
+    /* background-color: #121212; */
+    height: 3rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    margin: 1rem  auto;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+.inputArea:hover{
+    border-color: var(--primaryDark);
+    /* transition: 0.3s; */
+}
+.inputArea:hover > input{
+    color: #121212;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+
+.editS{
+    background-color: var(--text);
+    border-radius: 50%;
+    padding: 3px;
+    color: var(--background);
+    position: relative;
+    bottom: 56px;
+    left: 38%;
+  
+}
+.inputArea > span{
+    margin: 0 0.5rem;
+    color: var(--text);
+}
+::placeholder{
+    opacity: 1;
+    color: var(--text);
+}
+
+.inputArea > input{
+    z-index: 111;
+    background-color: var(--background);
+    border: none;
+    color: var(--text);
+    outline: none;
+    width: 100%;
+}
+
+.form-select > option{
+    background-color: var(--accent);
+    outline: none;
+    border: none;
+}
+.form-select {
+    background-color: #0082ce;
+}
+.input-group{
+    /* background-color: var(--background); */
+    /* background-color: gray; */
+    outline: none;
+    border: none;
+}
+.myResNextB{
+    position: relative;
+    left:90% ;
+    /* top: 20px; */
+    background-color: var(--primaryDark) !important;
+    border-color:var(--primaryDark) !important;
+    color: whitesmoke !important;
+    font-weight: bolder !important;
+    opacity: 0.9;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+.myResNextB:hover{
+    opacity: 1;
+    transition: 0.3s;
+}
+.Check{
+    justify-content: space-evenly;
+    /* color: gray; */
+}
+.overflowS{
+    overflow: scroll;
+    position: relative;
+    bottom: 20px;
+    scrollbar-color: var(--background);
+    /* height: 25rem; */
+}
+.form-select{
+    background-color: var(--background) !important;
+    border: none !important;
+}
+/* nocategory */
+.noCategory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.flexCol{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+    /* width: 100%; */
+    /* z-index: 50; */
+    overflow:hidden;
+    height: 480px;
+}
+
+.addGrayButtonBox{
+
+    height: 10rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.8rem;
+    background-color: rgba(128, 128, 128, 0.466);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 1rem;
+
+}
+.addGrayButtonBox > span{
+background: #333;
+border-radius: 50%;
+padding: 3px;
+color: whitesmoke;
+
+}
+.addGrayButtonBox:hover > span{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+/* list category */
+.upperListCategory{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* text-align: center; */
+    color: var(--text);
+    overflow: scroll;
+    scrollbar-color:  red;
+    /* scrollbar-color: var(--background); */
+    padding: 0.8rem;
+    
+    
+}
+.categoryItem{
+    color: var(--background);
+    background-color: #301c60;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* align-items: center; */
+    /* text-align: center; */
+    color: var(--text);
+    border: 1px solid gray;
+    width: 35rem;
+    height: 20rem;
+    margin: 1rem auto;
+    /* outline: rgb(7, 7, 7) -3px; */
+    /* outline: 5px solid whitesmoke; */
+    border: 1px solid var(--primaryDark);
+    border-radius: 1rem;
+}
+.categoryItem > h4{
+
+    color: whitesmoke;
+    font-weight: bolder;
+    padding: 0.2rem;
+    border-bottom: 1px solid whitesmoke;
+    margin: 0 1rem;
+    padding: 1rem 0;
+
+}
+.categoryButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+}
+.categoryButton > p{
+    margin: auto;
+    /* border: 1px solid whitesmoke; */
+    width: 80%;
+    /* border-bottom: none !important; */
+    /* color: var(--text); */
+    color: whitesmoke !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0.5rem auto; */
+    padding: 0.5rem;
+    background-color: var(--primaryDark);
+    margin: 1rem ;
+    cursor: pointer;
+    border-radius: 1rem;
+    opacity: 1;
+}
+.myActionButton{
+    margin: auto;
+    border: 1px solid var(--navPrimaryDark);
+    width: 80%;
+    /* border-bottom: none !important; */
+    /* color: var(--text); */
+    color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0.5rem auto; */
+    padding: 0.5rem;
+    background-color: var(--primaryDark);
+    font-weight: bolder;
+    margin: 1rem ;
+    cursor: pointer;
+    border-radius: 1rem;
+    /* opacity: 0.8; */
+}
+.myActionButton:hover{
+    opacity: 0.9;
+}
+.categoryButton > p:hover{
+    opacity: 0.8;
+}
+
+p> span{
+    margin: 0 0.2rem;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.nameCategory{
+    display: flex;
+    color: whitesmoke;
+    font-weight: bolder;
+    margin: 1rem 0.2;
+    padding: 0.5rem;
+    border-bottom: 1px solid whitesmoke;
+    align-items: center;
+    align-content: center;
+
+}
+.nameCategory > h4{
+    font-weight: bolder;
+}
+.nameCategory >img{
+    height: 2.5rem;
+    border-radius: 50%;
+    padding: 2px;
+    margin: 0 0.5rem;
+}
+.itermList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 3.2rem;
+    /* padding: 0.3rem; */
+    /* border-bottom: 1px solid var(--navPrimaryDark); */
+    margin: 0.2rem 0.7rem;
+    background-color: var(--primaryDark);
+    border-radius: 1rem;
+
+
+}
+.itermList > h4{
+
+    margin: 1rem !important;
+    color: var(--background);
+
+}
+.myListBtn{
+    justify-content: center !important;
+}
+.cateloginList{
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    align-content: center;
+    background-color:#7f4cff77 ;
+    /* background-color: rgba(128, 128, 128, 0.322); */
+    margin: 0 0.5rem;
+}
+.itemListScroll{
+    /* background-color:#7f4cff77 ; */
+    border-radius: 5px;
+    /* border : 1px solid black; */
+    height: 100%;
+    width: 70%;
+    overflow: scroll;
+
+    
+}
+.cateloginList > img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin: auto;
+
+}
+.cateloginList > h3{
+    color: #121212;
+    margin: 1rem auto;
+    font-weight: bolder;
+}
+.itermListBlock{
+    border-radius: 7px;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    padding: 0.4rem;
+    background-color: #bea6fa7a;
+    height: 30%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-bottom: 2px solid var(--primaryDark);
+    
+  
+}
+.listnewItem{
+    justify-content: space-between;
+
+
+}
+.listnewItem > h6{
+    margin-left: 1rem;
+}
+.listnewItem > p{
+    /* color: var(--text) !important; */
+    width: 20%;
+    border: 1px solid var(--navPrimaryDark);
+
+}
+
+@media only screen and (max-width: 600px) {
+   .myleftright{
+    flex-direction: column !important;
+
+   }
+   .heightMax{
+    height: 480px !important;
+   }
+   .container{
+    height: fit-content;
+    margin:  15% 20%;
+   }
+   .leftBlock{
+        height: 20rem !important;
+   }
+   .rightBlock{
+    height: fit-content;
+   }
+   .myResNextB{
+    left: 80% !important;
+   }
+   .navbar{
+    margin-bottom: 2rem;
+    background-color: var(--navPrimaryDark) !important;
+   }
+   .container > h2{
+    text-align: center;
+    margin: auto !important;
+    margin-top: 0.5rem !important;
+   
+   }
+   .rightBlock{
+    padding: 0 !important;
+    padding-bottom: 1rem !important ;
+   }
+   .inputArea:hover{
+    border-width: 1.8px;
+   }
+   .categoryItem{
+    height: auto;
+    width: 100%;
+   }
+   .categoryButton > p {
+    padding: 0.5rem !important;
+    width: min-content;
+   }
+
+   .cateloginList :nth-child(1){
+    order: 1
+}
+    .cateloginList :nth-child(3){
+    order: 3
+}
+.flexCol{
+    flex-direction: column;
+}
+.cateloginList{
+    width: 100%;
+    flex-direction: row;
+}
+.cateloginList > img{
+    height: 3.5rem;
+    width: 3.5rem;
+}
+.cateloginList > p{
+    width: fit-content;
+}
+.cateloginList > h3{
+    position: relative;
+    right: 35px;
+}
+
+.itemListScroll{
+    width: 110%;
+    margin: 1rem;
+}
+
+
+ 
+   
+}
+
+@media only screen and (min-width: 700px){
+    .cateloginList > h3{
+
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        background-color: var(--primaryDark);
+        color: var(--background) !important;
+        margin: 0;
+        border-radius: 0rem 0rem 0.5rem 0.5rem;
+    }
+
+}
+
+.inputArea:hover > span{
+ color: var(--primaryDark);
+}
+
+input[type="radio"]{
+    accent-color: var(--primaryDark) !important;
+    border: 2px solid red;
+    
+  }
+
