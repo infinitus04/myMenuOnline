@@ -584,6 +584,9 @@ p> span{
         margin: 0;
         border-radius: 0rem 0rem 0.5rem 0.5rem;
     }
+    .setFixHeight{
+        height: 500px !important;
+    }
 
 }
 
