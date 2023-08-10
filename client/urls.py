@@ -11,8 +11,8 @@ urlpatterns = [
     path('category/<int:id>/', views.categoryEdit, name='category'),
     # path('category/', views.categoryList, name='categoryList'),
 
-    path('items/<int:id>/', views.itemList, name= 'itemList'),
-    path('items/<int:id>/add/', views.itemAdd, name= 'itemAdd'),
-    path('items/<int:id>/edit/<int:itemId>/', views.itemEdit, name= 'itemEdit'),
+    path('items/category=<int:id>/', views.itemList, name= 'itemList'),
+    path('items/category=<int:id>/add/', views.itemAdd, name= 'itemAdd'),
+    path('items/category=<int:id>/edit/item=<int:itemId>/', views.itemEdit, name= 'itemEdit'),
 
 ]

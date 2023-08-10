@@ -27,7 +27,7 @@
           <img src="{% static 'img/burger.jpg' %}" alt="">
           {% endif %}
             
-          <p class="myActionButton" onclick="parent.location.href='/client/items/{{header.id}}/add'"> Add Item<span class="material-symbols-outlined">
+          <p class="myActionButton" onclick="parent.location.href='/client/items/category={{header.id}}/add'"> Add Item<span class="material-symbols-outlined">
             chevron_right
             </span></p>
         </div>
@@ -48,8 +48,8 @@
           <!-- </div> -->
           <div class="categoryButton listnewItem">
             <h6>{{item.description}}</h6>
-            <p onclick="parent.location.href='/client/items/{{header.id}}/edit/{{item.id}}'" > <span class="material-symbols-outlined">
-              edit {{item.id}}
+            <p onclick="parent.location.href='/client/items/category={{header.id}}/edit/item={{item.id}}'" > <span class="material-symbols-outlined">
+              edit
             </span>Edit</p>
             
           </div>

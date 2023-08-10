@@ -143,21 +143,22 @@ def itemAdd(request, id):
                 tags = tags,
                 header = header
             )
-            return redirect(f'/client/items/{header.id}/')
+            return redirect(f'/client/items/category={header.id}/')
 
 
         return render(request, 'client/itemAdd.html', {'header': header })
 
+@login_required
 def itemEdit(request, id, itemId):
     try:
         header = Header.objects.get(id = id)
         item = Item.objects.get(id = itemId)
     except:
         return HttpResponse('404 page not found')
-    if header.menu.user != request.user:
+    if header.menu.user != request.user or item.header != header:
         return HttpResponse('You are not authorized to view this page')
-    if request.method == 'POST':
 
+    if request.method == 'POST':
         itemName = request.POST.get('itemName')
         price = request.POST.get('price')
         tags = request.POST.get('tags')
@@ -171,9 +172,8 @@ def itemEdit(request, id, itemId):
             item.tags = tags
         if item.vegnonveg != vegnonveg:
             item.vegnonveg = vegnonveg
-        
-        print(f'itemname: {itemName} | price: {price} | tags: {tags} | vegnonveg: {vegnonveg}')
+        item.save()
+        return redirect(f'/client/items/category={header.id}/')
+        # print(f'itemname: {itemName} | price: {price} | tags: {tags} | vegnonveg: {vegnonveg}')
 
-
-        # item.item_name = 
     return render(request, 'client/itemEdit.html',{'header': header, 'item': item })
