@@ -77,7 +77,7 @@
     <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
     <form action="" method="POST" class="container">
       {% csrf_token %}
-        <h2>Item Details</h2>
+        <h2>ADD NEW ITEM</h2>
         {% comment %} <div class="myleftright">
             <div onclick="open_file1()" class="leftBlock">
                 <input type="file" name="" id='input_file1' hidden>
@@ -119,12 +119,12 @@
                         <input type="number" placeholder="Price" name="price">
                     </div>
                     <!-- description -->
-                    <div class="inputArea">
+                    {% comment %} <div class="inputArea">
                         <span class="material-symbols-outlined">
                         description
                         </span>
                         <input type="text" placeholder="veg or non-veg" name="vegnonveg">
-                    </div>
+                    </div> {% endcomment %}
                     <!-- add tags -->
                     <div class="inputArea">
                         <span class="material-symbols-outlined">
@@ -135,9 +135,9 @@
                     <!-- veg or non-veg -->
                     <div  class="inputArea Check">
                     <label for="veg">Veg</label>
-                    <input type="radio" name="veg" id="vegcheck" name="">
-                    <label for="nonveg">NonVeg</label>
-                    <input type="radio" name="veg" id="nonvegcheck" name="" >
+                    <input type="radio" name="veg" id="vegcheck" name="vegnonveg" value="veg">
+                    <label for="nonveg">nonveg</label>
+                    <input type="radio" name="veg" id="nonvegcheck" name="vegnonveg" value="nonveg">
                     <!-- <label for="valueV" class="typeVeg">Type</label> -->
                     </div>
            
