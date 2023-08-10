@@ -62,7 +62,7 @@ def categoryAdd(request):
             return redirect('/client/category/')
         else:
             print('empty hai not allowed')
-    return render(request, 'client/category.html')
+    return render(request, 'client/categoryAdd.html')
 
 @login_required
 def categoryList(request):
@@ -130,10 +130,10 @@ def itemAdd(request, id):
         if request.method == "POST":
             itemName = request.POST.get('itemName')
             price = request.POST.get('price')
-            vegnonveg = request.POST.get('vegnonveg')
+            vegnonveg = 'veg'
             tags = request.POST.get('tags')
 
-            print(f'name: {itemName} | price: {price} | desc:{vegnonveg} | tags: {tags}')
+            # print(f'name: {itemName} | price: {price} | desc:{vegnonveg} | tags: {tags}')
             Item.objects.create(
                 item_name=itemName,
                 price = price,
