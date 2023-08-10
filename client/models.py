@@ -127,14 +127,14 @@ class Header(models.Model):
     
     
 class Item(models.Model):
-    VEGNONVEG = (
-        ('vegetarian', 'Vegetarian'),
-        ('nonvegetarian', 'Non-Vegetarian'),
-    )
+    # VEGNONVEG = (
+    #     ('vegetarian', 'Vegetarian'),
+    #     ('nonvegetarian', 'Non-Vegetarian'),
+    # )
     header = models.ForeignKey(Header, on_delete=models.CASCADE)
     item_name = models.CharField( max_length=50)
     price = models.IntegerField()
-    vegnonveg = models.CharField(max_length=15, choices=VEGNONVEG)
+    vegnonveg = models.CharField(max_length=15,)
     tags = models.CharField( max_length=50)
 
     def __str__(self):

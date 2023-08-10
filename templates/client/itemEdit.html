@@ -40,7 +40,7 @@
                         <span class="material-symbols-outlined">
                             border_color
                             </span>
-                        <input type="text" placeholder="Name" name="itemName">
+                        <input type="text" placeholder="Name" name="itemName" value="{{item.item_name}}">
                     </div>
                     <!-- ========== Choose Category  ============ -->
                     <div class="inputArea">
@@ -57,7 +57,7 @@
                         <span class="material-symbols-outlined">
                             currency_rupee
                             </span>
-                        <input type="number" placeholder="Price" name="price">
+                        <input type="number" placeholder="Price" name="price" value="{{item.price}}">
                     </div>
                     <!-- description -->
                     {% comment %} <div class="inputArea">
@@ -71,18 +71,26 @@
                         <span class="material-symbols-outlined">
                         sell
                         </span>
-                        <input type="text" placeholder="Add Tags" name="tags">
+                        <input type="text" placeholder="Add Tags" name="tags" value="{{item.tags}}">
                     </div>
                     <!-- veg or non-veg -->
                     <div  class="inputArea Check">
                       <label for="veg">Veg</label>
-                      <input type="radio"  id="vegcheck" name="vegnonveg" value="veg">
+                      <input type="radio"  id="vegcheck" name="vegnonveg" value="veg"  
+                      {% if item.vegnonveg  ==  'veg' %}
+                        checked
+                      {% endif %}
+                        >
 
                       <label for="nonveg">nonveg</label>
-                      <input type="radio"  id="nonvegcheck" name="vegnonveg" value="nonveg">
+                      <input type="radio"  id="nonvegcheck" name="vegnonveg" value="nonveg" {% if item.vegnonveg == 'nonveg' %}
+                      checked
+                    {% endif %}>
                       
                       <label for="nonveg">egg</label>
-                      <input type="radio"  id="nonvegcheck" name="vegnonveg" value="egge">
+                      <input type="radio"  id="nonvegcheck" name="vegnonveg" value="egge" {% if item.vegnonveg == 'egge' %}
+                      checked
+                    {% endif %}>
                     <!-- <label for="valueV" class="typeVeg">Type</label> -->
                     </div>
            
@@ -90,7 +98,7 @@
             </div>
               
         </div>
-        <button type="submit" class=" myResNextB btn btn-outline-primary ">Next</button>
+        <button type="submit" class=" myResNextB btn btn-outline-primary ">save changes</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script>

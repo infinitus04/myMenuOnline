@@ -13,5 +13,6 @@ urlpatterns = [
 
     path('items/<int:id>/', views.itemList, name= 'itemList'),
     path('items/<int:id>/add/', views.itemAdd, name= 'itemAdd'),
+    path('items/<int:id>/edit/<int:itemId>/', views.itemEdit, name= 'itemEdit'),
 
 ]

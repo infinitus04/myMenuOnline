@@ -130,8 +130,10 @@ def itemAdd(request, id):
         if request.method == "POST":
             itemName = request.POST.get('itemName')
             price = request.POST.get('price')
-            vegnonveg = 'veg'
+            vegnonveg = request.POST.get('vegnonveg')
             tags = request.POST.get('tags')
+
+            # print(f'value of vegnonveg: {vnvValue}')
 
             # print(f'name: {itemName} | price: {price} | desc:{vegnonveg} | tags: {tags}')
             Item.objects.create(
@@ -145,3 +147,33 @@ def itemAdd(request, id):
 
 
         return render(request, 'client/itemAdd.html', {'header': header })
+
+def itemEdit(request, id, itemId):
+    try:
+        header = Header.objects.get(id = id)
+        item = Item.objects.get(id = itemId)
+    except:
+        return HttpResponse('404 page not found')
+    if header.menu.user != request.user:
+        return HttpResponse('You are not authorized to view this page')
+    if request.method == 'POST':
+
+        itemName = request.POST.get('itemName')
+        price = request.POST.get('price')
+        tags = request.POST.get('tags')
+        vegnonveg = request.POST.get('vegnonveg')
+
+        if item.item_name != itemName:
+            item.item_name = itemName
+        if item.price != price:
+            item.price = price
+        if item.tags != tags:
+            item.tags = tags
+        if item.vegnonveg != vegnonveg:
+            item.vegnonveg = vegnonveg
+        
+        print(f'itemname: {itemName} | price: {price} | tags: {tags} | vegnonveg: {vegnonveg}')
+
+
+        # item.item_name = 
+    return render(request, 'client/itemEdit.html',{'header': header, 'item': item })

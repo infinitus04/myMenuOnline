@@ -13,6 +13,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
         <link rel="stylesheet" href="{% static 'css/style2.css' %}">
                 
        
@@ -45,7 +46,7 @@
                 {% endif %}
                 <div class="catelogTile">
                     <P class="catTile">{{head.header.header_text}}</P>
-                    <p class="catAbout">Deliciously Cheesy, Oven-Baked Bliss.</p>
+                    <p class="catAbout">{{head.header.description}}</p>
                 </div>
             </div>
 
