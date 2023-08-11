@@ -1,64 +1,66 @@
 {% load static %}
 <nav  style="  background-color: rgb(69, 45, 132) !important;" class="navbar navbar-dark bg-dark fixed-top">
-
-
-
-    <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#"><h2>MMO</h2></a> -->
-      <img class="myMMOlogo navbar-brand" src="{% static 'img/whiteTextMMO-removebg-preview.png' %}" alt="">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div style=" background-color: #1b1037 !important;" class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Options</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item d-flex align-items-center ">
-              <span class="material-symbols-outlined ">home</span>
-              <a class="nav-link active m-2" aria-current="page" href="#" >Home</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <span class="material-symbols-outlined">
-                calendar_month</span>
-              <a class="nav-link active m-2" href="#">Courses Attendance</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <span class="material-symbols-outlined">
-                add_circle
-                </span>
-              <a class="nav-link active m-2" href="#">Create Class</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <span class="material-symbols-outlined">
-                person
-                </span>
-              <a class="nav-link active m-2" href="#">Student</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <span class="material-symbols-outlined">
-                history
-                </span>
-              <a class="nav-link active m-2" href="#">History</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <span class="material-symbols-outlined">
-                download
-                </span>
-              <a class="nav-link active m-2" href="#">Export</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <span class="material-symbols-outlined">
-                logout
-                </span>
-              <a class="nav-link active m-2" style="font-weight: bold;" href="/client/logout/">log Out</a>
-            </li>
-          
-          </ul>
-         
-        </div>
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#"><h2>MMO</h2></a> -->
+    <img class="myMMOlogo navbar-brand" src="{% static "img/whiteTextMMO-removebg-preview.png" %}" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style=" background-color: #1b1037 !important;" class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Options</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item d-flex align-items-center ">
+            <span class="material-symbols-outlined ">home</span>
+            <a class="nav-link active m-2" aria-current="page" href="/client/psudoPanel/" >Home</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              menu_book</span>
+            <a class="nav-link active m-2" href="/client/category/">Menu</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              category
+              </span>
+            <a class="nav-link active m-2" href="/client/category/">Category</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              qr_code_scanner
+              </span>
+            <a class="nav-link active m-2" href="#">View QR</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              person
+              </span>
+            <a class="nav-link active m-2" href="#">Profile</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              info
+              </span>
+            <a class="nav-link active m-2" href="#">About</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              logout
+              </span>
+            <a class="nav-link active m-2" style="font-weight: bold;" onclick="logOut()">log Out</a>
+          </li>
+        
+        </ul>
+       
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+<!-- <script>
+  logOut(){
+    alert("Do you want to logout ?")
+  }
+</script> -->

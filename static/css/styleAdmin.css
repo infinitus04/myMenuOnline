@@ -285,13 +285,13 @@ color: whitesmoke;
 .upperListCategory{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    /* justify-content: space-evenly; */
     align-items: center;
-    /* text-align: center; */
+    text-align: center;
     color: var(--text);
     overflow: scroll;
     scrollbar-color:  red;
-    /* scrollbar-color: var(--background); */
+    scrollbar-color: var(--background);
     padding: 0.8rem;
     
     
@@ -560,7 +560,16 @@ p> span{
 }
 .cateloginList > h3{
     position: relative;
-    right: 35px;
+    right: 15px;
+}
+p > span {
+    font-size: 1rem !important;
+}
+.itermList > h4 {
+     font-size: 1.2rem;
+}
+.listnewItem > h6{
+    font-size: 10px;
 }
 
 .itemListScroll{
@@ -584,9 +593,6 @@ p> span{
         margin: 0;
         border-radius: 0rem 0rem 0.5rem 0.5rem;
     }
-    .setFixHeight{
-        height: 500px !important;
-    }
 
 }
 
@@ -599,4 +605,125 @@ input[type="radio"]{
     border: 2px solid red;
     
   }
+
+  .upperListCategory{
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    overflow: scroll;
+    justify-content: space-around;
+    height: 45vh  !important;
+  }
+  .categoryListIterm{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    /* justify-content: space-evenly; */
+    width: 45%;
+    margin: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+  }
+  .catListleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color:var(--text) ; ;
+    /* background-color:#7f4cff77 ; ; */
+    width: 60%;
+    /* margin: auto; */
+  }
+  .catListRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: fit-content;
+    margin: auto;
+    /* background-color: rgba(128, 128, 128, 0.399); */
+  }
+
+  .catListleft > img {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin: 1rem;
+  }
+  .catListleft > h6 {
+    color: var(--background);
+  }
+  .setFixheight{
+    height: 80vh !important;
+  }
+  .catListFlex{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+  }
+  .catListFlex > h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    height: 2.5rem;
+    margin: 0.5rem auto;
+    padding: 0.3rem;
+
+  }
+  .addCategoryButtonBlock{
+    height: 3rem;
+    width: fit-content;
+    border: 1.5px solid var(--primaryDark);
+    margin: 2rem auto;
+    padding: 0.2rem;
+    background-color: var(--background);
+    color: var(--primaryDark);
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    /* z-index: 111; */
+
+
+  }
+  
+.addCategoryButtonBlock:hover{
+      background-color: var(--primaryDark) !important;
+      color: whitesmoke !important;
+      /* z-index: 11; */
+      transition: 0.3s;
+      
+    }
+  .addCategoryButtonBlock > p,span {
+    margin: auto 0.3rem;
+  }
+
+  @media only screen and (max-width: 600px){
+
+    .setFixheight{
+        height: fit-content !important;
+    }
+
+    .upperListCategory{
+        height: 62vh !important;
+
+
+    }
+    .categoryListIterm{
+        width: 100%;
+    }
+    .catListRight{
+        width: 53%;
+    }
+
+  }
+
 
