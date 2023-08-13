@@ -13,7 +13,7 @@
   </head>
   <body>
           <!-- Nav bar  start-->
-    {% include 'client/navBar.html' %}
+    <!-- {% include 'client/navBar.html' %} -->
 
       <div class="container  flexCol">
         
@@ -46,12 +46,23 @@
 
           </div>
           <!-- </div> -->
-          <div class="categoryButton listnewItem">
-            <h6>{{item.description}}</h6>
-            <p onclick="parent.location.href='/client/items/category={{header.id}}/edit/item={{item.id}}'" > <span class="material-symbols-outlined">
-              edit
-            </span>Edit</p>
+          <div class="itemlistbtns">
+
+            <!-- <div class="categoryButton listnewItem">
+              <h6>{{item.description}}</h6>
+              <p > <span class="material-symbols-outlined">
+                edit
+              </span>Delete</p> -->
+
+
             
+            <div class="categoryButton listnewItem">
+              <h6>{{item.description}}</h6>
+              <p onclick="parent.location.href='/client/items/category={{header.id}}/edit/item={{item.id}}'" > <span class="material-symbols-outlined">
+                edit
+              </span>Edit</p>
+              
+            </div>
           </div>
      </div>
 

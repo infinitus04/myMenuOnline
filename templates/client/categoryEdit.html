@@ -12,7 +12,7 @@
   </head>
   <body>
         <!-- Nav bar  start-->
-        {% include 'client/navBar.html' %}
+        <!-- {% include 'client/navBar.html' %} -->
 
     <form action="" method="POST" class="container" enctype='multipart/form-data'>
       {% csrf_token %}
@@ -58,13 +58,14 @@
                         </span>
                         <input  type="text" placeholder="Description" name="description" size="10" value="{{header.description}}">
                   </div>
+                  <button type="submit"  class=" myResNextB btn btn-outline-primary ">Save Changes</button>
            
 
             </div>
               
         </div>
         {% comment %} onclick="parent.location.href='item.html'" {% endcomment %}
-        <button type="submit"  class=" myResNextB btn btn-outline-primary ">Save Changes</button>
+        
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script>

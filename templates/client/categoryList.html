@@ -13,19 +13,32 @@
   </head>
   <body>
           <!-- Nav bar  start-->
-          {% include 'client/navBar.html' %}
+          <!-- {% include 'client/navBar.html' %} -->
       <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
       <div class="container catListFlex setFixheight">
-        <h2>All Category</h2>
+        
+        
+        
+        <div class="category_header">
+
+          <h2>All Category</h2>
+
+          <div  onclick="parent.location.href= '/client/category/add/'" class="addCategoryButtonBlock">
+            <span class="material-symbols-outlined">
+              add_circle
+              </span>
+            <p>Add Category</p>
+          </div>
+
+        </div>
+
+
      
     <div class="upperListCategory">
      
       {% comment %} start category item list {% endcomment %}
       
       {% for header in headers %}
-        
-        
-       
           <!-- new -->
           <div class="categoryListIterm">
             <div class="catListleft">
@@ -59,12 +72,7 @@
         
         </div>
      
-        <div  onclick="parent.location.href= '/client/category/add/'" class="addCategoryButtonBlock">
-            <span class="material-symbols-outlined">
-              add_circle
-              </span>
-            <p>Add Category</p>
-          </div>
+        
     </div>    
     
     </div>
