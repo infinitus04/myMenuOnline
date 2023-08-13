@@ -18,7 +18,7 @@
     <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
     <form action="" method="POST" class="container">
       {% csrf_token %}
-        <h2>{{header.header_text}}</h2>
+        <h1 class="makeBoldColor">{{header.header_text}}</h1>
         {% comment %} <div class="myleftright">
             <div onclick="open_file1()" class="leftBlock">
                 <input type="file" name="" id='input_file1' hidden>

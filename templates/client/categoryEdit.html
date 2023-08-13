@@ -29,7 +29,7 @@
       enctype="multipart/form-data"
     >
       {% csrf_token %}
-      <h2>Edit Category Details</h2>
+      <h2>Edit Category</h2>
       <div class="myleftright">
         <div  class="leftBlock">
      
@@ -42,8 +42,13 @@
           />
         
           <div onclick="open_file1()" class="myImgForEdit">
+            {% if header.image %}
             <img src="{{header.image.url}}" alt="">
+            {% else %}
+            <img src="{% static "images/sadfrog.jpg" %}" alt="">
+            {% endif %}
           </div>
+
           <div onclick="open_file1()" id="" class="buttonBlockEditItem">
             <span class="material-symbols-outlined">change_circle</span>
             <p>Change Image</p>
