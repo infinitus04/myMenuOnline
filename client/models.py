@@ -68,12 +68,12 @@ class Menu(models.Model):
                     this.logo.delete(save=False)
             except: pass
             super(Menu, self).save(*args, **kwargs)
-                
-            # Compressing the size of image(logo) inside save function
-            img = Image.open(self.logo.path)
-            output_size = (IMAGE_SIZE, IMAGE_SIZE)
-            img.thumbnail(output_size)
-            img.save(self.logo.path)
+            if self.logo:
+                # Compressing the size of image(logo) inside save function
+                img = Image.open(self.logo.path)
+                output_size = (IMAGE_SIZE, IMAGE_SIZE)
+                img.thumbnail(output_size)
+                img.save(self.logo.path)
         else:
             super(Menu, self).save(*args, **kwargs)
 

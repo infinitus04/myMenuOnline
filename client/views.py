@@ -17,7 +17,10 @@ def clientLogin(request):
                 login(request, user)
                 return redirect('/client/psudoPanel/')
             else:
-                print(f'no user found')
+                data = {
+                    'invalid_credentials':True
+                }
+                return render(request, 'client/login.html', data)
         return render(request, 'client/login.html')
     return redirect('/client/psudoPanel')
 
