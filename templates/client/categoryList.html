@@ -12,15 +12,27 @@
     
   </head>
   <body>
-          <!-- Nav bar  start-->
-          {% include 'client/navBar.html' %}
+    <!-- Nav bar  start-->
+    {% include 'client/navBar.html' %}
+
+    {% if headers|length == 0 %}
+    <div class="heightMax container noCategory ">
+      <h1>No Category Created</h1>
+      <a class="addGrayButtonBox" href="/client/category/add/ ">
+          <p>Create New Category</p>
+          <span class="material-symbols-outlined">add_circle</span>
+      </a>
+      
+            
+      </div>
       <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
+      {% else %}
       <div class="container catListFlex setFixheight">
         <h2>All Category</h2>
      
     <div class="upperListCategory">
      
-      {% comment %} start category item list {% endcomment %}
+        
       
       {% for header in headers %}
         
@@ -53,7 +65,8 @@
 
             </div>
           </div>
-            {% endfor %}
+          {% endfor %}
+          
 
             {% comment %} end category item list {% endcomment %}
         
@@ -62,13 +75,14 @@
         <div  onclick="parent.location.href= '/client/category/add/'" class="addCategoryButtonBlock">
             <span class="material-symbols-outlined">
               add_circle
-              </span>
+            </span>
             <p>Add Category</p>
           </div>
-    </div>    
-    
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  
+        </div>    
+        
+      </div>
+      {% endif %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      
   </body>
 </html>
