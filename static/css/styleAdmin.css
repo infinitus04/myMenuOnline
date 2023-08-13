@@ -490,6 +490,9 @@ p> span{
     border: 1px solid var(--navPrimaryDark);
 
 }
+.heightMax{
+    height: 63vh !important;    
+   }
 
 @media only screen and (max-width: 600px) {
    .myleftright{
@@ -497,7 +500,7 @@ p> span{
 
    }
    .heightMax{
-    height: 480px !important;
+    height: 63vh !important;
    }
    .container{
     height: fit-content;
@@ -626,7 +629,7 @@ input[type="radio"]{
     border: 1px solid black;
     /* justify-content: space-evenly; */
     width: 45%;
-    margin: 1rem;
+    margin: 1rem -10px;
     border-radius: 1rem;
     overflow: hidden;
 
@@ -654,10 +657,11 @@ input[type="radio"]{
   }
 
   .catListleft > img {
-    height: 7rem;
-    width: 7rem;
+    height: 6rem;
+    width: 6rem;
     border-radius: 50%;
     margin: 1rem;
+    object-fit: cover;
   }
   .catListleft > h6 {
     color: var(--background);
