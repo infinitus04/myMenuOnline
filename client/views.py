@@ -3,6 +3,7 @@ from .models import CustomUser
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from client.models import *
+from django.contrib import messages
 
 # Create your views here.
 def clientLogin(request):
@@ -79,22 +80,31 @@ def categoryList(request):
 def categoryEdit(request, id):
     header = Header.objects.get(id = id)
     if request.method =="POST":
-        categoryName = request.POST.get('categoryName')
-        description =  request.POST.get('description')
-        imagee = request.FILES.get('image')
-        print(f'Name: {categoryName} | dis: {description} | image: {imagee}')
-        if imagee:
-            header.image = imagee
-
-        if header.header_text != categoryName:
-            header.header_text = categoryName
         
-        if header.description != description:
-            header.description = description
+        if 'saveSubmit' in request.POST:
+        # If submit buttton is clicked
+            categoryName = request.POST.get('categoryName')
+            description =  request.POST.get('description')
+            imagee = request.FILES.get('image')
+            print(f'Name: {categoryName} | dis: {description} | image: {imagee}')
+            if imagee:
+                header.image = imagee
 
-        header.save()
-        return redirect('/client/category/')
-    
+            if header.header_text != categoryName:
+                header.header_text = categoryName
+            
+            if header.description != description:
+                header.description = description
+
+            header.save()
+            messages.success(request, 'Item edited sucessfully!')
+            return redirect('/client/category/')
+        
+        elif 'deleteSubmit' in request.POST:
+            messages.error(request, 'Item deleted sucessfully!')
+            header.delete()
+            return redirect('/client/category/')
+
     if header.menu.user==request.user:
         return render(request, 'client/categoryEdit.html', {'header': header})
     else:
@@ -143,10 +153,12 @@ def itemAdd(request, id):
                 tags = tags,
                 header = header
             )
+            messages.success(request, 'Item added sucessfully')
+            
             if 'save' in request.POST:
                 return redirect(f'/client/items/category={header.id}/')
-            elif 'saveandnew':
-                return redirect(f'/client/items/category={header.id}/add/   ')
+            elif 'saveandnew' in request.POST:
+                return redirect(f'/client/items/category={header.id}/add/')
 
 
         return render(request, 'client/itemAdd.html', {'header': header })

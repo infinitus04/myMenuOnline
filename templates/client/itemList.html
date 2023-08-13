@@ -17,6 +17,11 @@
 
       <div class="container  flexCol">
         
+          <!-- Alert message -->
+          <!-- GET THE UI DONE-->
+
+          <!-- Alert message end -->
+          
         <!-- categlog -->
         <div class="cateloginList ">
           <h3>{{header.header_text}}</h3>
@@ -32,6 +37,13 @@
             </span></p>
         </div>
         <!-- itemList -->
+        {% if messages %}
+        {% for message in messages %}
+          {{message.tags}}
+          <br>
+          {{message}}
+        {% endfor %}
+      {% endif %}
         <div class="itemListScroll">
           
           {% comment %} item list start {% endcomment %}

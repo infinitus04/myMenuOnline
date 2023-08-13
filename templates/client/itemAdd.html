@@ -16,9 +16,22 @@
       <!-- Nav bar  start-->
     {% include 'client/navBar.html' %}
     <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
+        <!-- Alert message -->
+          <!-- GET THE UI DONE-->
+          <!-- Alert message end -->
+          
     <form action="" method="POST" class="container">
       {% csrf_token %}
-        <h1 class="makeBoldColor">{{header.header_text}}</h1>
+      <h1 class="makeBoldColor">{{header.header_text}}</h1>
+      {% if messages %}
+      {% for message in messages %}
+        {{message.tags}}
+        <br>
+        
+        {{message}}
+        
+      {% endfor %}
+    {% endif %}
         {% comment %} <div class="myleftright">
             <div onclick="open_file1()" class="leftBlock">
                 <input type="file" name="" id='input_file1' hidden>
@@ -34,6 +47,7 @@
 
 
             </div> {% endcomment %}
+
             <div class="rightBlock overflowS">
                                     <!-- ================== name =============== -->
                     <div class="inputArea">

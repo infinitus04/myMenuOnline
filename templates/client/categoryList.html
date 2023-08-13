@@ -15,6 +15,24 @@
     <!-- Nav bar  start-->
     {% include 'client/navBar.html' %}
 
+        
+    <!-- Alert message -->
+    <!--  GET THE UI DONE FOR ALERTS -->
+    {% if messages %}
+    
+    {% for message in messages %}
+    <h1>{{message.tags}}</h1>
+    <h1>{{message.tags}}</h1>
+    <h1>{{message.tags}}</h1>
+    <h1>{{message}}</h1>
+    <h1>{{message}}</h1>
+    <h1>{{message}}</h1>
+      
+    {% endfor %}
+      
+    {% endif %}
+    <!-- Alert message end -->
+
     {% if headers|length == 0 %}
     <div class="heightMax container noCategory ">
       <h1>No Category Created</h1>
@@ -27,6 +45,10 @@
       </div>
       <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
       {% else %}
+
+    <!-- Alert message -->
+
+    <!-- Alert message end -->
       <div class="container catListFlex setFixheight">
         <h2>All Category</h2>
         

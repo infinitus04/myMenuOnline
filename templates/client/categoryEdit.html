@@ -22,6 +22,8 @@
     <!-- Nav bar  start-->
     {% include 'client/navBar.html' %}
 
+
+
     <form
       action=""
       method="POST"
@@ -86,12 +88,12 @@
       </button> -->
       <div class="buttonListEdit">
           
-        <div id="deleteButton" class="buttonBlockEditItem">
+        <button type="submit" id="deleteButton" class="buttonBlockEditItem" name="deleteSubmit">
           <span class="material-symbols-outlined">delete</span>
           <p>Delete</p>
-        </div>  
+        </button>  
 
-        <button type="submit" onclick="parent.location.href='item.html'" id="saveChangeButton" class="buttonBlockEditItem">
+        <button type="submit"  id="saveChangeButton" class="buttonBlockEditItem" name="saveSubmit">
           <span class="material-symbols-outlined">change_circle</span>
           <p>Save</p>
         </button>
