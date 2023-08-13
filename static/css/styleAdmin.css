@@ -72,7 +72,10 @@ body{
 }
 .container > h2{
     font-weight: bolder;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
+    text-align: center;
+    margin: 1rem;
+
 }
 .container > h1{
     font-weight: bolder;
@@ -120,6 +123,7 @@ body{
 }
 
 .grayBlock{
+    border-radius: 50%;
     border-radius: 1rem;
     height: 80%;
     width: 80%;
@@ -127,7 +131,29 @@ body{
     margin: auto;
     display: flex;
     justify-content: center;
+
 }
+
+.myImgForEdit{
+    border-radius: 1rem;
+    height: 60%;
+    width: 10rem;
+    /* background-color: gray; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    /* overflow: hidden; */
+    /* border: 1px solid black; */
+    border-radius:  50%;
+}
+.myImgForEdit > img{
+
+    /* padding: 1rem; */
+    border-radius:  50%;
+}
+
+
 
 .imgSpan{
     color: #333;
@@ -413,7 +439,7 @@ p> span{
     /* padding: 0.3rem; */
     /* border-bottom: 1px solid var(--navPrimaryDark); */
     margin: 0.2rem 0.7rem;
-    background-color: var(--primaryDark);
+    /* background-color: var(--primaryDark); */
     border-radius: 1rem;
 
 
@@ -421,7 +447,7 @@ p> span{
 .itermList > h4{
 
     margin: 1rem !important;
-    color: var(--background);
+    /* color: var(--background); */
 
 }
 .myListBtn{
@@ -456,6 +482,7 @@ p> span{
     width: 10rem;
     border-radius: 50%;
     margin: auto;
+    object-fit: cover;
 
 }
 .cateloginList > h3{
@@ -490,9 +517,6 @@ p> span{
     border: 1px solid var(--navPrimaryDark);
 
 }
-.heightMax{
-    height: 63vh !important;    
-   }
 
 @media only screen and (max-width: 600px) {
    .myleftright{
@@ -500,7 +524,7 @@ p> span{
 
    }
    .heightMax{
-    height: 63vh !important;
+    height: 480px !important;
    }
    .container{
     height: fit-content;
@@ -618,7 +642,7 @@ input[type="radio"]{
     /* flex-direction: column; */
     overflow: scroll;
     justify-content: space-around;
-    height: 45vh  !important;
+    height: 45vh;
   }
   .categoryListIterm{
     display: flex;
@@ -629,7 +653,7 @@ input[type="radio"]{
     border: 1px solid black;
     /* justify-content: space-evenly; */
     width: 45%;
-    margin: 1rem -10px;
+    margin: 1rem auto;
     border-radius: 1rem;
     overflow: hidden;
 
@@ -642,7 +666,7 @@ input[type="radio"]{
     align-items: center;
     background-color:var(--text) ; ;
     /* background-color:#7f4cff77 ; ; */
-    width: 60%;
+    width: 47%;
     /* margin: auto; */
   }
   .catListRight{
@@ -657,17 +681,18 @@ input[type="radio"]{
   }
 
   .catListleft > img {
-    height: 6rem;
-    width: 6rem;
+    height: 7rem;
+    width: 7rem;
     border-radius: 50%;
     margin: 1rem;
     object-fit: cover;
+
   }
   .catListleft > h6 {
     color: var(--background);
   }
   .setFixheight{
-    height: 80vh !important;
+    height: 100vh !important;
   }
   .catListFlex{
     display: flex;
@@ -686,15 +711,23 @@ input[type="radio"]{
     height: 3rem;
     width: fit-content;
     border: 1.5px solid var(--primaryDark);
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 0.2rem;
     background-color: var(--background);
     color: var(--primaryDark);
     font-weight: bolder;
     display: flex;
     justify-content: center;
+    margin: auto;
     border-radius: 1rem;
-    /* z-index: 111; */
+    position: fixed;
+    bottom: 1rem;
+    width: 50%;
+   left: 25%;
+   right: 25%;
+
+
+    z-index: 111;
 
 
   }
@@ -711,23 +744,67 @@ input[type="radio"]{
   }
 
   @media only screen and (max-width: 600px){
-
-    .setFixheight{
-        height: fit-content !important;
-    }
-
     .upperListCategory{
-        height: 62vh !important;
-
+        height: fit-content;
 
     }
     .categoryListIterm{
         width: 100%;
     }
     .catListRight{
-        width: 53%;
+        width: 51%;
+    }
+    .buttonListEdit{
+        justify-content: center !important;
     }
 
   }
 
+  
+ 
 
+
+
+.buttonListEdit{
+    display: flex;
+    justify-content: end;
+  }
+  .buttonBlockEditItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0.5rem 1rem;
+    border: 1px solid var(--primaryDark);
+    padding: 0.5rem;
+    background-color: var(--primaryDark);
+    /* color: var(--navPrimaryDark) !important; */
+    border-radius: 0.6rem;
+  }
+  .buttonBlockEditItem , .buttonListEdit :hover{
+    cursor: pointer;
+  }
+  .buttonBlockEditItem > p {
+
+    margin: auto   0.5rem ;
+    color: var(--background);
+    font-weight: bolder;
+  }
+  .buttonBlockEditItem > span{
+    color: var(--background);
+  }
+
+#deleteButton:hover{
+
+    background-color: rgb(214, 22, 22);
+    transition: 0.3s;
+    border-color: whitesmoke;
+    
+}
+#saveChangeButton:hover{
+
+    background-color: rgb(34, 162, 34);
+    transition: 0.3s;
+    border-color: whitesmoke;
+    
+}

@@ -143,7 +143,10 @@ def itemAdd(request, id):
                 tags = tags,
                 header = header
             )
-            return redirect(f'/client/items/category={header.id}/')
+            if 'save' in request.POST:
+                return redirect(f'/client/items/category={header.id}/')
+            elif 'saveandnew':
+                return redirect(f'/client/items/category={header.id}/add/   ')
 
 
         return render(request, 'client/itemAdd.html', {'header': header })

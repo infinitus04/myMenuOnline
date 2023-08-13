@@ -31,17 +31,8 @@
       {% csrf_token %}
       <h2>Edit Category Details</h2>
       <div class="myleftright">
-        <div onclick="open_file1()" class="leftBlock">
-          {% if header.url %}
-          <input
-            accept="image/x-png,image/gif,image/jpeg"
-            type="file"
-            name="image"
-            id="input_file1"
-            src="{{header.image.url}}"
-            hidden
-          />
-          {% else %}
+        <div  class="leftBlock">
+     
           <input
             accept="image/x-png,image/gif,image/jpeg"
             type="file"
@@ -49,18 +40,16 @@
             id="input_file1"
             hidden
           />
-          {% endif %}
-          <div class="grayBlock">
-            {% if header.url %}
-            <img src="{{header.image.url}}" alt="" />
-
-            {% else %}
-            <img src="{% static '/img/sadfrog.jpeg' %}" alt="" />
-
-            {% endif %}
+        
+          <div onclick="open_file1()" class="myImgForEdit">
+            <img src="{{header.image.url}}" alt="">
           </div>
+          <div onclick="open_file1()" id="" class="buttonBlockEditItem">
+            <span class="material-symbols-outlined">change_circle</span>
+            <p>Change Image</p>
+          </div>  
           <p id="fileName">Add Logo of Category</p>
-          <span class="material-symbols-outlined editS"> edit </span>
+         
         </div>
         <div class="rightBlock">
           <!-- name  -->
@@ -87,9 +76,22 @@
         </div>
       </div>
       {% comment %} onclick="parent.location.href='item.html'" {% endcomment %}
-      <button type="submit" class="myResNextB btn btn-outline-primary">
+      <!-- <button type="submit" class="myResNextB btn btn-outline-primary">
         Save Changes
-      </button>
+      </button> -->
+      <div class="buttonListEdit">
+          
+        <div id="deleteButton" class="buttonBlockEditItem">
+          <span class="material-symbols-outlined">delete</span>
+          <p>Delete</p>
+        </div>  
+
+        <button type="submit" onclick="parent.location.href='item.html'" id="saveChangeButton" class="buttonBlockEditItem">
+          <span class="material-symbols-outlined">change_circle</span>
+          <p>Save</p>
+        </button>
+
+      </div>
     </form>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

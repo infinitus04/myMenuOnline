@@ -18,7 +18,7 @@
     <!-- <img class="myMMOlogo" src="static/img/mmoLogo.png" alt=""> -->
     <form action="" method="POST" class="container">
       {% csrf_token %}
-        <h2>ADD NEW ITEM</h2>
+        <h2>{{header.header_text}}</h2>
         {% comment %} <div class="myleftright">
             <div onclick="open_file1()" class="leftBlock">
                 <input type="file" name="" id='input_file1' hidden>
@@ -90,7 +90,20 @@
             </div>
               
         </div>
-        <button type="submit" class=" myResNextB btn btn-outline-primary ">Add</button>
+        <!-- <button type="submit" class=" myResNextB btn btn-outline-primary ">Add</button> -->
+        <div class="buttonListEdit">
+          
+            <button type="submit" name="saveandnew" id="" class="buttonBlockEditItem">
+              <span class="material-symbols-outlined">repeat</span>
+              <p>Save & New</p>
+            </button>  
+    
+            <button type="submit" name="save" id="saveChangeButton" class="buttonBlockEditItem">
+              <span class="material-symbols-outlined">add_circle</span>
+              <p>Save</p>
+            </button>
+    
+          </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script>
