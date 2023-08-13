@@ -33,12 +33,12 @@ def clientLogout(request):
 def psudoPanel(request):
     
     # print(request.user)
-    menu_link = Menu.objects.get(user = request.user).menu_link
-    templates = Template.objects.all()
+    menu = Menu.objects.get(user = request.user)
+    dailyVisitors = DailyVisitors.objects.get(menu = menu) 
 
     data = {
-        'menu_link' : menu_link,
-        'templates': templates
+        'menu' : menu,
+        'dailyVisitors': dailyVisitors
     }
     
     return render(request, 'client/psudoPanel.html', data)
@@ -133,9 +133,6 @@ def itemAdd(request, id):
             vegnonveg = request.POST.get('vegnonveg')
             tags = request.POST.get('tags')
 
-            # print(f'value of vegnonveg: {vnvValue}')
-
-            # print(f'name: {itemName} | price: {price} | desc:{vegnonveg} | tags: {tags}')
             Item.objects.create(
                 item_name=itemName,
                 price = price,
