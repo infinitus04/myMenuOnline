@@ -7,11 +7,13 @@ import uuid
 from django.dispatch import receiver
 import os
 from PIL import Image
+import datetime
+from django.utils import timezone
 # from django.utils.text import format_lazy
 # from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
-IMAGE_SIZE = 800
+IMAGE_SIZE = 400
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField( unique=True, max_length= 50)
@@ -66,7 +68,7 @@ class Menu(models.Model):
                     this.logo.delete(save=False)
             except: pass
             super(Menu, self).save(*args, **kwargs)
-            print(self.menu_link)
+                
             # Compressing the size of image(logo) inside save function
             img = Image.open(self.logo.path)
             output_size = (IMAGE_SIZE, IMAGE_SIZE)
@@ -85,6 +87,14 @@ class Menu(models.Model):
 
     def __str__(self):
         return f'{self.business_name}'
+
+class DailyVisitors(models.Model):
+    Daily_visitors = models.IntegerField(default=0, null=True, blank=True)
+    date = models.DateField(default= timezone.now(), blank=True, null=True)    
+    menu = models.OneToOneField(Menu, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.menu} | {self.Daily_visitors}'
     
 class Header(models.Model):
     header_text = models.CharField(max_length=100)

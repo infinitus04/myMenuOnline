@@ -47,3 +47,7 @@ admin.site.register(Item, AdminItem)
 class AdminTemplate(admin.ModelAdmin):
     Template_display = ('Template_text', 'image', 'menu', )
 admin.site.register(Template, AdminTemplate)
+
+class AdminDailyVisitors(admin.ModelAdmin):
+    Daily_display = ('Daily_visitors', 'date', 'blank', )
+admin.site.register(DailyVisitors, AdminDailyVisitors)

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'users',
     'client',
+    
+    'crontab',
 
 ]
 
@@ -138,3 +140,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default link for login required decorator in client-views
 LOGIN_URL = '/client/login/' 
+
+# value set to 0 settings
+CRONJOBS = [
+    ('0 0 * * *', 'myapp.management.commands.reset_value')
+]
