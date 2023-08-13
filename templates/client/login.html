@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<<<<<<< HEAD
+    <style>
+        .alert {
+          padding: 20px;
+          background-color: #f44336;
+          color: white;
+          z-index: -1;
+        }
+        
+        .closebtn {
+          margin-left: 15px;
+          color: white;
+          font-weight: bold;
+          float: right;
+          font-size: 22px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+          color: black;
+        }
+        </style>
+=======
+>>>>>>> 51940d6fa05b1f4f5fc149a0105eb60b4d3c5f9a
 </head>
 <body>
     <h3>THIS IS LOGIN PAGE FOR CLIENTS</h3>
     <form action="" method="POST">
         {% csrf_token %}
+        
+        {% if invalid_credentials %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            Invalid username or password
+          </div>
+        {% endif %}
+
         <input type="number" name = "phone">
         <input type="password" name = "password">
         <button type = "submit">SUBMIT!</button>

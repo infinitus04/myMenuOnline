@@ -20,7 +20,7 @@ def serve(request, linkId):
         for head in headers:
             headers = {}
             headers['header'] = head
-            items = Item.objects.filter(header = head)
+            items = Item.objects.filter(header = head).order_by('price')
             allitem = []
             for item in items:
                 allitem.append(item)
