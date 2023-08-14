@@ -22,15 +22,18 @@
     <!-- Nav bar  start-->
     {% include 'client/navBar.html' %}
 
-
-
+    
+    
     <form
-      action=""
-      method="POST"
-      class="container"
-      enctype="multipart/form-data"
+    action=""
+    method="POST"
+    class="container"
+    enctype="multipart/form-data"
     >
-      {% csrf_token %}
+
+
+
+    {% csrf_token %}
       <h2>Edit Category</h2>
       <div class="myleftright">
         <div  class="leftBlock">
@@ -66,7 +69,7 @@
               type="text"
               placeholder="Category Name"
               name="categoryName"
-              value="{{header.header_text}}"
+              value="{{header.header_text}}"required
             />
           </div>
           <!-- phone no. -->
@@ -87,16 +90,16 @@
         Save Changes
       </button> -->
       <div class="buttonListEdit">
-          
-        <button type="submit" id="deleteButton" class="buttonBlockEditItem" name="deleteSubmit">
-          <span class="material-symbols-outlined">delete</span>
-          <p>Delete</p>
-        </button>  
-
         <button type="submit"  id="saveChangeButton" class="buttonBlockEditItem" name="saveSubmit">
           <span class="material-symbols-outlined">change_circle</span>
           <p>Save</p>
         </button>
+          
+        <button onclick="deleteAction()" type="submit" id="deleteButton" class="buttonBlockEditItem" name="deleteSubmit">
+          <span class="material-symbols-outlined">delete</span>
+          <p>Delete</p>
+        </button>  
+
 
       </div>
     </form>
@@ -123,6 +126,30 @@
 
         span.innerText = newStringName;
       });
+      // Alert action
+    //   setTimeout(function() {
+    // element = document.getElementById("myNotification");
+  
+    // element.classList.add("alertMakeFlex");
+    // }, 1000);
+
+    // setTimeout(function() {
+    // element = document.getElementById("myNotification");
+  
+    //   element.parentNode.removeChild(element);
+    
+    // }, 5000);
+
+    deleteAction = ()=> {
+      confirm("Do you want to Delete this Item ? ")
+    }
+
+
+
+
+
+
+
     </script>
   </body>
 </html>

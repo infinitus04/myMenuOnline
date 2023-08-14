@@ -21,6 +21,25 @@
           <!-- Alert message end -->
           
     <form action="" method="POST" class="container">
+
+          <!-- Alert message -->
+    <!--  GET THE UI DONE FOR ALERTS -->
+    {% if messages %}
+    
+    {% for message in messages %}
+    
+    <div  id="myNotification" class="mesageAlartShow {% if message.tags == 'success' %}
+    greenColorAlert {% else %} redColorAlert {% endif %}">
+      <span class="material-symbols-outlined">
+        notifications
+        </span>
+      <h6 class="alertMeassge" >{{message}}</h6>
+    </div>
+      
+    {% endfor %}
+      
+    {% endif %}
+    <!-- Alert message end -->
       {% csrf_token %}
       <h1 class="makeBoldColor">{{header.header_text}}</h1>
       {% if messages %}
@@ -54,7 +73,7 @@
                         <span class="material-symbols-outlined">
                             border_color
                             </span>
-                        <input type="text" placeholder="Name" name="itemName">
+                        <input type="text" placeholder="Name" name="itemName" required>
                     </div>
                     <!-- ========== Choose Category  ============ -->
                     <div class="inputArea">
@@ -71,7 +90,7 @@
                         <span class="material-symbols-outlined">
                             currency_rupee
                             </span>
-                        <input type="number" placeholder="Price" name="price">
+                        <input type="number" placeholder="Price" name="price" required>
                     </div>
                     <!-- description -->
                     {% comment %} <div class="inputArea">
@@ -126,5 +145,6 @@
       }
     
     </script>
+      <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

@@ -16,11 +16,28 @@
     {% include 'client/navBar.html' %}
 
       <div class="container  flexCol">
-        
-          <!-- Alert message -->
-          <!-- GET THE UI DONE-->
 
-          <!-- Alert message end -->
+
+        
+               <!-- Alert message -->
+    <!--  GET THE UI DONE FOR ALERTS -->
+    {% if messages %}
+    
+    {% for message in messages %}
+    
+    <div  id="myNotification" class="mesageAlartShow {% if message.tags == 'success' %}
+    greenColorAlert {% else %} redColorAlert {% endif %}">
+      <span class="material-symbols-outlined">
+        notifications
+        </span>
+      <h6 class="alertMeassge" >{{message}}</h6>
+    </div>
+      
+    {% endfor %}
+      
+    {% endif %}
+    <!-- Alert message end -->
+    
           
         <!-- categlog -->
         <div class="cateloginList ">
@@ -78,6 +95,6 @@
 <!-- <button onclick="parent.location.href='category.html'" class=" myResNextB btn btn-outline-primary ">Next</button> -->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
