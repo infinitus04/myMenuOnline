@@ -63,6 +63,8 @@ def categoryAdd(request):
             header.menu = menu
             header.image = imagee
             header.save()
+            
+            messages.success(request, 'Category created sucessfully!')
             return redirect('/client/category/')
         else:
             print('empty hai not allowed')
