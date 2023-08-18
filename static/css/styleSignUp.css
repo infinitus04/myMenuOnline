@@ -1,3 +1,21 @@
+:root{
+  --text: #3f3f3f;
+  --background: #e4e4e4;
+  /* --primary: #A076F9; */
+  /* --primary: #7e4cff; */
+  /* --primaryDark : #6528F7; */
+  /* --primaryDark : rgb(69, 45, 132); */
+  /* --navPrimaryDark :  #4819b4;  */
+  /* --navPrimaryDark : #1b1037 ; */
+  /* --secondary: #e1e9fb; */
+  /* --accent: #0082ce; */
+  --primaryDark : #0B666A;
+  --navPrimaryDark : #071952;
+  --primary : #0B666A;
+  --alertRed : #C70039
+}
+
+
 .myCenterContainer{
     height: 80vh;
     margin:  5%;
@@ -45,6 +63,8 @@
     align-content: center;
     align-items: center;
     /* border: 1px solid #121212; */
+    border: none !important;
+    outline: none !important;
     border-radius: 1rem;
     margin: 1rem;
     /* box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18); */
@@ -58,10 +78,12 @@
     transition: 0.3s;
 }
 .signup{
-  background-color:  #071952 !important;
-  outline: none;
-  border: none;
+  background-color:  var(--primary) !important;
+  outline: none !important;
+  border: none !important;
   /* border-radius: 1rem; */
+  display: block !important;
+  margin: auto;
   
 }
 .signup :hover {
@@ -70,7 +92,7 @@
 }
 .upperSignUpHidden{
   background-color: #071952;
-  height: 7rem;
+  height: 5rem;
   display: none;
   justify-content: center;
   align-items: center;
@@ -78,13 +100,37 @@
 
 }
 .upperSignUpHidden > img{
-
+  
   height: 80%;
   margin: auto;
+  
+}
+.midOrSection{
+  height: 1rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.form-control:focus{
+  border: 1px solid var(--primary) !important;
+  /* outline-color: var(--primary) !important ; */
 
 }
 
 @media only screen  and (max-width : 600px) {
+
+  .midOrSection{
+    display: flex;
+    /* margin: auto; */
+    /* margin: 0.2rem; */
+  }
+  .midOrSection > p {
+    margin: auto;
+    color: gray;
+  }
 .upperSignUpHidden {
   
   display: flex;
@@ -98,7 +144,7 @@
 .childContainer{
   width: 100%;
   padding: 1rem  0.5rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 .rightContainer > img {
   display: none;
@@ -107,5 +153,6 @@
 }
 
 .makeNoraml{
-text-decoration: none !important;
+  text-decoration: none !important;
 }
+

@@ -47,15 +47,18 @@ class Menu(models.Model):
     id = models.UUIDField( primary_key = True, default = uuid.uuid4, editable = False,)
     template = models.ForeignKey(Template, on_delete=models.CASCADE)
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    business_name = models.CharField(max_length=100)
-    menu_link = models.CharField(max_length=100, blank=True, default= uuid.uuid4 )
+
     logo = models.ImageField(upload_to='images', height_field=None, width_field=None, max_length=None, blank=True, null=True)
+    business_name = models.CharField(max_length=100)
+    business_contact_number = models.CharField( max_length=50, blank=True)
     address = models.TextField( max_length=50, blank=True)
+
     instagram_link = models.CharField( max_length=50, blank=True)
     facebook_link = models.CharField( max_length=50, blank=True)
     youtube_link = models.CharField( max_length=50, blank=True)
     google_link = models.CharField( max_length=50, blank=True)
-    business_contact_number = models.CharField( max_length=50, blank=True)
+    
+    menu_link = models.CharField(max_length=100, blank=True, default= uuid.uuid4 )
     is_subscribed = models.BooleanField( default= False)
     qrcode = models.ImageField(upload_to='qrcodes/', null= True, blank= True)
     

@@ -4,6 +4,19 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from client.models import *
 from django.contrib import messages
+import functools
+
+def menu_creation(view_func, verification_url="/client/menucreation/"):
+
+    @functools.wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if Menu.objects.filter(user=request.user).exists():
+            return view_func(request, *args, **kwargs)
+        messages.info(request, "create menu first")
+        print("create menu first")
+        return redirect(verification_url)
+    return wrapper
+
 
 # Create your views here.
 def clientLogin(request):
@@ -34,6 +47,7 @@ def clientLogout(request):
 
 
 @login_required
+@menu_creation
 def psudoPanel(request):
     
     # print(request.user)
@@ -48,6 +62,7 @@ def psudoPanel(request):
     return render(request, 'client/psudoPanel.html', data)
 
 @login_required
+@menu_creation
 def categoryAdd(request):
     if request.method == 'POST':
         category_name = request.POST.get('categoryName')
@@ -71,6 +86,7 @@ def categoryAdd(request):
     return render(request, 'client/categoryAdd.html')
 
 @login_required
+@menu_creation
 def categoryList(request):
     menu = Menu.objects.get(user= request.user)
     # print(menu)
@@ -79,6 +95,7 @@ def categoryList(request):
 
 
 @login_required
+@menu_creation
 def categoryEdit(request, id):
     header = Header.objects.get(id = id)
     if request.method =="POST":
@@ -115,6 +132,7 @@ def categoryEdit(request, id):
 # Item view functions
 
 @login_required
+@menu_creation
 def itemList(request, id):
     try:
         header = Header.objects.get(id = id)
@@ -133,7 +151,8 @@ def itemList(request, id):
     else:
         return HttpResponse('You are not authorized to view this page')
         
-@login_required    
+@login_required 
+@menu_creation
 def itemAdd(request, id):
     try:
         header = Header.objects.get(id = id)
@@ -166,7 +185,9 @@ def itemAdd(request, id):
         return render(request, 'client/itemAdd.html', {'header': header })
 
 @login_required
+@menu_creation
 def itemEdit(request, id, itemId):
+    
     try:
         header = Header.objects.get(id = id)
         item = Item.objects.get(id = itemId)
@@ -203,5 +224,8 @@ def itemEdit(request, id, itemId):
 
     return render(request, 'client/itemEdit.html',{'header': header, 'item': item })
 
+@login_required 
 def menuCreation(request):
-    return render(request, 'user/signUP.html')
+    return render(request, 'client/menuCreation.html')
+
+
