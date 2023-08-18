@@ -22,7 +22,7 @@
                <!-- Alert message -->
     <!--  GET THE UI DONE FOR ALERTS -->
     {% if messages %}
-    
+     
     {% for message in messages %}
     
     <div  id="myNotification" class="mesageAlartShow {% if message.tags == 'success' %}
@@ -54,13 +54,7 @@
             </span></p>
         </div>
         <!-- itemList -->
-        {% if messages %}
-        {% for message in messages %}
-          {{message.tags}}
-          <br>
-          {{message}}
-        {% endfor %}
-      {% endif %}
+
         <div class="itemListScroll">
           
           {% comment %} item list start {% endcomment %}
