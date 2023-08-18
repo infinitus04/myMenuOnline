@@ -176,20 +176,28 @@ def itemEdit(request, id, itemId):
         return HttpResponse('You are not authorized to view this page')
 
     if request.method == 'POST':
-        itemName = request.POST.get('itemName')
-        price = request.POST.get('price')
-        tags = request.POST.get('tags')
-        vegnonveg = request.POST.get('vegnonveg')
+        
+        if 'saveSubmit' in request.POST:
+            itemName = request.POST.get('itemName')
+            price = request.POST.get('price')
+            tags = request.POST.get('tags')
+            vegnonveg = request.POST.get('vegnonveg')
 
-        if item.item_name != itemName:
-            item.item_name = itemName
-        if item.price != price:
-            item.price = price
-        if item.tags != tags:
-            item.tags = tags
-        if item.vegnonveg != vegnonveg:
-            item.vegnonveg = vegnonveg
-        item.save()
+            if item.item_name != itemName:
+                item.item_name = itemName
+            if item.price != price:
+                item.price = price
+            if item.tags != tags:
+                item.tags = tags
+            if item.vegnonveg != vegnonveg:
+                item.vegnonveg = vegnonveg
+            item.save()
+            messages.success(request, 'Item edited sucessfully!')
+            
+        elif 'deleteSubmit' in request.POST:
+            item.delete()
+            messages.error(request, 'Item deleted sucessfully!')
+        
         return redirect(f'/client/items/category={header.id}/')
         # print(f'itemname: {itemName} | price: {price} | tags: {tags} | vegnonveg: {vegnonveg}')
 

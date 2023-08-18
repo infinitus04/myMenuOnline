@@ -426,6 +426,7 @@ color: whitesmoke;
 }
 .categoryButton > p:hover{
     opacity: 0.8;
+    user-select: none;
 }
 
 p> span{

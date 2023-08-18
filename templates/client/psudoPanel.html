@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,8 @@
     <title>Psudo Panel</title>
 </head>
 <body>
+    {% include 'client/navBar.html' %}
+
     <a  href="/client/logout">logout</a>
     <h1>WELCOME {{request.user}} TO CLIENT PANEL</h1>
     
