@@ -194,3 +194,6 @@ def itemEdit(request, id, itemId):
         # print(f'itemname: {itemName} | price: {price} | tags: {tags} | vegnonveg: {vegnonveg}')
 
     return render(request, 'client/itemEdit.html',{'header': header, 'item': item })
+
+def menuCreation(request):
+    return render(request, 'user/signUP.html')

@@ -14,5 +14,7 @@ urlpatterns = [
     path('items/category=<int:id>/', views.itemList, name= 'itemList'),
     path('items/category=<int:id>/add/', views.itemAdd, name= 'itemAdd'),
     path('items/category=<int:id>/edit/item=<int:itemId>/', views.itemEdit, name= 'itemEdit'),
+    path('menucreation/', views.menuCreation)
+
 
 ]

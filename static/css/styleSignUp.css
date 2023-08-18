@@ -1,0 +1,111 @@
+.myCenterContainer{
+    height: 80vh;
+    margin:  5%;
+    /* border: 1px solid gray; */
+    display: flex;
+    /* background-color: whitesmoke; */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+
+}
+.childContainer{
+    /* height: 100%; */
+    width: 45%;
+    /* border: 1px solid gray; */
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 1rem; */
+
+}
+
+.leftContainer{
+    /* border: 1.5px solid  #071952;; */
+    background-color: whitesmoke;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3), 0 1px 2px -1px rgba(0,0,0,0.3);
+}
+
+.rightContainer{
+    background-color: #071952;
+    color: whitesmoke;
+}
+.rightContainer > img {
+    height: 7rem;
+
+}
+.mySignupBtn{
+    background-color: whitesmoke;
+    height: 3rem;
+    width: fit-content;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    /* border: 1px solid #121212; */
+    border-radius: 1rem;
+    margin: 1rem;
+    /* box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18); */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.16), 0 8px 8px rgba(0,0,0,0.20);
+  
+
+    
+}
+.rightContainer > button:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.signup{
+  background-color:  #071952 !important;
+  outline: none;
+  border: none;
+  /* border-radius: 1rem; */
+  
+}
+.signup :hover {
+  background-color:  #071952c3 !important;
+ 
+}
+.upperSignUpHidden{
+  background-color: #071952;
+  height: 7rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+
+}
+.upperSignUpHidden > img{
+
+  height: 80%;
+  margin: auto;
+
+}
+
+@media only screen  and (max-width : 600px) {
+.upperSignUpHidden {
+  
+  display: flex;
+}
+.myCenterContainer{
+  flex-direction: column ;
+  height: fit-content;
+  box-shadow: none;
+  margin: auto 5%;
+}
+.childContainer{
+  width: 100%;
+  padding: 1rem  0.5rem;
+  margin: 2rem auto;
+}
+.rightContainer > img {
+  display: none;
+}
+
+}
+
+.makeNoraml{
+text-decoration: none !important;
+}
