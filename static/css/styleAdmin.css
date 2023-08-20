@@ -114,7 +114,7 @@ body{
 .leftBlock{
 
     width: 100%;
-    height: 25rem;
+    height: 57vh;
     display: flex;
     justify-content: left;
     flex-direction: column;
@@ -135,7 +135,7 @@ body{
     flex-direction: column;
     align-items: center;
     /* border:1px solid black; */
-    height: 25rem;
+    height: 57vh;
     /* background-color: var(--secondary); */
     /* margin-top: 1.5rem ; */
 
@@ -198,9 +198,8 @@ body{
     padding: 0.5rem;
 }
 .inputArea:hover{
-    border-color: var(--primaryDark);
-    border-width: 2px ;
-    /* transition: 0.3s; */
+    border-color: var(--accent) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--accent) !important;
 }
 .inputArea:focus{
     border-color: var(--primaryDark);
@@ -279,7 +278,7 @@ body{
 .overflowS{
     overflow: scroll;
     position: relative;
-    bottom: 20px;
+    /* bottom: 20px; */
     scrollbar-color: var(--background);
     /* height: 25rem; */
 }
@@ -975,5 +974,21 @@ input[type="radio"]{
 .fade-out {
     animation: fadeOut 1s ease forwards;
 }
+
+.socialMediaInput{
+    /* box-shadow: 0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09); */
+    /* border: 1px solid gray; */
+    padding: 1rem;
+    margin: 0.5rem auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.form-control:focus {
+    border-color: var(--accent) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--accent) !important;
+  }
+
+  .socilaMediaTitle{
+    margin-top: 2.5rem;
+  }
 
 

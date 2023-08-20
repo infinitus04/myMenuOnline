@@ -36,6 +36,7 @@
     justify-content: center;
     align-items: center;
     /* border-radius: 1rem; */
+    padding: 1rem;
 
 }
 
@@ -113,12 +114,12 @@
 
 }
 
-
+/* 
 .form-control:focus{
   border: 1px solid var(--primary) !important;
-  /* outline-color: var(--primary) !important ; */
+  outline-color: var(--primary) !important ;
 
-}
+} */
 
 @media only screen  and (max-width : 600px) {
 
@@ -143,7 +144,7 @@
 }
 .childContainer{
   width: 100%;
-  padding: 1rem  0.5rem;
+  padding: 1rem  0.5rem !important;
   margin: 1rem auto;
 }
 .rightContainer > img {
