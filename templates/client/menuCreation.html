@@ -30,30 +30,31 @@
         <div class=" childContainer leftContainer">
             <!-- <h1>left</h1> -->
             <!-- ********* LEFT FORM WHITE **********  -->
-            <form action="POST">
+            <form action="" method="POST">
+              {% csrf_token %}
                 <div class="mb-3">
                   <h4>Change password</h4>
                   <p>(Optional)</p>
                   
                   <label for="exampleInputEmail1" class="form-label">Old Password</label>
-                  <input  required  type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input  required name="old_password"  type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label" >New Password</label>
-                  <input  required type="password" class="form-control" id="exampleInputPassword1" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}">
+                  <input  required name="new_password" type="password" class="form-control" id="exampleInputPassword1" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}">
                   <!-- <div id="emailHelp" class="form-text"><a class="makeNoraml" href="">forgot Password</a></div> -->
                   <div id="emailHelp" class="form-text">Secure your account: Mix uppercase, lowercase, digits, and special characters in password.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                  <input required  type="password" class="form-control" id="exampleInputPassword1" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}">
+                  <input required name="confirm_password"  type="password" class="form-control" id="exampleInputPassword1" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}">
                 </div>
                 <!-- <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div> -->
-                <button type="submit" class="btn btn-primary signup">Sign Up</button>
+                <button type="submit" name = "changePassword" class="btn btn-primary signup">Change Password</button>
               </form>
         </div>
         <div class="midOrSection">
@@ -63,7 +64,7 @@
             <!-- <h1>right</h1> -->
             <!-- img -->
             <img src="{% static 'img/whiteTextMMO-removebg-preview.png' %}" alt="">
-            <button   class="mySignupBtn" >Let's get Started <span class="material-symbols-outlined">
+            <button  onclick="parent.location.href='details/'" class="mySignupBtn" >Let's get Started <span class="material-symbols-outlined">
                 arrow_right_alt
                 </span> </button>
         </div>

@@ -136,7 +136,7 @@ AUTH_USER_MODEL = "client.CustomUser"
 
 # Media routes for image storing in client-models
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default link for login required decorator in client-views
 LOGIN_URL = '/client/login/' 

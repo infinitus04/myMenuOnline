@@ -7,7 +7,7 @@ def serve(request, linkId):
     # menu  = ''
     try:
         menu = Menu.objects.get(menu_link = linkId)
-    except menu.DoesNotExist:
+    except:
         return HttpResponse('404 page not found', status= 404)
     if menu.is_subscribed:
 
