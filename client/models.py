@@ -58,7 +58,7 @@ class Menu(models.Model):
     youtube_link = models.CharField( max_length=50, blank=True)
     google_link = models.CharField( max_length=50, blank=True)
     
-    menu_link = models.CharField(max_length=100, blank=True, default= uuid.uuid4 )
+    menu_link = models.CharField(max_length=100, blank=True)
     is_subscribed = models.BooleanField( default= False)
     qrcode = models.ImageField(upload_to='qrcodes/', null= True, blank= True)
     
