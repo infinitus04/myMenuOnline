@@ -71,12 +71,12 @@ class Menu(models.Model):
                     this.logo.delete(save=False)
             except: pass
             super(Menu, self).save(*args, **kwargs)
-            if self.logo:
-                # Compressing the size of image(logo) inside save function
-                img = Image.open(self.logo.path)
-                output_size = (IMAGE_SIZE, IMAGE_SIZE)
-                img.thumbnail(output_size)
-                img.save(self.logo.path)
+
+            # Compressing the size of logo(logo) inside save function
+            img = Image.open(self.logo.path)
+            output_size = (IMAGE_SIZE, IMAGE_SIZE)
+            img.thumbnail(output_size)
+            img.save(self.logo.path)
         else:
             super(Menu, self).save(*args, **kwargs)
 
@@ -120,9 +120,6 @@ class Header(models.Model):
             output_size = (IMAGE_SIZE, IMAGE_SIZE)
             img.thumbnail(output_size)
             img.save(self.image.path)
-            print(f'none {self.image}')
-
-           
         else:
             super(Header, self).save(*args, **kwargs)
 

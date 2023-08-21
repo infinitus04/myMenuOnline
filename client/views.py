@@ -1,12 +1,13 @@
-from django.shortcuts import render, redirect, HttpResponse
-from .models import CustomUser
-from django.contrib.auth import authenticate, login,logout
-from django.contrib.auth.decorators import login_required
-from client.models import *
-from django.contrib import messages
 import functools
+from client.models import *
+from .models import CustomUser
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login,logout
+from django.shortcuts import render, redirect, HttpResponse
 
-def menu_creation(view_func, verification_url="/client/menucreation/"):
+def menu_creation(view_func, verification_url="/client/getstarted/"):
 
     @functools.wraps(view_func)
     def wrapper(request, *args, **kwargs):
@@ -226,6 +227,61 @@ def itemEdit(request, id, itemId):
 
 @login_required 
 def menuCreation(request):
+    if 'changePassword' in request.POST:
+        old_password = request.POST.get('old_password')
+        new_password = request.POST.get('new_password')
+        confirm_password = request.POST.get('confirm_password')
+        saveuser = CustomUser.objects.get(id = request.user.id)
+        if (old_password and new_password) and (new_password==confirm_password):
+            if request.user.check_password(old_password):
+                saveuser.set_password(new_password)
+                update_session_auth_hash(request, saveuser)
+                saveuser.save()
+                print('Password changed sucessfully')
+                messages.success(request, 'Password changed sucessfully')
+                return redirect('/client/getstarted/details/')
+            else:
+                messages.error(request, 'Old password is incorrect')
+                return redirect('/client/getstarted/')
+        
+        print(f'{old_password} | {new_password} | {confirm_password}')
+        return redirect('/client/getstarted/')
     return render(request, 'client/menuCreation.html')
+
+@login_required 
+def regMenuDetail(request):
+    if request.method == "POST":
+        instance = Menu()
+        instance.user = request.user
+        Template.objects.all()
+        instance.template = Template.objects.all()[:1].get()
+        if request.POST.get('business_name'):
+            instance.business_name = request.POST.get('business_name')
+        else:
+            messages.error('Business name cannot be empty')
+            return redirect('/client/getstarted/details/')
+        if request.FILES.get('logo'):
+            instance.logo = request.FILES.get('logo')
+
+        if request.POST.get('business_contact_number'):
+            instance.business_contact_number = request.POST.get('business_contact_number')
+
+        if request.POST.get('address'):
+            instance.address = request.POST.get('address')
+
+        if request.POST.get('instagram_link'):
+            instance.instagram_link = request.POST.get('instagram_link')
+
+        if request.POST.get('facebook_link'):
+            instance.facebook_link = request.POST.get('facebook_link')
+
+        if request.POST.get('google_link'):
+            instance.google_link = request.POST.get('google_link')
+        
+        instance.save()
+        DailyVisitors.objects.create(menu= instance)
+        return redirect('/client/psudoPanel/')
+
+    return render(request, 'client/regMenuDetails.html')
 
 
