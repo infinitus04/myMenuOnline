@@ -6,6 +6,8 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login,logout
 from django.shortcuts import render, redirect, HttpResponse
+import uuid
+from utilityCodes import qrCodeGenrator
 
 def menu_creation(view_func, verification_url="/client/getstarted/"):
 
@@ -256,15 +258,20 @@ def regMenuDetail(request):
         instance.user = request.user
         Template.objects.all()
         instance.template = Template.objects.all()[:1].get()
+        menu_link = uuid.uuid4().hex
+        print(menu_link)
+        instance.menu_link = menu_link 
+        qr_link = qrCodeGenrator.qr_code_create((menu_link))
+        instance.qrcode = qr_link
+
+        instance.logo = request.FILES.get('logo')
+        
         if request.POST.get('business_name'):
             instance.business_name = request.POST.get('business_name')
         else:
             messages.error('Business name cannot be empty')
             return redirect('/client/getstarted/details/')
 
-        logo = request.FILES.get('logo')
-        instance.logo = logo
-        print(f'link: {logo}')
 
         if request.POST.get('business_contact_number'):
             instance.business_contact_number = request.POST.get('business_contact_number')
