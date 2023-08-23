@@ -15,13 +15,13 @@
       {% include 'client/navBar.html' %}
 
       <!-- **********  form  ******************   -->
-    <form action="" method="POST" class="container">
+    <form action="" method="POST" class="container" enctype='multipart/form-data'>
       {% csrf_token %}
         <h2>Restaurant Details</h2>
         <div class="myleftright">
             <!-- left block -->
-            <div onclick="open_file1()" class="leftBlock">
-                <input type="file" name="logo" id='input_file1' hidden>
+            <div onclick="open_file2()" class="leftBlock" >
+                <input accept="image/x-png,image/gif,image/jpeg" type="file" name="logo" id='input_file2' hidden>
                 <div class="grayBlock">
                     <span class="material-symbols-outlined imgSpan ">
                         photo_library
@@ -36,7 +36,6 @@
             </div>
             <!-- right block with scroll -->
             <div class="rightBlock overflowS">
-                                      <!-- name  -->
                   <div class="inputArea ">
                     <span class="material-symbols-outlined">
                         border_color
@@ -99,11 +98,11 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script>
-        function open_file1() {
-          document.getElementById('input_file1').click();
+        function open_file2() {
+          document.getElementById('input_file2').click();
       }
                   // Get file input element
-      let fileInput = document.getElementById('input_file1');
+      let fileInput = document.getElementById('input_file2');
       let span = document.getElementById('fileName');
 
       // Fires on file upload

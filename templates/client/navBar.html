@@ -3,6 +3,69 @@
   <div class="container-fluid">
     <!-- <a class="navbar-brand" href="#"><h2>MMO</h2></a> -->
     <img class="myMMOlogo navbar-brand" src="{% static "img/whiteTextMMO-removebg-preview.png" %}" alt="">
+
+    <div class="navList">
+      <h6 onclick="parent.location.href='/client/psudoPanel/'"  class="navItem animated">Home</h6>
+      <h6 onclick="parent.location.href='/client/category'"  class="navItem animated">Category</h6>
+      <h6 onclick="parent.location.href=''"  class="navItem animated">Menu</h6>
+     
+      <!-- ofcanvas -->
+      <button class="btn animated" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="color: whitesmoke;">More</button>
+
+      <div style="color: whitesmoke; background-color: #071952 !important;" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Options</h5>
+          <button style="color: whitesmoke;" type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item d-flex align-items-center ">
+              <span class="material-symbols-outlined ">home</span>
+              <a class="nav-link active m-2" aria-current="page" href="/client/psudoPanel/" >Home</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="material-symbols-outlined">
+                menu_book</span>
+              <a class="nav-link active m-2" href="/client/category/">Menu</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="material-symbols-outlined">
+                category
+                </span>
+              <a class="nav-link active m-2" href="/client/category/">Category</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="material-symbols-outlined">
+                qr_code_scanner
+                </span>
+              <a class="nav-link active m-2" href="#">View QR</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="material-symbols-outlined">
+                person
+                </span>
+              <a class="nav-link active m-2" href="#">Profile</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="material-symbols-outlined">
+                info
+                </span>
+              <a class="nav-link active m-2" href="#">About</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="material-symbols-outlined">
+                logout
+                </span>
+              <a href="/client/logout/" class="nav-link active m-2" style="font-weight: bold;" onclick="logOut()">log Out</a>
+            </li>
+          
+          </ul>
+         
+        </div>
+      </div>
+    </div>
+    <!-- end of desktop -->
+
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

@@ -68,6 +68,7 @@ def categoryAdd(request):
     if request.method == 'POST':
         category_name = request.POST.get('categoryName')
         imagee = request.FILES.get('image')
+        print(imagee)
         description = request.POST.get('description')
         # print(f'name:{category_name} | image:{imagee} | desc:{description}')
 
@@ -260,8 +261,10 @@ def regMenuDetail(request):
         else:
             messages.error('Business name cannot be empty')
             return redirect('/client/getstarted/details/')
-        if request.FILES.get('logo'):
-            instance.logo = request.FILES.get('logo')
+
+        logo = request.FILES.get('logo')
+        instance.logo = logo
+        print(f'link: {logo}')
 
         if request.POST.get('business_contact_number'):
             instance.business_contact_number = request.POST.get('business_contact_number')
