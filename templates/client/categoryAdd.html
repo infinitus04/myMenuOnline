@@ -20,15 +20,15 @@
       {% csrf_token %}
         <h2>Category Details</h2>
         <div class="myleftright">
-            <div onclick="open_file1()" class="leftBlock">
+            <div  class="leftBlock">
                 <input  accept="image/x-png,image/gif,image/jpeg"  type="file" name="image" id='input_file1' hidden>
-                <div class="grayBlock">
-                    <span class="material-symbols-outlined imgSpan ">
+                <div  onclick="open_file1()" class="grayBlock">
+                    <span  class="material-symbols-outlined imgSpan ">
                         photo_library
                         </span>
                 </div>
                 <p id="fileName">Add Logo of Category</p>
-                <span class="material-symbols-outlined editS ">
+                <span  onclick="open_file1()" class="material-symbols-outlined editS ">
                     edit
                 </span>
 
