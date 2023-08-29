@@ -149,9 +149,11 @@
                         <div class="profile-top">
                             <h1>Your Details</h1>
 
-                            <button  onclick="profileExpand()" class="profile-expand-btn"><img src="{% static 'img/dropdown.png'%}" alt=""></button>
+                            <button id="profile-expand-btn"><img src="{% static 'img/dropdown.png'%}" alt=""></button>
 
                         </div>
+
+                        <div class="profile-bottom">
 
                         <div class="res-info">
                             <h4>Rajesh Nehare</h4>
@@ -189,6 +191,8 @@
                             <h4>Hinga t-point, Nagpur</h4>
                             <p>Address</p>
                         </div>
+
+                    </div>
                         <!-- <hr style="margin:0px 0px; width: 95%; border: 1px dashed  #3f3f3f ;"> -->
 
 
@@ -242,22 +246,16 @@
 
         // });
 
-        var cont=document.getElementsByClassName('profile-cont');
-        // var profile_exp_btn=document.getElementsByClassName('profile-expand-btn')
+        const container = document.querySelector('.profile-cont');
+const changeHeightButton = document.getElementById('profile-expand-btn');
+let expanded = false; 
 
-function profileExpand(){
+changeHeightButton.addEventListener('click', () => {
+  expanded = !expanded; 
+  container.style.height = expanded ? '450px' : '70px';
+  
+});
 
-            // if(cont.style.height=="70px"){
-
-                cont.style.height="450px";
-            // }
-            // else{
-
-                // cont.style.height="70px";
-
-
-
-            }
 
         
 
