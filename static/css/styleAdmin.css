@@ -701,6 +701,7 @@ input[type="radio"]{
   }
 
   .upperListCategory{
+    margin-bottom : 2rem ;
     width: 100%;
     /* border: 1px solid black; */
     display: flex;
@@ -1024,9 +1025,14 @@ input[type="radio"]{
   }
 
 
+
   @media  screen and (min-width : 700px) {
 
     .navbar-toggler{
+        display: none !important;
+    }
+
+    .inviBlockforCategory{
         display: none !important;
     }
   }
@@ -1053,6 +1059,14 @@ input[type="radio"]{
  .animated:hover::after{
     width: 100%;  /* Show border on hover */
 
+ }
+
+ .inviBlockforCategory{
+
+    height: 5rem;
+ }
+ .inviBlockforCategory > h2{
+    color: whitesmoke;
  }
 
    
