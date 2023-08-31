@@ -1,30 +1,383 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <title>Psudo Panel</title>
-</head>
-<body>
-    {% include 'client/navBar.html' %}
 
-    <a  href="/client/logout">logout</a>
-    <h1>WELCOME {{request.user}} TO CLIENT PANEL</h1>
+</head>
+
+<body>
+
+
+
+    <a id="logout" href="/client/logout">logout</a>
+
+    <div class="containerH">
+
+
+        <div class="dash-top">
+
+            <div class="cont-heading">
+                <h3> My dashboard</h3>
+
+
+            </div>
+
+            <div style=" margin: 15px 0px;">
+            </div>
+
+        </div>
+
+        <div class="dash-content">
+
+            <div class="content-upper" style="display: flex;">
+                <div class="content-left">
+
+                    <div id="views">
+
+
+                        <div class="view-left">
+
+                            <p class="viewsp-des">Today's views on your menu -</p>
+                            <p class="viewsp-mob">Views -</p>
+
+                            {% if dailyVisitors %}
+                            <h1 class="view-count"> {{dailyVisitors.Daily_visitors}} </h1>
+
+                            {% endif %}
+
+
+                        </div>
+
+                        <div class="view-right">
+                            <a href="http://127.0.0.1:8000/{{menu.menu_link}}" target="_blank">Your menu <span> <img
+                                        src="{% static 'img/arrow-icon.png' %}" alt=""></span></a>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="left-mid">
+
+                        <div class="days-left-cont">
+
+                            <div class="left">
+
+                                <h1> 9</h1>
+                                <p>Days left...</p>
+
+
+                            </div>
+                            <div class="right">
+
+                                <h3>Renew Now!!!</h3>
+
+                                <h4> Only at 499/- </h4>
+                                <h5> Expires at : 10 Aug 2023</h5>
+                                <a href=""> Renew <img src="{% static 'img/renew.png' %}" alt=""></a>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="mid-sub">
+
+                            <div class="add-social-cont">
+
+                                <h4>Links to your social ></h4>
+                                <p> Get more reaches to your menu by adding your social links to your menus...</p>
+                                <div class="social">
+
+                                    <div class="social-icon" id="insta-btn" data-target="insta-add-link" >
+                                        <img src="{% static 'img/instagram-icon.png' %}" alt="">
+
+                                    </div>
+
+                                
+                                    <div class="social-icon" id="google-btn" data-target="google-add-link" >
+                                        <img src="{% static 'img/google-icon.png' %}" alt="">
+                                       
+
+
+                                    </div>
+
+                                    <div class="social-icon" id="fb-btn" data-target="fb-add-link" >
+                                        <img src="{% static 'img/facebook-icon.png' %}" alt="">
+
+
+
+                                    </div>
+
+                                    
+                                   
+
+
+                                </div>
+                            </div>
+
+                            <div class="add-category-cont">
+
+                                <h1> Add and Edit categories </h1>
+
+                                <p>Add, Delete and Edit your categories Anytime, Anywhere..</p>
+
+
+                                <a href="/client/category/"><img src="{% static 'img/nextpage-icon.png' %}" alt=""></a>
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+               
+
+                    <div class="profile-cont">
+
+                        <div class="profile-top">
+                            <h1>Your Details</h1>
+
+                            <button id="profile-expand-btn"><img src="{% static 'img/dropdown.png'%}" alt=""></button>
+
+                        </div>
+
+                        <div class="profile-bottom">
+
+                        <div class="res-info">
+                            <h4>Rajesh Nehare</h4>
+                            <p>Owner Name</p>
+                        </div>
+
+                        <hr style="margin:0px 0px; width: 95%; border: 1px solid  #afaeae;">
+                        <div class="res-info">
+                            <h4>Katta cafe</h4>
+                            <p>Restaurant Name</p>
+                        </div>
+                        <hr style="margin:0px 0px; width: 95%; border: 1px solid  #afaeae ;">
+
+
+                        <div class="res-info">
+                            <h4>rejeshnehare@gmail.com</h4>
+                            <p>Email</p>
+                        </div>
+                        <hr style="margin:0px 0px; width: 95%; border: 1px solid  #afaeae ;">
+
+                        <div class="res-info">
+                            <h4>1234567890</h4>
+                            <p>Contact no.</p>
+                        </div>
+                        <hr style="margin:0px 0px; width: 95%; border: 1px solid  #afaeae ;">
+
+                        <div class="res-info">
+                            <h4>8976654321</h4>
+                            <p>Alternate Con. no.</p>
+                        </div>
+                        <hr style="margin:0px 0px; width: 95%; border: 1px solid  #afaeae ;">
+
+
+                        <div class="res-info">
+                            <h4>Hinga t-point, Nagpur</h4>
+                            <p>Address</p>
+                        </div>
+
+                    </div>
+                        <!-- <hr style="margin:0px 0px; width: 95%; border: 1px dashed  #3f3f3f ;"> -->
+
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="content-bottom">
+
+                <div class="active-template-cont">
     
-    {% if dailyVisitors %}
-    <p>Today's total visitors are {{dailyVisitors.Daily_visitors}} | Date: {{dailyVisitors.date}}</p>
+                    <div class="left">
+    
+                        <p>Active Template</p>
+                        <h1>DarkD</h1>
+                    </div>
+    
+                    <div class="right">
+    
+                        <p>Change template</p>
+    
+                        <button>Click here<img src="{% static 'img/arrow-icon.png' %}" alt=""></button>
+                    </div>
+    
+                </div>
+            </div>
+
+        </div>
+
         
-    {% endif %}
-    {% if menu.qrcode %}
-    To view your qr code <a href="{{menu.qrcode.url}}">click Here!</a>
-    {% endif %}
+
+
+
+
+    </div>
+
+   
+
+    <div id="insta-add-link" class="popup">
+        <div class="popup-content">
+            <button class="popup-close-btn" data-target="insta-add-link"><img src="{% static 'img/close.png' %}" alt=""></button>
+            <h3>Add link to your Instagram -</h3>
+            <input type="text" class="linkInput" placeholder="paste link here...">
+            <button class="submit-link">Submit</button>
+        </div>
+    </div>
+
+
+    <div id="google-add-link" class="popup">
+        <div class="popup-content">
+            <button class="popup-close-btn"  data-target="google-add-link"><img src="{% static 'img/close.png' %}" alt=""></button>
+
+            <h3>Add link to your Google -</h3>
+
+            <input type="text" class="linkInput"  placeholder="paste link here...">
+            <button class="submit-link" >Submit</button>
+        </div>
+    </div>
+
+
+    <div id="fb-add-link" class="popup">
+        <div class="popup-content">
+            <button class="popup-close-btn" data-target="fb-add-link"><img src="{% static 'img/close.png' %}" alt=""></button>
+
+            <h3>Add link to your Facebook -</h3>
+
+            <input type="text" class="linkInput"  placeholder="paste link here...">
+            <button class="submit-link">Submit</button>
+        </div>
+    </div>
+
+   
+
+   
+
+
+
+    <script  >
+
+const container = document.querySelector('.profile-cont');
+const changeHeightButton = document.getElementById('profile-expand-btn');
+let expanded = false; 
+
+changeHeightButton.addEventListener('click', () => {
+  expanded = !expanded; 
+  container.style.height = expanded ? '450px' : '70px';
+  
+});
+
+
+
+
+const openPopupButtons = document.querySelectorAll(".social-icon");
+const popupContainers = document.querySelectorAll(".popup");
+const closeContainer=document.querySelectorAll(".popup-close-btn");
+
+
+openPopupButtons.forEach(div => {
+    div.addEventListener("click", () => {
+        const targetId = div.getAttribute("data-target");
+        const targetContainer = document.getElementById(targetId);
+
+        fadeIn(targetContainer);
+    });
+
+});
+
+popupContainers.forEach(div => {
+    const addLinkButton = div.querySelector(".submit-link");
+
+    const linkInput = div.querySelector(".linkInput");
+
+    addLinkButton.addEventListener("click", () => {
+        const link = linkInput.value;
+        if (link) {
+            
+            console.log("Link added:", link);
+        }
+        fadeOut(div);
+        linkInput.value = null;
+    });
+
+});
+
+closeContainer.forEach( button =>{
+
+        button.addEventListener("click", () => {
+            
+        const targetId = button.getAttribute("data-target")
+        const container= document.getElementById(targetId);
+        fadeOut(container);
+
         
-    <p>To preview you menu <a href="http://127.0.0.1:8000/{{menu.menu_link}}" target="_blank">click here</a></p>
-    <p>To preview and add Categories <a href="/client/category/">Click Here!</a></p>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
+
+        
+    });
+    })
+
+
+
+function fadeIn(element) {
+    element.style.display = "flex";
+    element.style.opacity = 0;
+    let opacity = 0;
+    const interval = setInterval(() => {
+        if (opacity < 1) {
+            opacity += 0.1;
+            element.style.opacity = opacity;
+        } else {
+            clearInterval(interval);
+        }
+    }, 5);
+}
+
+function fadeOut(element) {
+    let opacity = 1;
+    const interval = setInterval(() => {
+        if (opacity > 0) {
+            opacity -= 0.1;
+            element.style.opacity = opacity;
+        } else {
+            clearInterval(interval);
+            element.style.display = "none";
+        }
+    }, 5);
+}
+
+
+
+
+
+
+    </script>
+
+
 </body>
+
 </html>
