@@ -101,20 +101,28 @@
                                 <p> Get more reaches to your menu by adding your social links to your menus...</p>
                                 <div class="social">
 
-                                    <div class="social-icon">
+                                    <div class="social-icon" id="insta-btn" data-target="insta-add-link" >
                                         <img src="{% static 'img/instagram-icon.png' %}" alt="">
 
                                     </div>
-                                    <div class="social-icon">
+
+                                
+                                    <div class="social-icon" id="google-btn" data-target="google-add-link" >
+                                        <img src="{% static 'img/google-icon.png' %}" alt="">
+                                       
+
+
+                                    </div>
+
+                                    <div class="social-icon" id="fb-btn" data-target="fb-add-link" >
                                         <img src="{% static 'img/facebook-icon.png' %}" alt="">
 
 
-                                    </div>
-                                    <div class="social-icon">
-                                        <img src="{% static 'img/google-icon.png' %}" alt="">
-
 
                                     </div>
+
+                                    
+                                   
 
 
                                 </div>
@@ -231,23 +239,50 @@
 
     </div>
 
+   
+
+    <div id="insta-add-link" class="popup">
+        <div class="popup-content">
+            <button class="popup-close-btn" data-target="insta-add-link"><img src="{% static 'img/close.png' %}" alt=""></button>
+            <h3>Add link to your Instagram -</h3>
+            <input type="text" class="linkInput" placeholder="paste link here...">
+            <button class="submit-link">Submit</button>
+        </div>
+    </div>
 
 
-    <script>
-        // const buttons = document.getElementsByClassName("nav-btn");
+    <div id="google-add-link" class="popup">
+        <div class="popup-content">
+            <button class="popup-close-btn"  data-target="google-add-link"><img src="{% static 'img/close.png' %}" alt=""></button>
 
-        // buttons.forEach(button => {
-        //     button.addEventListener('click', () => {
-        //         buttons.forEach(btn => {
-        //             btn.classList.remove('active-btn');
-        //         });
+            <h3>Add link to your Google -</h3>
 
-        //         button.classList.add('active-btn');
-        //     });
+            <input type="text" class="linkInput"  placeholder="paste link here...">
+            <button class="submit-link" >Submit</button>
+        </div>
+    </div>
 
-        // });
 
-        const container = document.querySelector('.profile-cont');
+    <div id="fb-add-link" class="popup">
+        <div class="popup-content">
+            <button class="popup-close-btn" data-target="fb-add-link"><img src="{% static 'img/close.png' %}" alt=""></button>
+
+            <h3>Add link to your Facebook -</h3>
+
+            <input type="text" class="linkInput"  placeholder="paste link here...">
+            <button class="submit-link">Submit</button>
+        </div>
+    </div>
+
+   
+
+   
+
+
+
+    <script  >
+
+const container = document.querySelector('.profile-cont');
 const changeHeightButton = document.getElementById('profile-expand-btn');
 let expanded = false; 
 
@@ -258,7 +293,86 @@ changeHeightButton.addEventListener('click', () => {
 });
 
 
+
+
+const openPopupButtons = document.querySelectorAll(".social-icon");
+const popupContainers = document.querySelectorAll(".popup");
+const closeContainer=document.querySelectorAll(".popup-close-btn");
+
+
+openPopupButtons.forEach(div => {
+    div.addEventListener("click", () => {
+        const targetId = div.getAttribute("data-target");
+        const targetContainer = document.getElementById(targetId);
+
+        fadeIn(targetContainer);
+    });
+
+});
+
+popupContainers.forEach(div => {
+    const addLinkButton = div.querySelector(".submit-link");
+
+    const linkInput = div.querySelector(".linkInput");
+
+    addLinkButton.addEventListener("click", () => {
+        const link = linkInput.value;
+        if (link) {
+            
+            console.log("Link added:", link);
+        }
+        fadeOut(div);
+        linkInput.value = null;
+    });
+
+});
+
+closeContainer.forEach( button =>{
+
+        button.addEventListener("click", () => {
+            
+        const targetId = button.getAttribute("data-target")
+        const container= document.getElementById(targetId);
+        fadeOut(container);
+
         
+
+        
+    });
+    })
+
+
+
+function fadeIn(element) {
+    element.style.display = "flex";
+    element.style.opacity = 0;
+    let opacity = 0;
+    const interval = setInterval(() => {
+        if (opacity < 1) {
+            opacity += 0.1;
+            element.style.opacity = opacity;
+        } else {
+            clearInterval(interval);
+        }
+    }, 5);
+}
+
+function fadeOut(element) {
+    let opacity = 1;
+    const interval = setInterval(() => {
+        if (opacity > 0) {
+            opacity -= 0.1;
+            element.style.opacity = opacity;
+        } else {
+            clearInterval(interval);
+            element.style.display = "none";
+        }
+    }, 5);
+}
+
+
+
+
 
 
     </script>
