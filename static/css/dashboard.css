@@ -228,7 +228,7 @@ body{
 
 .days-left-cont{
 
-    width: 545px;
+    width: 50%;
     height: 335px;
     border-radius: 10px;
     background-color: #f3f3f3;
@@ -239,16 +239,19 @@ body{
     color: #4d4c4c;
     margin-left: 5px;
 
+
 }
 
 .left-mid{
 
     display: flex;
     gap: 15px;
+    /* border: 2px solid red; */
+    width: 100%;
 }
 
 .days-left-cont .left{
-
+/*  */
     width: 40%;
     height: 100%;
     display: flex;
