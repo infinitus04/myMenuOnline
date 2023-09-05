@@ -961,22 +961,7 @@ input[type="radio"]{
     margin-top: 2.5rem;
   }     
 
-  .animated{
-    text-decoration: none;
-    display: inline-block;
- }
- .animated::after{
-    content: '';
-    display: block;
-    width: 0;    /* Hide border initially */
-    height: 2px;
-    background: whitesmoke;
-    transition: width 0.3s ease;
- }
- .animated:hover::after{
-    width: 100%;  /* Show border on hover */
-
- }
+  
 
  .inviBlockforCategory{
 
