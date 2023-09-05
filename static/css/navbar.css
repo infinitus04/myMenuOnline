@@ -1,0 +1,73 @@
+:root{
+    --text: #3f3f3f;
+    --background: #e4e4e4;
+    --primaryDark : #0B666A;
+    --navPrimaryDark : #071952;
+    --primary : #0B666A;
+    --alertRed : #C70039;
+    --secondary :#F5EDDC;
+}
+
+.navbar-brand  h2{
+    font-family: 'Bodoni Moda', serif;
+}
+.navbar{
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.offcanvas{
+
+    background-color: var(--navPrimaryDark) !important;
+
+}
+
+ .navList{
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    /* width: 50% ; */
+    color: whitesmoke;
+    font-weight: bolder;
+  }
+  .navItem{
+    margin: auto 1rem;
+    /* border: 1px solid #071952; */
+    padding: 0.2rem;
+  }
+
+.myMMOlogo{
+    height: 3rem;
+    mix-blend-mode: lighten;
+    position: relative;
+    z-index: 1;
+    
+
+
+}
+
+@media  screen and (min-width : 700px) {
+
+    .navbar-toggler{
+        display: none !important;
+    }
+
+    .inviBlockforCategory{
+        display: none !important;
+    }
+  }
+
+
+  @media  screen and (max-width : 700px) {
+
+   .offcanvas{
+
+    width: 70% !important; 
+   }
+  }
+
+
+
+
+
+ 
