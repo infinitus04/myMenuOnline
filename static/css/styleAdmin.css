@@ -1013,6 +1013,12 @@ input[type="radio"]{
     /* border: 1px solid #071952; */
     padding: 0.2rem;
   }
+  .navItem:hover{
+    cursor: pointer;
+  }
+  .noOutline{
+    border: none !important;
+  }
 
 
   @media  screen and (min-width : 700px) {
