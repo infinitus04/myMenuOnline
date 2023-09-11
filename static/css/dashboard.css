@@ -12,14 +12,13 @@
 
 body{
 
-    background: url(assets/MyMenuBack.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+   
     height: 99vh;
     overflow-y: scroll;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #071952 !important;
 
 }
 
@@ -58,7 +57,7 @@ body{
 .dash-top{
 
     display: flex;
-     justify-content: start; 
+     justify-content: center; 
     align-items: center; 
      
      width: 99%;
@@ -79,7 +78,7 @@ body{
 
 .cont-heading h3{
     font-size: 2rem;
-    color: #4d4c4c;
+    color: #f4eee2;
     font-weight: bold;
     
 
@@ -802,7 +801,7 @@ body{
 
 body{
 
-    background-image: none;
+    background-color: transparent !important;
     /* width: 99%; */
 
 
@@ -854,6 +853,7 @@ body{
 .cont-heading h3{
 
     font-size: 1.7rem;
+    color: #4d4c4c;
 
 
 }
