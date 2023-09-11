@@ -13,14 +13,6 @@
 :root{
     --text: #3f3f3f;
     --background: #e4e4e4;
-    /* --primary: #A076F9; */
-    /* --primary: #7e4cff; */
-    /* --primaryDark : #6528F7; */
-    /* --primaryDark : rgb(69, 45, 132); */
-    /* --navPrimaryDark :  #4819b4;  */
-    /* --navPrimaryDark : #1b1037 ; */
-    /* --secondary: #e1e9fb; */
-    /* --accent: #0082ce; */
     --primaryDark : #0B666A;
     --navPrimaryDark : #071952;
     --primary : #0B666A;
@@ -47,9 +39,7 @@
 
 
 
-/* span,p{
-    color: #333;
-} */
+
 
 h1,h2,h3,h4,h5,h6{
     text-transform: capitalize;
@@ -59,29 +49,6 @@ body{
     color: var(--text);
     background-color: var(--navPrimaryDark) !important;
     /* background-color: #0082ce; */
-}
-.navbar-brand > h2{
-    font-family: 'Bodoni Moda', serif;
-}
-.navbar{
-    background-color: rgba(255, 255, 255, 0) !important;
-}
-.offcanvas{
-    background-color: var(--navPrimaryDark) !important;
-}
-.myMMOlogo{
-    height: 3rem;
-    /* filter: invert(1); */
-    mix-blend-mode: lighten;
-    /* width: 100%; */
-    position: relative;
-    /* right: 5px;
-    top: 2px; */
-    /* margin: 0.4rem; */
-    z-index: 1;
-    /* margin-left: 4.5rem; */
-
-
 }
 
 .container{
@@ -569,10 +536,7 @@ p> span{
    .myResNextB{
     left: 80% !important;
    }
-   .navbar{
-    margin-bottom: 2rem;
-    background-color: var(--navPrimaryDark) !important;
-   }
+   
    .container > h2{
     text-align: center;
     /* margin: auto !important; */
@@ -692,6 +656,7 @@ input[type="radio"]{
   }
 
   .upperListCategory{
+    margin-bottom : 2rem ;
     width: 100%;
     /* border: 1px solid black; */
     display: flex;
@@ -817,9 +782,7 @@ input[type="radio"]{
     .buttonListEdit{
         justify-content: center !important;
     }
-    #offcanvasDarkNavbar{
-        width: 69% !important;
-    }
+  
 
     .container{
         margin: 0 !important;
@@ -996,7 +959,7 @@ input[type="radio"]{
 
   .socilaMediaTitle{
     margin-top: 2.5rem;
-  }
+  }     
 
   /* nav action */
   .navList{
@@ -1013,43 +976,14 @@ input[type="radio"]{
     /* border: 1px solid #071952; */
     padding: 0.2rem;
   }
-  .navItem:hover{
-    cursor: pointer;
-  }
-  .noOutline{
-    border: none !important;
-  }
 
 
-  @media  screen and (min-width : 700px) {
+ .inviBlockforCategory{
 
-    .navbar-toggler{
-        display: none !important;
-    }
-  }
-
-  @media  screen and (max-width : 700px) {
-
-    .navList{
-        display: none !important;
-    }
-  }
-
-  .animated{
-    text-decoration: none;
-    display: inline-block;
+    height: 5rem;
  }
- .animated::after{
-    content: '';
-    display: block;
-    width: 0;    /* Hide border initially */
-    height: 2px;
-    background: whitesmoke;
-    transition: width 0.3s ease;
- }
- .animated:hover::after{
-    width: 100%;  /* Show border on hover */
-
+ .inviBlockforCategory > h2{
+    color: whitesmoke;
  }
 
    

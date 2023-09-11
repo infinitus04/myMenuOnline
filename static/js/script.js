@@ -30,3 +30,15 @@ setTimeout(function() {
         }, 3000); // Wait for 4 seconds for the div to fade-in before starting fade-out
     }
 }, 0000); // 1 second delay
+
+
+var itemHeading = document.getElementsByClassName('itemHeading');
+
+for (let index = 0; index < itemHeading.length; index++) {
+    
+    var textItem = itemHeading[0].innerHTML;
+    if (textItem.length <= 12) {
+        
+    }
+    
+}
