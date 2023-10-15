@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMenuOnline</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+</head>
+
+
+<body>
+
+    <div class="nav-cont">
+        <nav class="navbar">
+
+            <div class="logo"><img src="{% static 'assets/mmo-logo-white.png' %}" alt=""></div>
+            <ul class="nav-tabs">
+    
+                <li class="nav-btn"><a href="">Home</a></li>
+                <li class="nav-btn"><a href="">Templates</a></li>
+                <li class="nav-btn"><a href="">Dashboard</a></li>
+                <li class="nav-btn"><a href="">Contact</a></li>
+                <li class="nav-btn"><a href="">About US</a></li>
+            </ul>
+    
+            
+    
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+    
+        </nav>
+    </div>
+
+    <div class="dark-back" id="home-cont">
+
+        <div class="home-left">
+
+            <div class="welcome">
+
+                <img src="{% static 'assets/star.png' %}" alt="">
+
+                <p>Welcome to <span>MyMenuOnline</span></p>
+
+
+            </div>
+
+            <div class="slogan-slider">
+
+            <div id="slogan" class="slogan-animation" >
+
+                " Menus on the Move:
+                Scan, Savor, Delight in
+                Every Bite! "
+
+            </div>
+            </div>
+
+
+           <div class="home-btn-cont">
+            <button class="home-btn" id="get-btn">
+
+                Get Started <span><img src="{% static 'assets/fire.png' %}" alt=""></span>
+
+            </button>
+
+            <button class="home-btn" id="sign-btn">
+                Sign in <span><img src="{% static 'assets/sign-in.png' %}" alt=""></span>
+
+            </button>
+           </div>
+
+
+        </div>
+
+        <div class="home-right">
+
+            <div id="menu-design">
+
+            <img src="{% static 'assets/menu 1.png' %}" alt="" id="menu1" class="menu-img">
+
+            <img src="{% static 'assets/menu 2.png' %}" alt="" id="menu2" class="menu-img">
+
+            <img src="{% static 'assets/menu 3.png' %}" alt="" id="menu3" class="menu-img">
+            
+            <img src="{% static 'assets/menu 4.png' %}" alt="" id="menu4" class="menu-img">
+
+            <img src="{% static 'assets/menu 5.png' %}" alt="" id="menu5" class="menu-img">
+
+            <img src="{% static 'assets/menu 6.png' %}" alt="" id="menu6" class="menu-img">
+
+            <img src="{% static 'assets/menu 7.png' %}" alt="" id="menu7" class="menu-img">
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="feature-cont">
+
+        <div class="cont-heading">
+
+            <h1>Features</h1>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+
+<div class="f-img-cont">
+    <img  class="f-image" src="{% static 'assets/f1.png' %}" alt="">
+
+</div>
+                <h4 class="f-name">Ready-made Templates</h4>
+
+
+
+                
+            </div>
+            <div class="feature-card">
+
+                <div class="f-img-cont">
+                    <img  class="f-image" src="{% static 'assets/f2.png' %}" alt="">
+
+                    <img src="{% static 'assets/E1.png' %}" class="img-shadow"></img>
+                </div>
+
+                <h4 class="f-name">QR-Code Generation</h4>
+
+
+            </div>
+            <div class="feature-card">
+
+                <div class="f-img-cont">
+                    <img  class="f-image" src="{% static 'assets/f3.png' %}" alt="">
+
+                    <img src="{% static 'assets/E1.png' %}" class="img-shadow"></img>
+                </div>
+
+                <h4 class="f-name">Affordable Pricing</h4>
+
+
+            </div>
+            <div class="feature-card">
+
+                <div class="f-img-cont">
+                    <img  class="f-image" src="{% static 'assets/f4.png' %}" alt="">
+
+                    <img src="{% static 'assets/E1.png' %}" class="img-shadow"></img>
+                </div>
+
+                <h4 class="f-name">Real-time Changes</h4>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</body>
+
+<script src="{% static 'js/home.js'%}"></script>
+
+
+
+
+
+</html>

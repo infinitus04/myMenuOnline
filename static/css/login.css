@@ -15,15 +15,10 @@ body {
     margin: -20px 0 50px;
 }
 
-.container{
-
-    margin-top: 30px;
-}
-
 h1 {
     /* font-weight: bold; */
     margin: 0;
-    color: #616161  ;
+    color: #595959;
 }
 
 h2 {
@@ -52,7 +47,7 @@ a {
 button {
     border-radius: 20px;
     border: 1px solid #e4e4e4;
-    background-color: #616161;
+    background-color: #777777;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -168,7 +163,7 @@ input {
 }
 
 .overlay {
-    background: #0B666A;
+    background: #777777;
     /* background: -webkit-linear-gradient(to right, #3f3f3f, #3f3f3f);
 	background: linear-gradient(to right, #3f3f3f, #3f3f3f); */
     background-repeat: no-repeat;
@@ -246,6 +241,3 @@ input {
 .closebtn:hover {
     color: black;
 }
-
-
-

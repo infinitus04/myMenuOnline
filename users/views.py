@@ -37,6 +37,10 @@ def serve(request, linkId):
             dailyVisitors.save()
 
         return render(request, template_name, data)
-        
+
     else:
         return render(request, 'user/notsub.html')
+
+
+def homePage(request):
+    return render(request, "user/home.html")
