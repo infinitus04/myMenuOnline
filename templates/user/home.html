@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMenuOnline</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 </head>
 
@@ -22,7 +23,7 @@
     
                 <li class="nav-btn"><a href="">Home</a></li>
                 <li class="nav-btn"><a href="">Templates</a></li>
-                <li class="nav-btn"><a href="">Dashboard</a></li>
+                <li class="nav-btn"><a href="/client/psudoPanel">Admin</a></li>
                 <li class="nav-btn"><a href="">Contact</a></li>
                 <li class="nav-btn"><a href="">About US</a></li>
             </ul>
@@ -43,7 +44,7 @@
 
         <div class="home-left">
 
-            <div class="welcome">
+            <div class="welcome-website">
 
                 <img src="{% static 'assets/star.png' %}" alt="">
 
@@ -65,14 +66,14 @@
 
 
            <div class="home-btn-cont">
-            <button class="home-btn" id="get-btn">
+            <a  href="templates.html" class="home-btn" id="get-btn">
 
-                Get Started <span><img src="{% static 'assets/fire.png' %}" alt=""></span>
+                Templates <span><img src="{% static 'assets/fire.png' %}" alt=""></span>
 
-            </button>
+            </a>
 
             <button class="home-btn" id="sign-btn">
-                Sign in <span><img src="{% static 'assets/sign-in.png' %}" alt=""></span>
+                Sign in/up <span><img src="{% static 'assets/sign-in.png' %}" alt=""></span>
 
             </button>
            </div>
@@ -166,6 +167,261 @@
 
 
     </div>
+
+    <div class="contact-cont">
+
+        <div class="con-left">
+
+            <div class="con-img">
+                <img src="{% static  'assets/contact.png' %}" alt="">
+            </div>
+
+
+            <h1 class="con-heading">
+                Contact Us
+            </h1>
+
+            <div class="con-slogan">
+
+                <p>
+                    " We're just a message away from bringing your menu vision to life."
+                </p>
+            </div>
+
+            <div class="cont-icons"  id="cont-icon-des">
+                <img src="{% static 'assets/whatsapp.png' %}" alt="" class="con-icon-img">
+                <img src="{% static 'assets/email.png' %}" alt="" class="con-icon-img">
+                <img src="{% static 'assets/phone.png' %}" alt="" class="con-icon-img">
+            </div>
+
+        </div>
+
+        <div class="con-right">
+
+            <form class="contact-form" action="">
+
+                <input type="text" name="" class="con-input" id="name-input-con" placeholder="Name">
+            <input type="text" name=""  class="con-input" id="phone-input-con" placeholder="Phone number">
+            
+            <input type="text" name=""  class="con-input" id="mess-input-con" placeholder="Your message">
+
+            <div class="btn-icon-btn">
+            <button type="submit" class="submit-con-btn" > Submit </button>
+
+            <div class="cont-icons" id="cont-icon-mob">
+
+                <img src="{% static 'assets/whatsapp.png' %}" alt="" class="con-icon-img">
+                <img src="{% static 'assets/email.png' %}" alt="" class="con-icon-img">
+                <img src="{% static 'assets/phone.png' %}" alt="" class="con-icon-img">
+            </div>
+
+        </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="about-container">
+
+        <h1 class="about-heading">Get to know us</h1>
+
+        <hr style="width: 7%; height: 3px ;background-color: white; margin-top: 30px;">
+
+        <div id="about-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur explicabo itaque doloribus natus temporibus corrupti, a dolorem eius sequi porro deleniti perspiciatis atque consequatur nam. Ea dolores omnis nihil corporis commodi asperiores voluptates doloribus ab culpa a debitis hic illo quod assumenda aliquid libero suscipit quo, repellat distinctio numquam, ex, consectetur voluptatem deleniti pariatur. Fuga voluptatem eligendi vero suscipit eius. Quaerat ipsa obcaecati in quidem quod blanditiis, nulla id fugit quam autem corrupti atque at expedita cumque recusandae aliquid, aperiam molestias ratione voluptas nobis tenetur ea quasi! Eaque tempora placeat veniam eligendi voluptatibus in! Voluptatum, doloremque voluptas laboriosam possimus ad natus eos veritatis quia enim nisi modi eaque. Obcaecati veritatis expedita est consectetur eos dolorum consequatur aspernatur quam? Itaque explicabo debitis minus doloremque aliquam porro veniam molestias omnis officia error rerum eaque natus iure labore animi, facilis consequuntur quas obcaecati expedita quos! Enim esse vitae ad quaerat cumque ipsam corrupti.</div>
+        <p id="read-more-btn">...read more</p>
+        <p id="read-less-btn">read less...</p>
+
+
+    </div>
+
+    <div class="team-cont">
+        <div class="team-heading">
+
+            <h1>Meet the team</h1>
+        </div>
+
+        <hr id="team-line">
+
+
+        <div class="team-sub">
+
+            <div class="mem-card">
+
+                <div class="team-profile"><img src="{% static 'assets/harshal.jpeg' %}" alt=""></div>
+                <h2 class="profile-name">Harshal Warukar</h2>
+                <h3 class="profile-skill">Front-end Developer</h3>
+            </div>
+            <div class="mem-card">
+
+                <div class="team-profile"><img src="{% static 'assets/yash.jpeg' %}" alt=""></div>
+                <h2 class="profile-name">Yash Pardhi</h2>
+                <h3 class="profile-skill">Back-end Developer</h3>
+    
+            </div>
+            <div class="mem-card">
+
+                <div class="team-profile"><img src="{% static 'assets/praful.jpeg' %}" alt=""></div>
+                <h2 class="profile-name">Praful Sawarkar</h2>
+                <h3 class="profile-skill">Front-end Developer</h3>
+    
+            </div>
+            <div class="mem-card">
+
+                <div class="team-profile"><img src="{% static 'assets/gouri.jpeg' %}" alt=""></div>
+                <h2 class="profile-name">Gouri Patankar</h2>
+                <h3 class="profile-skill">UI-UX  Developer</h3>
+    
+            </div>
+
+            <div class="mem-card">
+
+                <div class="team-profile"><img src="{% static 'assets/sanchi.jpeg' %}" alt=""></div>
+                <h2 class="profile-name">Sanchi Dongre</h2>
+                <h3 class="profile-skill">Back-end Developer</h3>
+    
+            </div>
+            <div class="mem-card">
+
+                <div class="team-profile"><img src="{% static 'assets/swarnit.jpeg' %}" alt=""></div>
+                <h2 class="profile-name">Swarnit Mokadam</h2>
+                <h3 class="profile-skill">UI-UX  Designer</h3>
+    
+            </div>
+            
+        </div>
+
+        <!-- <div class="team-sub"> -->
+
+          
+        <!-- </div> -->
+
+       
+
+        
+
+        
+
+        
+    </div>
+
+
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <hr class="footer-top-line">
+            <div class="footer-heading">
+                <img src="{% static 'assets/mmo-logo-white.png' %}" alt="">
+            </div>
+            <hr class="footer-top-line">
+
+        </div>
+
+        <div class="footer-mid">
+
+            <div class="side-mid">
+
+                <p>Features</p>
+                <p>About</p>
+                <p>Terms and Condition</p>
+
+            </div>
+
+            <div class="mid-mid">
+
+                <div class="sub-mid"> <img src="{% static 'assets/whatsapp.png' %}" alt="" class="footer-icon-img">
+                    </div>
+                <div class="sub-mid">
+                    <img src="{% static 'assets/phone.png' %}" alt="" class="footer-icon-img">
+                    <hr class="mid-line">
+                </div>
+                    
+                    <div class="sub-mid"><img src="{% static 'assets/email.png' %}" alt="" class="footer-icon-img"></div>
+                
+                
+
+
+            </div>
+
+            <div class="side-mid">
+
+                <p>Contact</p>
+                <p>Templates</p>
+                <p>Login</p>
+                
+
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span><img src="{% static 'assets/copyright.png' %}" alt=""></span>2023 MyMenuOnline. All rights Reserved
+        </div>
+
+        
+
+    </footer>
+
+
+    <section id="login-section">
+        <div id="login-close">X</div>
+        <div class="login-container" id="login-container">
+
+  
+            <div class="form-container sign-up-container">
+                <form class="login-form" action="#">
+                    <h1 class="log-form-heading" >Create Account</h1>
+                    
+                    <span>Enter your details</span>
+                    <input class="login-input" type="text" placeholder="Name" />
+                    <input class="login-input" type="tel" placeholder="Phone" />
+                    <input class="login-input" type="email" placeholder="Email" />
+                    <input class="login-input" type="password" placeholder="Password" />
+                    <button class="login-btn">Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form class="login-form"  action="" method="POST">
+      
+                
+                    <h1 class="log-form-heading" >Log in</h1>
+      
+                    {% csrf_token %}
+              
+                    {% if invalid_credentials %}
+             
+                    {% endif %}
+      
+                    <input class="login-input" type="tel" name = "phone" placeholder="Phone" />
+                    <input  class="login-input" type="password" name = "password" placeholder="Password" />
+                    <a id="forget-pass-login" href="#">Forgot your password?</a>
+                    <button class="login-btn" type = "submit">Submit</button>
+      
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1 class="log-form-heading" >Welcome Back!</h1>
+                        <p class="login-para">Already have an account <br> Please Sign in </p>
+                        <button class="ghost login-btn" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1 class="log-form-heading">Hello, Friend! <br> Don't have an account!</h1>
+                        <p class="login-para">Enter your personal details and we will make an account for you</p>
+                        <button class="ghost login-btn" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 </body>
 

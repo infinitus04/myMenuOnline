@@ -32,6 +32,10 @@ const menu_design =document.getElementById("menu-design");
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    // console.log(event);
+    // const login= document.getElementById("login-section");
+
+    
 
 setTimeout(() => {
 
@@ -48,9 +52,27 @@ setTimeout(() => {
 }, 100);
 
 
+setTimeout(()=>{
+
+    if(loginSection.style.display="none"){
+
+        loginSection.style.display="flex";
+    }
+    
+
+
+
+},20000)
+
+
 });
 
 const sign_btn=document.getElementById("sign-btn")
+
+sign_btn.addEventListener('click',()=>{
+
+    loginSection.style.display="flex";
+})
 const get_btn=document.getElementById("get-btn")
 
 sign_btn.addEventListener("mouseenter",()=>{
@@ -64,6 +86,67 @@ sign_btn.addEventListener("mouseleave",()=>{
     get_btn.style.backgroundColor="rgb(6, 143, 255,0.2)";
     get_btn.style.border=" none"
 })
+
+let about_text=document.getElementById("about-text");
+
+let readMoreBtn= document.getElementById("read-more-btn");
+let readLessBtn= document.getElementById("read-less-btn");
+console.log(about_text.innerText);
+
+readMoreBtn.addEventListener("click", showAboutText);
+readLessBtn.addEventListener("click",hideAboutText)
+
+function showAboutText(event){
+
+
+    about_text.style.height="fit-content";
+    readLessBtn.style.display="block";
+    // console.log("Text Shown !!!");
+    event.target.style.display="none";
+    
+
+}
+
+function hideAboutText(event){
+
+
+    about_text.style.height="243px";
+    readMoreBtn.style.display="block";
+    // console.log("Text hidden !!!");
+    event.target.style.display="none";
+
+
+}
+
+
+
+
+// ----------------Login form js------------------
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('login-container');
+
+signUpButton.addEventListener('click', () => {
+container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+container.classList.remove("right-panel-active");
+});
+
+const loginSection= document.getElementById("login-section");
+const loginCloseBtn= document.getElementById("login-close");
+
+loginCloseBtn.addEventListener('click',()=>{
+
+    loginSection.style.display="none";
+})
+
+
+
+
+
 
 
 

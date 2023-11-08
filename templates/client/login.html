@@ -12,34 +12,26 @@
 <body>
     
 
-    <div class="container" id="container">
+    <div class="login-container" id="login-container">
 
   
       <div class="form-container sign-up-container">
-          <form action="#">
-              <h1>Create Account</h1>
+          <form class="login-form" action="#">
+              <h1 class="log-form-heading" >Create Account</h1>
               
               <span>Enter your details</span>
-              <input type="text" placeholder="Name" />
-              <input type="tel" placeholder="Phone" />
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <button>Sign Up</button>
+              <input class="login-input" type="text" placeholder="Name" />
+              <input class="login-input" type="tel" placeholder="Phone" />
+              <input class="login-input" type="email" placeholder="Email" />
+              <input class="login-input" type="password" placeholder="Password" />
+              <button class="login-btn">Sign Up</button>
           </form>
       </div>
       <div class="form-container sign-in-container">
-          <form action="" method="POST">
+          <form class="login-form"  action="" method="POST">
 
           
-              <h1>Log in</h1>
-
-              <!-- <div class="alert">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                Invalid username or password
-              </div> -->
-              
-              
-              
+              <h1 class="log-form-heading" >Log in</h1>
 
               {% csrf_token %}
         
@@ -47,24 +39,24 @@
        
               {% endif %}
 
-              <input type="tel" name = "phone" placeholder="Phone" />
-              <input type="password" name = "password" placeholder="Password" />
-              <a href="#">Forgot your password?</a>
-              <button type = "submit">Submit</button>
+              <input class="login-input" type="tel" name = "phone" placeholder="Phone" />
+              <input  class="login-input" type="password" name = "password" placeholder="Password" />
+              <a id="forget-pass-login" href="#">Forgot your password?</a>
+              <button class="login-btn" type = "submit">Submit</button>
 
           </form>
       </div>
       <div class="overlay-container">
           <div class="overlay">
               <div class="overlay-panel overlay-left">
-                  <h1 >Welcome Back!</h1>
-                  <p>Already have an account <br> Please Log in </p>
-                  <button class="ghost" id="signIn">Sign In</button>
+                  <h1 class="log-form-heading" >Welcome Back!</h1>
+                  <p class="login-para">Already have an account <br> Please Log in </p>
+                  <button class="ghost login-btn" id="signIn">Sign In</button>
               </div>
               <div class="overlay-panel overlay-right">
-                  <h1>Hello, Friend!</h1>
-                  <p>Enter your personal details and we will can an account for you</p>
-                  <button class="ghost" id="signUp">Sign Up</button>
+                  <h1 class="log-form-heading">Hello, Friend!</h1>
+                  <p class="login-para">Enter your personal details and we will can an account for you</p>
+                  <button class="ghost login-btn" id="signUp">Sign Up</button>
               </div>
           </div>
       </div>
@@ -73,7 +65,7 @@
   <script>
     const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+const container = document.getElementById('login-container');
 
 signUpButton.addEventListener('click', () => {
 container.classList.add("right-panel-active");
