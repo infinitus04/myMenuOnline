@@ -39,6 +39,7 @@ class Template(models.Model):
     name = models.CharField( max_length=50)
     theme = models.CharField( max_length=6, choices= themes)
     template_file_name = models.CharField( max_length=50)
+    image = models.ImageField(upload_to='images', height_field=None, width_field=None, max_length=None, blank=True, null=True)
 
     def __str__(self):
         return f'{self.name} - {self.theme}'
@@ -61,6 +62,8 @@ class Menu(models.Model):
     menu_link = models.CharField(max_length=100, blank=True)
     is_subscribed = models.BooleanField( default= False)
     qrcode = models.ImageField(upload_to='qrcodes/', null= True, blank= True)
+    sub_date = models.DateField(auto_now=True, null=True, blank=True)
+    
     
     # To delete the old image when changed to new one
     def save(self, *args, **kwargs):

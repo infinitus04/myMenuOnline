@@ -4,9 +4,11 @@ from .models import CustomUser
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login,logout
 from django.shortcuts import render, redirect, HttpResponse
 import uuid
+import datetime
 from utilityCodes import qrCodeGenrator
 
 def menu_creation(view_func, verification_url="/client/getstarted/"):
@@ -16,7 +18,6 @@ def menu_creation(view_func, verification_url="/client/getstarted/"):
         if Menu.objects.filter(user=request.user).exists():
             return view_func(request, *args, **kwargs)
         messages.info(request, "create menu first")
-        print("create menu first")
         return redirect(verification_url)
     return wrapper
 
@@ -56,7 +57,8 @@ def psudoPanel(request):
     # print(request.user)
     menu = Menu.objects.get(user = request.user)
     dailyVisitors = DailyVisitors.objects.get(menu = menu) 
-
+    diff = (menu.sub_date - datetime.date.today()).days
+    print(datetime.date.today())
     data = {
         'menu' : menu,
         'dailyVisitors': dailyVisitors

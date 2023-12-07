@@ -33,11 +33,13 @@ admin.site.register(CustomUser, CustomUserAdmin)
 
 
 class AdminMenu(admin.ModelAdmin):
-    Menu_display = ('template', 'user', 'business_name', 'menu_link', 'logo', 'address', 'instagram_link', 'facebook_link', 'youtube_link', 'google_link', 'business_contact_number', 'is_subscribed', 'qrcode')
+    def get_list_display(self, request):
+        return ('id', 'template', 'user', 'logo', 'business_name', 'business_contact_number', 'address', 'instagram_link', 'facebook_link', 'youtube_link', 'google_link', 'menu_link', 'qrcode', 'sub_date')
+
 admin.site.register(Menu, AdminMenu)
 
 class AdminHeader(admin.ModelAdmin):
-    Header_display = ('header_text', 'image', 'menu','discription')
+    Header_display = ('header_text', 'image','discription')
 admin.site.register(Header, AdminHeader)
 
 class AdminItem(admin.ModelAdmin):
@@ -48,6 +50,3 @@ class AdminTemplate(admin.ModelAdmin):
     Template_display = ('Template_text', 'image', 'menu', )
 admin.site.register(Template, AdminTemplate)
 
-class AdminDailyVisitors(admin.ModelAdmin):
-    Daily_display = ('Daily_visitors', 'date', 'blank', )
-admin.site.register(DailyVisitors, AdminDailyVisitors)

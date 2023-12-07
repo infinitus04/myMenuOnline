@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400');
+
+:root{
+    --text: #3f3f3f;
+    --background: #e4e4e4;
+    /* --primary: #A076F9; */
+    /* --primary: #7e4cff; */
+    /* --primaryDark : #6528F7; */
+    /* --primaryDark : rgb(69, 45, 132); */
+    /* --navPrimaryDark :  #4819b4;  */
+    /* --navPrimaryDark : #1b1037 ; */
+    /* --secondary: #e1e9fb; */
+    /* --accent: #0082ce; */
+    --primaryDark : #071952;
+    --navPrimaryDark : #071952;
+    --primary :  #071952;
+    /* --primary : #0B666A; */
+    --alertRed : #C70039;
+    --accent : #0B666A;
+}
+
+
+*{
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+
+    scrollbar-color: var(--background);
+    scroll-behavior: smooth;
+   
+    
+}
+.mmoDashContainer{
+    background-color: whitesmoke;
+    /* margin-top: 4rem; */
+}
+
+
+
+.buttonListEdit{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem  1rem;
+}
+/* end */
+
+.dashBfirstBlock{
+    display: flex;
+    justify-content: space-evenly;
+    height: 40vh;
+    /* border: 1px solid black; */
+    padding: 1rem;
+    align-items: center;
+
+}
+.dashFirstItem{
+    background-color: white;
+    /* border: 1px solid gray; */
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    border-radius: 0.7rem;
+    height: 95%;
+    width: 30% !important;
+    margin:1rem  0.5rem;
+
+}
+.profileBlock{
+    display: flex;
+    padding: 0.25rem;
+}
+.profileImg{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border : 1px solid black */
+
+}
+.profileDetailsBlock{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* border : 1px solid black; */
+    /* text-align: left; */
+    padding: 0 0.2rem;
+}
+.profileDetailsBlock > h4{
+    font-weight: bolder;
+}
+.profileDetailsBlock > p{
+  font-size: 0.9rem;
+}
+
+.profileImg > img {
+    border-radius: 50%;
+    border-color: gray;
+    height: 65%;
+    /* width: 50%; */
+    
+}
+.profileDetailsBlock > button{
+    width: 75%;
+    margin:  0 auto;
+    display: block;
+    
+}
+
+/* edit menu */
+.editMenu{
+    display: flex;
+    
+}
+
+.editMenublockDiscp{
+    width: 70%;
+    margin: 0.6rem;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.editMenublockDiscp > p{
+    font-size: small;
+}
+.editButtonBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.2rem;
+}
+.editButtonBlock > span{
+    font-size: 5rem;
+}
+.editButtonBlock > button{
+    width: 95%;
+}
+.expFirstBlock{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    
+}
+
+.expBlock{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column ;
+}
+
+.expDateCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+}
+
+.expDateCount > h1{
+    /* display: flex */
+    font-size: 4.5rem;
+    
+}
+.priceTage{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.priceTage > h3 {
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    position: relative;
+    left: 3.7rem;
+    bottom: 2.5rem;
+}
+.expDate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0.4rem; */
+    /* padding: 0.15rem; */
+    padding: 0;
+    margin: 0;
+
+}
+.expDate > p {
+    margin-top: -6px 0 0 0 ;
+    padding: 0;
+}
+
+.expPayButtons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -0.4rem;
+}
+.expPayButtons> button{
+    width: 30%;
+}
+
+/* second block */
+.dashBSecondBlock{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    height: 62vh;
+    /* border: 1px solid black; */
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+.dash2ndItems{
+    background-color: white;
+    /* border: 1px solid gray; */
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    border-radius: 0.7rem;
+    height: 95%;
+    /* width: 30% !important; */
+    margin:1rem  0.5rem;
+
+
+}
+
+.socialMediablock{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.socialDiscp{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.socialMicons{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.socialMicons > button{
+    width: 40%;
+}
+.activeThemeblock{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.socialIconDash{
+    height: 3rem;
+    margin: 0 0.5rem;
+}
+.activeImgDash{
+    height: 70%;
+    object-fit: contain;
+    margin: 0.5rem ;
+    /* border-color: yellow ; */
+}
+.activeThemeblock > h3 {
+    font-weight: bolder;
+}
+ .changeThemeblock > h3 {
+    font-weight: bolder;
+}
+.changeThemeblock{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+
+    
+}
+.changeThemeblock  > h3 {
+    margin-top: 1rem;
+}
+.changeThemeblock > img {
+    height: 70%;
+    object-fit: contain;
+    margin: 0.5rem ;
+    /* filter: invert(1); */
+    /* border-color: yellow ; */
+}
+.changeThemeblock > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+.changeThemeblock > button > span{
+   margin: 0 0.2rem;
+}
+
+/* profile edit popup */
+.profileEditPopupImg{
+    border-radius: 50%;
+    border-color: gray;
+    height: 8rem;
+    /* width: 50%; */
+    margin: auto;
+    
+}
+
+
+/* mobile  */
+@media only screen and (max-width: 600px) {
+
+    .mmoDashContainer{
+        width: fit-content;
+        overflow: hidden;
+    }
+   
+    .dashBfirstBlock{
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+
+    }
+    .dashFirstItem{
+        width: 95% !important;
+
+    }
+    .dashBSecondBlock{
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+
+    }
+    .dash2ndItems{
+        width: 90vw;
+    }
+
+    /* profile img */
+    .profileImg > img {
+       height: 6rem;
+        
+    }
+    .profileBlock{
+        padding: 0.8rem;
+    }
+    /* expblock */
+    .expBlock{
+        padding: 0.5rem;
+
+    }
+    .priceTage > h3 {
+        bottom: 3rem !important;
+    }
+    /* socila m */
+    .socialMediablock {
+        padding: 0.5rem;
+    }
+    /* active img */
+    .activeImgDash {
+        height: 15rem !important;
+    }
+    .changeThemeblock > img {
+        height: 15rem !important;
+    }
+  }

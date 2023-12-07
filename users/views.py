@@ -1,6 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from client.models import Menu, Header, Item, DailyVisitors
 from django.db.models import F
+from django.contrib.auth import authenticate, login,logout
+
 
 # Create your views here.
 def serve(request, linkId):
@@ -43,4 +45,13 @@ def serve(request, linkId):
 
 
 def homePage(request):
+    if request.method == 'POST':
+            phone = request.POST.get('phone')
+            password = request.POST.get('password')
+            # user = CustomUser.objects.get(phone= username)
+            
+            user = authenticate(request, phone= phone, password = password)
+            if user is not None:
+                login(request, user)
+                return redirect('/client/psudoPanel/')        
     return render(request, "user/home.html")
