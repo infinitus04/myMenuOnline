@@ -4,5 +4,7 @@ from . import views
 
 urlpatterns = [
     path('<str:linkId>', views.serve, name='serve'),
-    path('', views.homePage)
+    path('', views.homePage),
+    # path('template/')
+    
 ]

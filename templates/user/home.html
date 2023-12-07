@@ -22,8 +22,8 @@
             <ul class="nav-tabs">
     
                 <li class="nav-btn"><a href="">Home</a></li>
-                <li class="nav-btn"><a href="">Templates</a></li>
-                <li class="nav-btn"><a href="/client/psudoPanel">Admin</a></li>
+                <li class="nav-btn"><a href="/client/template.html">Templates</a></li>
+                <li class="nav-btn" id="admin-btn"><a href="/client/psudoPanel">Admin</a></li>
                 <li class="nav-btn"><a href="">Contact</a></li>
                 <li class="nav-btn"><a href="">About US</a></li>
             </ul>
@@ -66,7 +66,7 @@
 
 
            <div class="home-btn-cont">
-            <a  href="templates.html" class="home-btn" id="get-btn">
+            <a  href="template.html" class="home-btn" id="get-btn">
 
                 Templates <span><img src="{% static 'assets/fire.png' %}" alt=""></span>
 
@@ -189,9 +189,11 @@
             </div>
 
             <div class="cont-icons"  id="cont-icon-des">
+
                 <img src="{% static 'assets/whatsapp.png' %}" alt="" class="con-icon-img">
                 <img src="{% static 'assets/email.png' %}" alt="" class="con-icon-img">
                 <img src="{% static 'assets/phone.png' %}" alt="" class="con-icon-img">
+                
             </div>
 
         </div>
@@ -426,9 +428,6 @@
 </body>
 
 <script src="{% static 'js/home.js'%}"></script>
-
-
-
 
 
 </html>

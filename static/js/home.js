@@ -51,6 +51,7 @@ setTimeout(() => {
 
 }, 100);
 
+// -------------login section display js -------------
 
 setTimeout(()=>{
 
@@ -59,9 +60,6 @@ setTimeout(()=>{
         loginSection.style.display="flex";
     }
     
-
-
-
 },20000)
 
 
@@ -73,6 +71,11 @@ sign_btn.addEventListener('click',()=>{
 
     loginSection.style.display="flex";
 })
+
+
+
+
+
 const get_btn=document.getElementById("get-btn")
 
 sign_btn.addEventListener("mouseenter",()=>{
@@ -142,6 +145,8 @@ loginCloseBtn.addEventListener('click',()=>{
 
     loginSection.style.display="none";
 })
+
+
 
 
 
