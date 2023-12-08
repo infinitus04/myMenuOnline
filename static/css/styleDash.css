@@ -31,6 +31,7 @@
 }
 .mmoDashContainer{
     background-color: whitesmoke;
+    padding: 60px 0px ;
     /* margin-top: 4rem; */
 }
 
@@ -312,6 +313,193 @@
     /* width: 50%; */
     margin: auto;
     
+}
+
+/* -------pop ups css starts here ---------------------- */
+
+#update-profile-section{
+
+    position: absolute;
+    width: 75%;
+    height: 65%;
+    border: 2px solid rgba(0,0,0,0.16);
+    top: 23%;
+    right: 140px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+
+.profile-left{
+
+    width: 35%;
+    height: 95%;
+    border: 2px solid rgba(0,0,0,0.7);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    
+
+}
+
+
+
+.profile-img{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+
+}
+
+.profile-name{
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.profile-email{
+    font-size: large
+    ;
+}
+
+
+.profile-right{
+
+    width: 65%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    
+    
+    
+
+}
+
+.profile-heading{
+
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    /* padding: 10px; */
+}
+
+.input-cont{
+
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    /* border: 2px solid red; */
+    height: fit-content;
+    gap: 5px;
+    margin: 10px;
+
+
+}
+
+.input-cont div{
+
+    display: flex;
+    gap: 10px;
+}
+
+
+.input-cont input{
+
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.input-cont input[name="fname"],.input-cont input[name="lname"]{
+
+    width: 300px;
+
+
+}
+
+.input-cont input[name="email"]{
+
+    width: 620px;
+}
+
+input-cont input[name="address"]{
+
+    width: 500px;
+}
+.profile-right .btn{
+
+    width: 200px;
+    margin-left: 250px;
+    margin-top: 10px;
+}
+
+.close_popup{
+
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: larger;
+
+
+}
+
+#close_popup:hover{
+
+    transform: scale(1.05);
+}
+
+#sm-popup{
+
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    border: 2px solid rgba(0,0,0,0.16);
+    display: none;
+    top: 25%;
+    left: 30%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sm-heading{
+
+    /* margin-bottom: 20px; */
+    font-size: larger;
+    font-weight: bold;
+}
+
+#sm-popup input{
+
+
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+
+
+}
+#sm-popup .btn{
+
+    width: 200px;
 }
 
 

@@ -23,7 +23,7 @@
                 <div class="profileDetailsBlock">
                     <h4 id="nameOfC">{{ menu.user.name }}</h4>
                     <p id="emailOfC">{{ menu.user.email }}</p>
-                    <button   class="btn btn-primary"> Update</button>
+                    <button  id="update-profile-btn"  class="btn btn-primary"> Update</button>
                 </div>
 
                 
@@ -76,7 +76,7 @@
                 </div>
                 <!-- social icon and button -->
                 <div class="socialMicons">
-                    <button class="btn btn-primary">Activate</button>
+                    <button  id="open-sm-popup-btn" class="btn btn-primary">Activate</button>
                     <div class="iconGroupSocial">
                         <img src="{% static '/images/facebookBlack.png' %}" alt="" class="socialIconDash">
                         <img src="{% static '/images/googleBlack.png' %}" alt="" class="socialIconDash">
@@ -104,6 +104,73 @@
 
         </div>
     </div>
+
+    <!-- -------pop ups--------- -->
+
+    <div id="update-profile-section">
+
+        <div class="profile-left">
+
+            <img src="{% static '/images/profileMe.jpeg' %}" alt="" class="profile-img">
+            <h4 class="profile-name">Praful Savarkar</h4>
+            <h3 class="profile-email">prafulsavarkar77@gmail.com</h3>
+
+
+        </div>
+
+        <div class="profile-right">
+            <div class="profile-heading">
+                <h2>Profile</h2>
+            </div>
+
+           <div class="input-cont">
+            <label for="">Name</label>
+
+           <div>
+            <input type="text" name="fname" id="" value="Praful" placeholder="Name">
+            <input type="text" name="lname" id="" value="Savarkar" placeholder="Name">
+
+           </div>
+           </div>
+
+           <div class="input-cont">
+            <label for="">Email</label>
+            <input type="email" name="email" id="email" value="prafulsavarkar77@gmail.com" placeholder="Email">
+           </div>
+
+           <div class="input-cont">
+            <label for="">Phone</label>
+            <input type="text" name="phone" id="phone" value="7798619989" placeholder="Phone">
+           </div>
+
+           <div class="input-cont">
+            <label for="">Address</label>
+            <input type="text" name="address" id="address" value="Gorewada road, Nagour" placeholder="Address">
+           </div>
+
+           <button   class="btn btn-primary"> Update</button>
+           <button class="close_popup">X</button>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div id="sm-popup">
+
+        <h3 class="sm-heading">Add Links to your socail media</h3>
+        <input type="text" name="" id="" placeholder="Link to your instagram">
+        <input type="text" name="" id="" placeholder="Link to your facebook">
+        <input type="text" name="" id="" placeholder="Link to your google">
+        <button  class="btn btn-primary"> Activate</button>
+        <button class="close_popup">X</button>
+
+        
+
+
+    </div>
    
 </body>
 <script>
@@ -112,6 +179,46 @@
   document.getElementById('nameOfC').innerHTML = document.getElementById('nameOfC').innerHTML.slice(0,13)+"..."
 }
     
+var profileCont = document.getElementById("update-profile-section");
+
+document.getElementById("update-profile-btn").addEventListener('click',()=>{
+
+    profileCont.style.display="flex";
+    
+
+});
+
+document.getElementById("open-sm-popup-btn").addEventListener('click',()=>{
+
+    document.getElementById("sm-popup").style.display="flex";
+    // console.log("harshal");
+
+
+});
+
+
+var closePopup = document.getElementsByClassName("close_popup");
+
+   closePopup[0].addEventListener('click',()=>{
+
+        profileCont.style.display="none";
+    
+
+
+   });
+
+   closePopup[1].addEventListener('click',()=>{
+
+document.getElementById('sm-popup').style.display="none";
+
+
+
+});
+
+
+        
+    
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
