@@ -1,7 +1,7 @@
 import qrcode,os
 
 def qr_code_create(image):
-    link = 'http://127.0.0.1:8000/' + str(image)
+    link = 'http://192:168:92:146:8000/' + str(image)
     qr = qrcode.make(link)
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     # qr.add_data('Scan for menu')
