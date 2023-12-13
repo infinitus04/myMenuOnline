@@ -4,19 +4,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="{% static '/css/styleDash.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styleAdmin.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" href="{% static '/css/styleDash.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/styleAdmin.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
   </head>
   <body>
-    <!-- Nav bar  start-->
-    {% include 'client/navBar.html' %}
-    <div class="mmoDashContainer" id="blur">
+  
+    
+    <!-- <div class="mmoDashContainer" id="blur">
         <div class="dashBfirstBlock">
             <div class="dashFirstItem profileBlock">
-                <!-- profile -->
+                
                 <div class="profileImg">
                     <img src="{% static '/images/profileMe.jpeg' %}" alt="">
                 </div>
@@ -29,7 +28,7 @@
                 
             </div>
             <div class="dashFirstItem editMenu">
-                <!-- Edit Menu -->
+                
                 <div class="editMenublockDiscp">
                     <h1>Edit Menu </h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quisquam iure explicabo Lorem ipsum dolor sit amet.</p>
@@ -44,7 +43,7 @@
 
             </div>
             <div class="dashFirstItem expBlock">
-                <!-- Expires Date -->
+                
                 <div class="expFirstBlock">
                     <div class="expDateCount">
                         <h1>29</h1>
@@ -65,16 +64,16 @@
                 </div>
             </div>
         </div>
-        <!-- second block -->
+      
         <div class="dashBSecondBlock">
 
             <div class="dash2ndItems socialMediablock">
-                <!-- social media -->
+               
                 <div class="socialDiscp">
                     <h1>Social Media</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, molestias dolor est voluptatem ea commodi, pariatur temporibus labore consectetur sit numquam explicabo vel quibusdam!</p>
                 </div>
-                <!-- social icon and button -->
+                
                 <div class="socialMicons">
                     <button  id="open-sm-popup-btn" class="btn btn-primary">Activate</button>
                     <div class="iconGroupSocial">
@@ -82,18 +81,18 @@
                         <img src="{% static '/images/googleBlack.png' %}" alt="" class="socialIconDash">
                         <img src="{% static '/images/instagramBlack.png' %}" alt="" class="socialIconDash">
                     </div>
-                    <!-- side blur effect popup -->
+                    
                    
                 </div>
             </div>
             <div class="dash2ndItems activeThemeblock" onclick="parent.location.href='/{{ menu.menu_link }}'">
-                <!-- Active theme -->
+                
                 <h3>Active Theme</h3>
                 <img src="{% static '/images/mmoDarkTheme.jpeg' %}" alt="" class="activeImgDash">
                 <p>MMO Dark </p>
             </div>
             <div class="dash2ndItems changeThemeblock">
-                <!-- change theme -->
+                
                 <h3>Change Theme</h3>
                 <img src="{% static '/images/chooseTheme.png' %}" alt="">
                 <button class="btn btn-success">Change <span class="material-symbols-outlined">
@@ -103,122 +102,149 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
-    <!-- -------pop ups--------- -->
-
-    <div id="update-profile-section">
-
-        <div class="profile-left">
-
-            <img src="{% static '/images/profileMe.jpeg' %}" alt="" class="profile-img">
-            <h4 class="profile-name">Praful Savarkar</h4>
-            <h3 class="profile-email">prafulsavarkar77@gmail.com</h3>
+    
 
 
+<!-- -----------dashboard----------- -->
+
+<div class="dashboard-container">
+
+    <div class="side-des-nav">
+
+        <img src="{% static 'assets/mmo-logo-color.png' %}" alt="" class="web-logo">
+
+        <div class="nav-items">
+
+            <div class="nav-btn  nav-btn-active">
+                <img class="nav-icon" src="{% static 'assets/home_png.png' %}" alt="">
+                <p class="nav-btn-name">Home</p>
+            </div>
+            <div class="nav-btn">
+                <img class="nav-icon" src="{% static 'assets/profile_png.png' %}" alt="">
+                <p class="nav-btn-name">Profile</p>
+            </div>
+            <div class="nav-btn">
+                <img class="nav-icon" src="{% static 'assets/foodmenu_png.png' %}" alt="">
+                <p class="nav-btn-name">Menu</p>
+            </div>
+            <div class="nav-btn">
+                <img class="nav-icon" src="{% static 'assets/category_png.png' %}" alt="">
+                <p class="nav-btn-name">Category</p>
+            </div>
+            <div class="nav-btn">
+                <img class="nav-icon" src="{% static 'assets/QR-code_png.png' %}" alt="">
+                <p class="nav-btn-name">View QR</p>
+            </div>
         </div>
 
-        <div class="profile-right">
-            <div class="profile-heading">
-                <h2>Profile</h2>
+    </div>
+
+    <div class="dash-upper">
+
+        <h1 class="dash-heading">YOUR DASHBOARD</h1>
+
+    </div>
+
+    <div class="dash-content">
+
+        <div class="small-card">
+
+            <div class="small-left">
+                <div class="small-para" id="view-para">
+                    Today’s views on your menu
+                </div>
+
+                </div>
+
+                <div class="small-right">
+                    <img id="views-icon" src="{% static 'assets/eye-view.png' %}"></img>
+                <div class="view-count">12</div>
+
+                </div>
+                
+           
+            
+        </div>
+        <div class="small-card  edit-card" >
+
+            <div class="small-top">
+                <div class="small-para" id="edit-para">Edit Your Menu</div>
+                <img  src="{% static 'assets/edit-menu.png' %}" id="editMenu-icon"></img>
             </div>
 
-           <div class="input-cont">
-            <label for="">Name</label>
-
-           <div>
-            <input type="text" name="fname" id="" value="Praful" placeholder="Name">
-            <input type="text" name="lname" id="" value="Savarkar" placeholder="Name">
-
-           </div>
-           </div>
-
-           <div class="input-cont">
-            <label for="">Email</label>
-            <input type="email" name="email" id="email" value="prafulsavarkar77@gmail.com" placeholder="Email">
-           </div>
-
-           <div class="input-cont">
-            <label for="">Phone</label>
-            <input type="text" name="phone" id="phone" value="7798619989" placeholder="Phone">
-           </div>
-
-           <div class="input-cont">
-            <label for="">Address</label>
-            <input type="text" name="address" id="address" value="Gorewada road, Nagour" placeholder="Address">
-           </div>
-
-           <button   class="btn btn-primary"> Update</button>
-           <button class="close_popup">X</button>
-
+            <div class="edit-btn">
+                Click here !
+            </div>
 
 
         </div>
+        <div class="small-card edit-card">
 
+            <div class="small-top">
+                <div class="small-para" id="edit-para">Change Theme</div>
+                <img  src="{% static 'assets/change_template.png' %}" id="editMenu-icon"></img>
+            </div>
 
-    </div>
+            <div class="edit-btn" style="background: #186F65;">
+                Change <img src="{% static 'img/arrow-icon.png' %}" alt="">
+            </div>
 
-    <div id="sm-popup">
+        </div>
+        <div class="large-card">
+            
+        </div>
+        <div class="large-card">
 
-        <h3 class="sm-heading">Add Links to your socail media</h3>
-        <input type="text" name="" id="" placeholder="Link to your instagram">
-        <input type="text" name="" id="" placeholder="Link to your facebook">
-        <input type="text" name="" id="" placeholder="Link to your google">
-        <button  class="btn btn-primary"> Activate</button>
-        <button class="close_popup">X</button>
+        </div>
+        <div class="large-card">
 
+        </div>
         
 
 
+
+
+
     </div>
+
+    
+
+
+
+</div>
+    
+
+
    
 </body>
 <script>
     // name and email lenght fix ...
-    if(document.getElementById('nameOfC').innerHTML.length > 15){
-  document.getElementById('nameOfC').innerHTML = document.getElementById('nameOfC').innerHTML.slice(0,13)+"..."
-}
-    
-var profileCont = document.getElementById("update-profile-section");
+//     if(document.getElementById('nameOfC').innerHTML.length > 15){
+//   document.getElementById('nameOfC').innerHTML = document.getElementById('nameOfC').innerHTML.slice(0,13)+"..."
+// }
 
-document.getElementById("update-profile-btn").addEventListener('click',()=>{
+   let nav_btn = document.getElementsByClassName("nav-btn");
 
-    profileCont.style.display="flex";
-    
+   console.log(nav_btn);
+for(let i=0;i<nav_btn.length;i++){
 
-});
+    nav_btn[i].addEventListener("click", ()=>{
 
-document.getElementById("open-sm-popup-btn").addEventListener('click',()=>{
-
-    document.getElementById("sm-popup").style.display="flex";
-    // console.log("harshal");
-
-
-});
-
-
-var closePopup = document.getElementsByClassName("close_popup");
-
-   closePopup[0].addEventListener('click',()=>{
-
-        profileCont.style.display="none";
-    
-
-
-   });
-
-   closePopup[1].addEventListener('click',()=>{
-
-document.getElementById('sm-popup').style.display="none";
-
-
-
-});
-
+        event.target.parentNode.childNode.classList.remove("nav-btn-active");
+        event.target.classList.add("nav-btn-active");
+        
 
         
+    })
+
+
+}
+  
     
 
+
+
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
