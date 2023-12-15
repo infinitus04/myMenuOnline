@@ -117,26 +117,26 @@
 
         <div class="nav-items">
 
-            <div class="nav-btn  nav-btn-active">
+            <button class="nav-btn  nav-btn-active">
                 <img class="nav-icon" src="{% static 'assets/home_png.png' %}" alt="">
                 <p class="nav-btn-name">Home</p>
-            </div>
-            <div class="nav-btn">
+            </button>
+            <button class="nav-btn">
                 <img class="nav-icon" src="{% static 'assets/profile_png.png' %}" alt="">
                 <p class="nav-btn-name">Profile</p>
-            </div>
-            <div class="nav-btn">
+            </button>
+            <button class="nav-btn">
                 <img class="nav-icon" src="{% static 'assets/foodmenu_png.png' %}" alt="">
                 <p class="nav-btn-name">Menu</p>
-            </div>
-            <div class="nav-btn">
+            </button>
+            <button class="nav-btn">
                 <img class="nav-icon" src="{% static 'assets/category_png.png' %}" alt="">
                 <p class="nav-btn-name">Category</p>
-            </div>
-            <div class="nav-btn">
+            </button>
+            <button class="nav-btn">
                 <img class="nav-icon" src="{% static 'assets/QR-code_png.png' %}" alt="">
                 <p class="nav-btn-name">View QR</p>
-            </div>
+            </button>
         </div>
 
     </div>
@@ -144,6 +144,13 @@
     <div class="dash-upper">
 
         <h1 class="dash-heading">YOUR DASHBOARD</h1>
+
+        <div class="dash-head-profile-sec">
+
+            <h3>{{ menu.user.name }}</h3>
+            <img src="{% static 'images/profileme.jpeg' %}" alt="">
+
+        </div>
 
     </div>
 
@@ -174,9 +181,9 @@
                 <img  src="{% static 'assets/edit-menu.png' %}" id="editMenu-icon"></img>
             </div>
 
-            <div class="edit-btn">
+            <a href="/client/category/" class="edit-btn">
                 Click here !
-            </div>
+            </a>
 
 
         </div>
@@ -187,31 +194,58 @@
                 <img  src="{% static 'assets/change_template.png' %}" id="editMenu-icon"></img>
             </div>
 
-            <div class="edit-btn" style="background: #186F65;">
+            <a href="" class="edit-btn" style="background: #186F65;">
                 Change <img src="{% static 'img/arrow-icon.png' %}" alt="">
-            </div>
+            </a>
 
         </div>
-        <div class="large-card">
+        <div class="large-card" id="social-media-card">
+
+            <h3 class="large-heading" style="padding-left: 1.5vw;">Social Media</h3>
+
+            <div class="social-bottom">
+                <p class="social-para">" Connect with your patrons beyond the table, creating a community that shares the love for your cuisine."</p>
+
+                <div class="social-icons" >
+                    <img src="{% static 'assets/whatsapp_png.png'%}" style="height: 70%; width: 40px;" alt="">
+                    <img src="{% static 'assets/insta_png.png'%}"  alt="">
+                    <img src="{% static 'assets/google_png.png'%}" style="height: 70%; width: 40px;" alt="">
+                </div>
+    
+                <button id="social-activate-btn"> Activate</button>
+    
+    
+            </div>
+           
             
         </div>
-        <div class="large-card">
+        <div class="large-card" id="active-theme-card">
+
+            <h3 class="large-heading">Active Theme</h3>
+
+            <img src="{% static 'assets/menu 3.png'%}" class="active-Theme-img" alt="">
+
+            <h4 class="active-theme-name">MMO-dark</h4>
 
         </div>
-        <div class="large-card">
+        <div class="large-card" id="subscription-card">
+
+            <div class="sub-price">499/-</div>
+            <div class="days-left"><span>15</span>days left</div>
+
+
+            <div class="plan-expire-para">Your plan will <br> expire on <br> <span>Dec. 20, 2023</span></div>
+
+            <div class="sub-button">
+                <button style="background: #186F65.90%; width: 130px;"> Details</button>
+                <button style="background: rgba(13, 110, 253, 0.80); width: 100px;"> Pay</button>
+            </div>
+
+
 
         </div>
         
-
-
-
-
-
     </div>
-
-    
-
-
 
 </div>
     
@@ -226,25 +260,23 @@
 // }
 
    let nav_btn = document.getElementsByClassName("nav-btn");
+   let nav_btns_array = Array.from(nav_btn);
 
-   console.log(nav_btn);
-for(let i=0;i<nav_btn.length;i++){
+   nav_btns_array.forEach(function (button) {
+        button.addEventListener('click', (event) => {
+            // Use closest to find the closest ancestor with the class "nav-btn"
+            const targetButton = event.target.closest('.nav-btn');
+            
+            let childarray=Array.from(targetButton.parentNode.children);
 
-    nav_btn[i].addEventListener("click", ()=>{
+            childarray.forEach(function (e) {
 
-        event.target.parentNode.childNode.classList.remove("nav-btn-active");
-        event.target.classList.add("nav-btn-active");
-        
+                e.classList.remove("nav-btn-active");               
+            });
 
-        
-    })
-
-
-}
-  
-    
-
-
+            targetButton.classList.add("nav-btn-active")
+        });
+   });
 
 </script>
 </html>
