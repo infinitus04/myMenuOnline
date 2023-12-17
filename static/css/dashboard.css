@@ -2,7 +2,7 @@
 
 
 
-html{
+html {
 
     font-size: 15px;
     width: 100%;
@@ -24,19 +24,20 @@ html{
 .dashboard-container {
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
 }
 
 .side-des-nav {
 
     width: 18%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 1.5em;
     position: relative;
+    /* border: 1px solid rebeccapurple; */
 }
 
 .web-logo {
@@ -55,7 +56,7 @@ html{
     height: fit-content;
     position: absolute;
     top: 25vh;
-    
+
 
 
 }
@@ -100,6 +101,56 @@ html{
     line-height: normal;
 }
 
+.nav-items a {
+
+    display: flex;
+    width: 100%;
+    height: 4.5em;
+    justify-content: start;
+    align-items: center;
+    gap: 0.6em;
+    padding-left: 3em;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    /* border: 1px solid red; */
+    text-decoration: none;
+
+
+}
+
+.log-out-btn {
+
+    color: #192655;
+    font-family: Poppins;
+    font-size: 1.2vmax;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    width: 100%;
+    height: 8%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    cursor: pointer;
+    border: none;
+    background: rgba(217, 217, 217, 0.10);
+    position: absolute;
+    bottom: 5%;
+    text-decoration: none;
+    /* border: 2px solid red; */
+
+
+}
+
+.log-out-btn img {
+
+    width: 7%;
+    height: 35%;
+
+}
+
 .dash-upper {
 
     position: absolute;
@@ -116,7 +167,7 @@ html{
     justify-content: space-between;
     padding-right: 1em;
     align-items: center;
-    
+
 
 }
 
@@ -131,7 +182,7 @@ html{
     width: 25%;
     margin-left: 3%;
     margin-top: -2%;
-    
+
 }
 
 .dash-head-profile-sec {
@@ -176,9 +227,20 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 0px 2vw;
 
+
+}
+
+
+#dash-home {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0px 2vmax;
 
 
 }
@@ -203,10 +265,9 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 
 }
-
 
 
 .small-para {
@@ -223,13 +284,13 @@ html{
 
 #view-para {
 
-    width: 10vw ;
-    height: 20vh ;
+    width: 10vw;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
+
+
 
 }
 
@@ -263,7 +324,8 @@ html{
     align-items: center;
     color: #FFF;
     font-family: Poppins;
-    font-size:  3vmax;;
+    font-size: 3vmax;
+    ;
     font-style: normal;
     font-weight: bolder;
     line-height: normal;
@@ -284,7 +346,7 @@ html{
     width: 100%;
     height: 60%;
     display: flex;
-    gap:  2.7vmax;
+    gap: 2.7vmax;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -366,7 +428,7 @@ html{
 
 }
 
-.social-bottom{
+.social-bottom {
 
     width: 100%;
     height: 85%;
@@ -419,7 +481,7 @@ html{
     border: none;
     border-radius: 10px;
     background: rgba(13, 110, 253, 0.80);
-    height:15%;
+    height: 15%;
     color: #FFF;
     font-family: Poppins;
     font-size: 1.6vmax;
@@ -427,7 +489,7 @@ html{
     font-weight: 500;
     line-height: normal;
     letter-spacing: 1px;
-    
+
 
 }
 
@@ -442,7 +504,7 @@ html{
     justify-content: center;
     align-items: center;
     padding-top: 1.5vh;
-    
+
 }
 
 .active-Theme-img {
@@ -450,7 +512,7 @@ html{
     width: 60%;
     height: 75%;
     margin-top: 2vh;
-    margin-bottom:0.5vh;
+    margin-bottom: 0.5vh;
 }
 
 .active-theme-name {
@@ -544,7 +606,7 @@ html{
     font-style: normal;
     font-weight: bolder;
     line-height: normal;
-    
+
 }
 
 .sub-button {
@@ -563,7 +625,7 @@ html{
 .sub-button button {
 
     width: fit-content;
-    padding:1vh 1vw;
+    padding: 1vh 1vw;
     color: #FFF;
     font-family: Poppins;
     font-size: 1.333rem;
@@ -572,7 +634,7 @@ html{
     line-height: normal;
     letter-spacing: 0.0666em;
     border: none;
-    border-radius : 5px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -582,4 +644,313 @@ html{
 .sub-button button:hover {
 
     opacity: 0.9;
+}
+
+#dash-profile {
+
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 1% 2%;
+    flex-direction: column;
+    gap: 1%;
+}
+
+.profile-heading {
+
+    color: #192655;
+    font-family: Poppins;
+    font-size: 2vmax;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 1%;
+
+}
+
+.profile-bottom {
+
+    width: 100%;
+    height: 90%;
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.profile-left {
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 30%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.profile-img-cont {
+
+    width: 100%;
+    height: 75%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+}
+
+.profile-img {
+
+    width: 70%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+.edit-profile-btn {
+
+    position: absolute;
+    width: 9%;
+    height: 12%;
+    bottom: 9%;
+    right: 25%;
+    /* border: 2px solid red; */
+
+
+}
+
+.profile-name-cont {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    width: 100%;
+    /* border: 1px solid rebeccapurple; */
+
+}
+
+.profile-name-cont h3 {
+
+    color: #192655;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.profile-right {
+
+    width: 70%;
+    height: 100%;
+    /* border: 2px solid red; */
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-cont {
+
+    width: 95%;
+    height: 18%;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-cont input {
+
+    background-color: none;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    color: #192655;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+.input-cont input:hover {
+
+    border: none;
+    outline: none;
+}
+
+.input-name {
+    width: 25%;
+    height: 100%;
+    /* border: 2px solid red; */
+    color: #192655;
+    font-family: Poppins;
+    font-size: 1.2vmax;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    opacity: 0.7;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    padding-right: 1.5%;
+
+
+}
+
+.input-name img {
+
+    width: 10%;
+    height: 40%;
+
+}
+
+.update-btn {
+
+    width: 20%;
+    height: 13%;
+    border-radius: 10px;
+    background: rgba(13, 110, 253, 0.80);
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1.5vmax;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.25px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2vmax;
+
+}
+
+.update-btn img {
+
+    width: 15%;
+    height: 60%;
+
+
+
+}
+
+.update-btn:hover {
+
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+#dash-QR {
+
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: none;
+    padding: 1% 2%;
+    flex-direction: column;
+    gap: 1%;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.QR-heading {
+
+    color: #192655;
+    font-family: Poppins;
+    font-size: 2vmax;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.QR-cont {
+
+    width: 30%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.15);
+
+}
+
+.QR-cont img {
+
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+
+}
+
+.Qr-btns {
+
+    width: 30%;
+    height: 11%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 0.5%;
+}
+
+.Qr-btns button {
+
+    /* height: 90%; */
+    /* width: fit-content; */
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1vmax;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1px;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    gap: 4%;
+    
+
+}
+
+.Qr-btns button img{
+
+    width: 15%;
+    height: 50%;
+
+}
+
+.print-btn {
+
+    border-radius: 10px;
+    background: rgba(13, 110, 253, 0.80);
+    width: 40%;
+
+}
+
+.download-btn {
+
+    border-radius: 10px;
+    background: #186F65;
+    width: 50%;
+
 }

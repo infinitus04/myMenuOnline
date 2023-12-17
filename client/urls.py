@@ -5,7 +5,7 @@ urlpatterns = [
     path('login/', views.clientLogin, name='clientLogin'),
     path('logout/', views.clientLogout, name='clientLogout'),
     path('psudoPanel/', views.psudoPanel, name='psudoPanel'),
-
+    path('templatesPage/', views.templatesPage, name='templates'),
     path('category/', views.categoryList, name='categoryList'),
     path('category/add/', views.categoryAdd, name='categoryAdd'),
     path('category/<int:id>/', views.categoryEdit, name='category'),

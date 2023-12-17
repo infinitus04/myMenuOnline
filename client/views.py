@@ -66,6 +66,11 @@ def psudoPanel(request):
     
     return render(request, 'client/psudoPanel.html', data)
 
+def templatesPage(request):
+
+    return render(request, 'client/templatesPage.html' )
+
+
 @login_required
 @menu_creation
 def categoryAdd(request):

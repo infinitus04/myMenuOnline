@@ -117,27 +117,30 @@
 
         <div class="nav-items">
 
-            <button class="nav-btn  nav-btn-active">
+            <button class="nav-btn  nav-btn-active" target="dash-home">
                 <img class="nav-icon" src="{% static 'assets/home_png.png' %}" alt="">
-                <p class="nav-btn-name">Home</p>
+                <p class="nav-btn-name" >Home</p>
             </button>
-            <button class="nav-btn">
+            <button class="nav-btn" target="dash-profile">
                 <img class="nav-icon" src="{% static 'assets/profile_png.png' %}" alt="">
                 <p class="nav-btn-name">Profile</p>
             </button>
-            <button class="nav-btn">
-                <img class="nav-icon" src="{% static 'assets/foodmenu_png.png' %}" alt="">
+            <a  href="/{{ menu.menu_link }}" >
+                <img  style="margin-left: -2%;" class="nav-icon" src="{% static 'assets/foodmenu_png.png' %}" alt="">
                 <p class="nav-btn-name">Menu</p>
-            </button>
-            <button class="nav-btn">
-                <img class="nav-icon" src="{% static 'assets/category_png.png' %}" alt="">
+            </a>
+            <a href="/client/category" >
+                <img style="margin-left: -2%;" class="nav-icon" src="{% static 'assets/category_png.png' %}" alt="">
                 <p class="nav-btn-name">Category</p>
-            </button>
-            <button class="nav-btn">
+            </a>
+            <button class="nav-btn" target="dash-QR">
                 <img class="nav-icon" src="{% static 'assets/QR-code_png.png' %}" alt="">
                 <p class="nav-btn-name">View QR</p>
             </button>
         </div>
+
+        <a href="/client/logout/" class="log-out-btn"  onclick="logOut()"> <img src="{% static 'assets/logout.png'%}" alt=""> log out</a>
+        
 
     </div>
 
@@ -154,8 +157,9 @@
 
     </div>
 
-    <div class="dash-content">
+    <div class="dash-content" >
 
+        <div id="dash-home" class="dash-sub-cont" >
         <div class="small-card">
 
             <div class="small-left">
@@ -194,7 +198,7 @@
                 <img  src="{% static 'assets/change_template.png' %}" id="editMenu-icon"></img>
             </div>
 
-            <a href="" class="edit-btn" style="background: #186F65;">
+            <a href="/client/templates/" class="edit-btn" style="background: #186F65;">
                 Change <img src="{% static 'img/arrow-icon.png' %}" alt="">
             </a>
 
@@ -244,8 +248,100 @@
 
 
         </div>
+
+    </div>
+
+    <div  id="dash-profile" class="dash-sub-cont">
+
+        <h3 class="profile-heading">Profile</h3>
+
+        <div class="profile-bottom">
+
+            <div class="profile-left">
+
+                <div class="profile-img-cont">
+                <img class="profile-img" src="{% static 'images/profileMe.jpeg' %}" alt="">
+                <img src="{% static 'assets/edit_png.png'%}" alt="" class="edit-profile-btn">
+
+
+                </div>
+                <div class="profile-name-cont">
+
+                    <h3>Spresso Cafe</h3>
+
+
+                </div>
+
+            </div>
+
+            <div class="profile-right">
+
+              
+                <div class="input-cont">
+
+                    <input type="text" id="user-res-name" value="Spresso Cafe">
+                    <div class="input-name">Restaurant name <img src="{% static 'assets/restaurant_name_png.png'%}" alt=""></div>
+
+
+                </div>
+                <div class="input-cont">
+
+                    <input type="text" id="user-name" value="Praful Sawarkar">
+                    <div class="input-name">Owner name<img src="{% static 'assets/person_png.png'%}" alt=""></div>
+
+
+                </div>
+                <div class="input-cont">
+
+                    <input type="text" id="user-address" value="Gorewada road, Nagpur">
+                    <div class="input-name">Address</address><img src="{% static 'assets/adrress-png.png'%}" alt=""></div>
+
+
+                </div>
+                <div class="input-cont">
+
+                    <input type="email" id="user-email" value="prafulsawarkar@gmail.com">
+                    <div class="input-name">Email<img src="{% static 'assets/email-png.png'%}" alt=""></div>
+
+                    
+                </div>
+                <div class="input-cont">
+                    <input type="text" id="user-phone" value="7798619989">
+                    <div class="input-name">Phone <img src="{% static 'assets/phone_png.png'%}" alt=""></div>
+
+
+                </div>
+                
+                 <button class="update-btn">Update <img src="{% static 'assets/upload_png.png'%}" alt=""></button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div  id="dash-QR" class="dash-sub-cont">
+
+        <h3 class="QR-heading">Your QR code
+        </h3>
+
+        <div class="QR-cont">
+
+            <img src="\media\qrcodes\{image}.png" alt="QR code">
+
+        </div>
+
+        <div class="Qr-btns">
+            <button class="print-btn">Print QR <img src="{% static 'assets/print_png.png'%}" alt=""></button>
+            <button class="download-btn">Download QR <img src="{% static 'assets/download_png.png'%}" alt=""></button>
+        </div>
+
+        
+
+    </div>
         
     </div>
+
+  
 
 </div>
     
@@ -266,6 +362,7 @@
         button.addEventListener('click', (event) => {
             // Use closest to find the closest ancestor with the class "nav-btn"
             const targetButton = event.target.closest('.nav-btn');
+
             
             let childarray=Array.from(targetButton.parentNode.children);
 
@@ -275,8 +372,21 @@
             });
 
             targetButton.classList.add("nav-btn-active")
+            let display_target=targetButton.getAttribute('target')
+            let dash_conts_array= Array.from(document.querySelectorAll('.dash-sub-cont'));
+            console.log(dash_conts_array);
+            dash_conts_array.forEach(element => {
+
+                element.style.display="none";
+                
+            });
+            document.getElementById(display_target).style.display='flex';
         });
    });
+
+    const dash_home = document.getElementById('dash-home');
+    const dash_profile = document.getElementById('dash-profile');
+    const dash_qr= document.getElementById('dash-QR');
 
 </script>
 </html>

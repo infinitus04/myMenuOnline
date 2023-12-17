@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template2</title>
+    <link rel="stylesheet" href="{% static 'css/template2.css' %}">
+</head>
+
+<body>
+
+    <div class="menu">
+
+        <div class="menu-head">
+            <h4 class="res_name">{{ menu.business_name }}</h4>
+            <h1>MENU</h1>
+
+
+        </div>
+        
+       
+
+        <div class="menu-item-cont">
+
+            {% for head in headers %}
+
+            {% comment %} Header {% endcomment %}
+
+            <div class="menu-section">
+
+
+                <div class="section1">
+
+                    <div class="item-image">
+                    {% if head.header.image %}
+                    <img src="{{head.header.image.url}}" alt="">
+
+                    {% else %}
+                    <img src="{% static 'images/sadfrog.jpg' %}" alt="">
+                    {% endif %}
+
+                    </div>
+
+                </div>
+                <div class="section2">
+
+                    <h4 class="sub-heading">
+                        {{head.header.header_text}}
+                    </h4>
+
+                    <div class="sub-section">
+                        {% for item in head.item %}
+                        <div class="item">
+                            <p class="item-name">{{item.item_name}}</p>
+                            <p class="item-price">{{item.price}}/-</p>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                   
+
+                </div>
+                
+
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+
+       
+
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Lilita+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+*{
+
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+.menu{
+
+    width: 100wh;
+    border: 2px solid red;
+    height: 100vh;
+    /* margin: 10px; */
+    background-image: url(../assets/menu2_back.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.menu-head{
+
+    margin: 40px 30px;
+    color: #E6A21C;
+    font-family: 'Lilita One', sans-serif;
+
+}
+
+.res_name{
+
+    font-size: 25px;
+    /* color: #ebb230; */
+}
+
+.menu-head h1{
+
+    font-size: 50px;
+    letter-spacing: 2px;
+
+
+}
+
+.menu-section{
+
+    width: 100%;
+    height: fit-content;
+    /* border: 2px solid green; */
+    margin: 0;
+    display: flex;
+    margin-bottom: 40px;
+    
+    
+
+}
+
+.menu-section:nth-child(even ){
+
+    flex-direction: row-reverse;
+}
+
+
+.section1{
+
+    width: 40%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* border: 2px solid red; */
+
+    
+
+}
+
+.item-image{
+
+    width: 100%;
+    height: 75%;
+    /* border: 1px solid white; */
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item-image img{
+
+    width: 70% ;
+    height: 70%;
+    border-radius: 50%;
+
+}
+
+.section2{
+
+    /* border: 2px solid red; */
+    max-height:30vh ;
+    padding: 10px ;
+    width: 60%;
+    
+    
+
+}
+
+.sub-heading{
+
+    font-size: 20px;
+    color: #f1ce53;
+    letter-spacing: 4px;
+    font-family: 'Fredoka', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 900;
+
+}
+
+.sub-section{
+
+    margin-top: 5px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    height: 82%;
+    width: 100%;
+    /* border: 2px solid brown; */
+    /* border: 2px solid pink; */
+
+    
+
+
+
+}
+
+.item{
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid green; */
+    color: rgb(255, 255, 255,0.7);
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+    
+
+}
+
+
+.item-name{
+
+    letter-spacing: 1px;
+
+}
