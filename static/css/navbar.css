@@ -1,0 +1,69 @@
+
+
+
+@media only screen and (min-width: 500px) {
+
+    .mmo-mob-nav{
+
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+    
+    
+.mmo-mob-nav{
+
+    height: 8vh !important;
+    background-image: url(../assets/background-dark-mobile.jpg) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-position: center;
+
+
+}
+
+.mmo-nav-logo{
+
+    display: block;
+}
+
+.mmo-nav-logo{
+
+    width: 20%;
+    height: 5vh;
+    /* border: 1px solid green; */
+}
+
+.navbar-toggler{
+
+    position: absolute;
+    top: 1%;
+    right: 3%;
+}
+
+.navbar-toggler img{
+
+    width: 6vh;
+
+}
+
+.toggle-container{
+
+    background-image: url(../assets/background-dark-mobile.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.nav-item{
+
+    display: flex;
+    align-items: center;
+    border: 1px solid red !important;
+}
+
+}

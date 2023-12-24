@@ -30,3 +30,8 @@ setTimeout(function() {
         }, 3000); // Wait for 4 seconds for the div to fade-in before starting fade-out
     }
 }, 0000); // 1 second delay
+
+function goBack() {
+    // Use the history object to navigate back
+    window.history.back();
+}

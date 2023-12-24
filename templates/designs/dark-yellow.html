@@ -1,0 +1,264 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-Yellow Menu</title>
+    <link rel="stylesheet" href="{% static 'css/dark_yellow.css' %}">
+    
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1 class="restro-name">{{ menu.business_name }}<br><span>FOOD MENU</span></h1>
+
+        <p class="restro-slogan">
+            " Indulge Your Senses "
+        </p>
+    
+    </div>
+
+    <div class="search-bar">
+
+        <input type="text" placeholder="Search you want to eat...">
+        <div id="search-icon"><img src="{%  static 'assets/search.png' %}" alt=""></div>
+
+    </div>
+
+    <div class="sub-container">
+
+        {% for head in headers %}
+            
+        {% comment %} Header {% endcomment %}
+
+       
+
+        <div class="items-cont">
+            
+         
+        <h2 class="sub-heading">{{head.header.header_text}}</h2>
+
+        <div class="item-img">
+            {% if head.header.image %}
+            <img src="{{head.header.image.url}}" alt="">
+
+            {% else %}
+
+            <img src="{% static 'images/sadfrog.jpg' %}" alt="">
+
+            {% endif %}
+
+        </div>
+
+        
+        <div class="items">
+
+            {% for item in head.item %}
+
+            <div class="item-card">
+
+               
+                <div class="item-info">
+
+                    <div class="item-name-price">
+
+                        <div class="item-name">
+                            <p> {{item.item_name}}</p>
+
+                        </div>
+                        <div class="item-price">
+                            <p class="real-price">{{item.price}} Rs</p>
+                        </div>
+                    </div>
+
+                    <div class="item-tags">
+                        <img src="{% static 'assets/tag-png.png' %}" alt="">
+                        <p>Medium-spicy</p>
+                    </div>
+
+                </div>
+            </div>
+
+            {% endfor %}
+           
+            
+
+        </div>
+
+        <hr style="width:40vw; height: 1px; background-color: #d9b84b; margin: 20px auto 20px auto;">
+
+
+    </div>
+    {% endfor %}
+      
+        
+    </div>
+
+    <footer class="navbar">
+
+        <ul>
+            <li><div class="nav-btn  active-tab"  id="pizza-cont" onclick="Openpizza()" onclick="fadeInDiv()">
+                <div class="nav-img  ">
+                    <img src="assets/pizza.jpg" alt="">
+
+                </div>
+
+                <p class="nav-text" >
+                    Pizzas
+                </p>
+
+                
+            </div></a></li>
+            <li><div class="nav-btn"  id="momo-cont" onclick="Openmomo()" onclick="fadeInDiv()">
+                <div class="nav-img">
+                    <img src="assets/pizza.jpg" alt="">
+
+
+                </div>
+
+                <p class="nav-text" >
+                    Momos
+                </p>
+
+                
+            </div></a></li>
+            <li><div class="nav-btn" id="sandwich-cont" onclick="Opensandwich()" onclick="fadeInDiv()">
+                <div class="nav-img">
+                    <img src="assets/pizza.jpg" alt="">
+
+
+                </div>
+
+                <p class="nav-text" >
+                   Sandwiches
+                </p>
+
+                
+            </div></a></li>
+            <li><div class="nav-btn" id="burger-cont"  onclick="Openburger()" onclick="fadeInDiv()">
+                <div class="nav-img">
+                    <img src="assets/pizza.jpg" alt="">
+
+
+                </div>
+
+                <p class="nav-text" >
+                    Burgers
+                </p>
+
+                
+            </div></a></li>
+            <li><div class="nav-btn" id="burger-cont"  onclick="Openburger()" onclick="fadeInDiv()">
+                <div class="nav-img">
+                    <img src="assets/pizza.jpg" alt="">
+
+
+                </div>
+
+                <p class="nav-text" >
+                    Burgers
+                </p>
+
+                
+            </div></a></li>
+            <li><div class="nav-btn" id="burger-cont"  onclick="Openburger()" onclick="fadeInDiv()">
+                <div class="nav-img">
+                    <img src="assets/pizza.jpg" alt="">
+
+
+                </div>
+
+                <p class="nav-text" >
+                    Burgers
+                </p>
+
+                
+            </div></a></li>
+            <li><div class="nav-btn" id="burger-cont"  onclick="Openburger()" onclick="fadeInDiv()">
+                <div class="nav-img">
+                    <img src="assets/pizza.jpg" alt="">
+
+
+                </div>
+
+                <p class="nav-text" >
+                    Burgers
+                </p>
+
+                
+            </div></a></li>
+        </ul>
+
+    
+
+
+    </footer>
+
+    
+</div>
+<script>
+
+ var pizza=document.getElementById("pizza-cont")
+ var momo=document.getElementById("momo-cont")
+ var sandwich=document.getElementById("sandwich-cont")
+ var burger=document.getElementById("burger-cont")
+
+ function Openpizza(){
+
+    pizza.classList.add("active-tab")
+    momo.classList.remove("active-tab")
+    sandwich.classList.remove("active-tab")
+    burger.classList.remove("active-tab")
+
+}
+function Openmomo(){
+    
+    pizza.classList.remove("active-tab")
+    momo.classList.add("active-tab")
+    sandwich.classList.remove("active-tab")
+    burger.classList.remove("active-tab")
+
+}
+
+function Opensandwich(){
+    
+    pizza.classList.remove("active-tab")
+    momo.classList.remove("active-tab")
+    sandwich.classList.add("active-tab")
+    burger.classList.remove("active-tab")
+
+}
+
+function Openburger(){
+    
+    pizza.classList.remove("active-tab")
+    momo.classList.remove("active-tab")
+    sandwich.classList.remove("active-tab")
+    burger.classList.add("active-tab")
+
+}
+
+function fadeInDiv() {
+    let nav_img = document.getElementsByClassName('nav-img');
+    nav_img.style.display = 'block'; /* Change display to block */
+    setTimeout(function () {
+        nav_img.style.opacity = '1'; /* Change opacity to 1 for fade-in effect */
+    }, 10); /* Add a small delay for better transition */
+}
+
+
+
+</script>
+
+
+
+
+    
+</body>
+</html>

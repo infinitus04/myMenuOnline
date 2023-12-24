@@ -254,6 +254,8 @@ html {
     box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.15);
     margin-top: -8vh;
     display: flex;
+    border: 1px solid rgb(128, 128, 128,0.5);
+
 
 
 }
@@ -405,6 +407,7 @@ html {
     box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
+    border: 1px solid rgb(128, 128, 128,0.5);
 
 }
 
@@ -663,8 +666,8 @@ html {
     font-size: 2vmax;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
     margin-left: 1%;
+    /* border: 1px solid red; */
 
 }
 
@@ -737,7 +740,7 @@ html {
 
     color: #192655;
     font-family: Poppins;
-    font-size: 25px;
+    font-size :3vmax;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -779,11 +782,12 @@ html {
     padding-left: 2%;
     color: #192655;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 2vmax;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
     border: none;
+    border-radius: 10px;
 }
 
 .input-cont input:hover {
@@ -875,7 +879,6 @@ html {
     font-size: 2vmax;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
 }
 
 .QR-cont {
@@ -952,5 +955,404 @@ html {
     border-radius: 10px;
     background: #186F65;
     width: 50%;
+
+}
+
+#dash-heading-mob{
+
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+
+    .dashboard-container {
+
+        /* border: 2px solid red; */
+        height: fit-content;
+        padding-bottom: 1vh;
+    
+    }
+
+    body {
+
+        background-color: rgba(83, 82, 82, 0.5);
+
+
+    }
+
+    .side-des-nav {
+
+        display: none;
+
+
+    }
+
+
+
+    #logo-color {
+
+        display: none;
+    }
+
+
+    .nav-items {
+
+        display: none;
+
+    }
+
+    .log-out-btn {
+
+        display: none;
+    }
+
+    .dash-upper {
+
+        display: none;
+
+
+    }
+
+    .upper-in {
+
+        background-color: rgb(5, 98, 173, 0.3);
+
+    }
+
+
+
+    .dash-heading {
+
+        display: none;
+
+
+    }
+
+    #dash-heading-mob {
+
+
+        font-size: 5vmin;
+        color: #FFF;
+        font-weight: 600;
+        margin-bottom: -0.5vh;
+        color: rgb(25, 38, 85, 0.9);
+        border-radius: 0px 0px 10px 10px;
+        margin-top: 1vh;
+        display: block;
+        color: #192655;
+
+
+    }
+
+    .dash-head-profile-sec {
+
+        display: none;
+    }
+
+    .dash-content {
+
+        width: 100vw;
+        height: fit-content;
+        position: relative;
+        top: 0;
+        /* background-color: none; */
+    }
+
+    #dash-home {
+
+        gap: 1.5vh 2.5vw;
+        padding-top: 2%;
+    }
+
+
+    .small-card {
+
+        width: 93%;
+        height: 20vh;
+        margin-top: 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+
+
+    }
+
+
+    .small-left {
+
+        width: 55%;
+
+    }
+
+
+    #view-para {
+
+        font-size: 4.5vmin;
+        width: 60%;
+        height: 70%;
+        /* border: 1px solid rebeccapurple; */
+        margin-left: 7%;
+
+    }
+
+    .small-right {
+
+        width: 45%;
+
+    }
+
+    #views-icon {
+
+        width: 10vw;
+        margin-top: 2vh;
+        /* height: ; */
+    }
+
+    .view-count {
+
+        font-size: 10vmin;
+
+    }
+
+    .edit-card {
+
+        width: 45%;
+    }
+
+    #edit-para {
+
+        font-size: 4vmin;
+        margin-left: 1vmin;
+
+    }
+
+    .edit-btn {
+
+        font-size: 4.5vmin;
+    }
+
+    .edit-btn img {
+
+        width: 11%;
+        height: 45%;
+    }
+
+    .large-card {
+
+
+        width: 93%;
+        height: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+
+    }
+
+    .large-heading {
+
+        font-size: 6vmin;
+        /* border: 1px solid rebeccapurple; */
+    }
+
+    #social-media-card {
+
+        padding-left: 3%;
+        height: 40%;
+    }
+
+    .social-bottom {
+
+        /* border: 1px solid red; */
+        margin-top: 0;
+
+    }
+
+    .social-para {
+
+        font-size: 4.5vmin;
+        /* width: 70%; */
+
+    }
+
+    .social-icons {
+
+        width: 60%;
+        height: 22%;
+        /* border: 1px solid red; */
+        margin-left: 0;
+        margin-top: -1vh;
+        margin-bottom: 1vh;
+    }
+
+    #social-activate-btn {
+
+        margin-left: -0.3vmin;
+        height: 25%;
+        width: 97%;
+        font-size: 5vmin;
+        margin-bottom: 0vh;
+    }
+
+
+    .active-Theme-img {
+
+        width: 45%;
+        margin-top: 0;
+        height: 70%;
+    }
+
+    .active-theme-name {
+
+        font-size: 4vmin;
+    }
+
+    .sub-price {
+
+        font-size: 7vmin;
+        padding: 2vw;
+
+
+    }
+
+    .days-left {
+
+        font-size: 7vmin;
+        gap: 0;
+
+
+    }
+
+    .days-left span {
+
+        font-size: 15vmin;
+
+    }
+
+    .plan-expire-para {
+
+        font-size: 5vmin;
+    }
+
+    .plan-expire-para span {
+
+        font-size: 7vmin;
+    }
+
+    #subcription-card {
+
+        margin-bottom: 2vh;
+    }
+
+
+    .sub-button button {
+
+        font-size: 5vmin;
+
+    }
+
+
+  
+
+    #dash-profile{
+
+        /* display: none; */
+        align-items: center;
+        height: fit-content;
+        
+
+    }
+
+    .profile-heading{
+
+        font-size: 3vmax;
+        margin-top: 1vh;
+    }
+    .profile-bottom{
+
+        flex-direction: column;
+        align-items: center;
+        gap: 3vh;
+        height: 90vh;
+        
+    }
+
+    .profile-left{
+
+        width: 70vw;
+    }
+
+    .profile-right{
+
+        width: 90vw;
+        height: 90vh;
+        gap: 2vh;
+
+
+    }
+
+    .input-cont{
+
+        height: 25%;
+    }
+
+
+    .input-cont input{
+
+        border-radius: 10px ;
+        width: 70%;
+
+    }
+
+    .input-name{
+
+        
+        gap: 5%;
+    }
+
+    .input-name img{
+
+        width: 20%;
+
+    }
+
+    .update-btn{
+
+        width: 30vw;
+        height: 10vh;
+        
+    }
+
+    #dash-QR{
+
+        display: none;
+        height: 91vh;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    .QR-heading{
+
+        font-size: 3vmax;
+    }
+
+    .QR-cont{
+
+        width: 80vw;
+        height: 50vh;
+    }
+
+    .Qr-btns{
+
+        width: 80vw;
+        height: 6vh;
+        margin-top: 1vh;
+    }
+
+    .Qr-btns button{
+
+        font-size: 1.5vmax;
+    }
+
+
+
 
 }

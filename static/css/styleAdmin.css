@@ -47,9 +47,6 @@
 
 
 
-/* span,p{
-    color: #333;
-} */
 
 h1,h2,h3,h4,h5,h6{
     text-transform: capitalize;
@@ -57,29 +54,51 @@ h1,h2,h3,h4,h5,h6{
 
 body{
     color: var(--text);
-    background-color: var(--navPrimaryDark) !important;
+    background-color: var(--background) !important;
     /* background-color: #0082ce; */
 }
-.navbar-brand > h2{
-    font-family: 'Bodoni Moda', serif;
+
+
+.back-btn{
+
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+    background-color: transparent;
+    border: none;
+
 }
-.navbar{
-    background-color: rgba(255, 255, 255, 0) !important;
+
+.back-btn img{
+
+    width: 40px ;
+    height: 40px;
+
 }
-.offcanvas{
-    background-color: var(--navPrimaryDark) !important;
+
+.home-btn{
+
+    position: absolute;
+    top: 2vh;
+    right: 3vw;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2vh 2vw; */
+    width: 40px;
+    height:40px;
+
+
+
 }
-.myMMOlogo{
-    height: 3rem;
-    /* filter: invert(1); */
-    mix-blend-mode: lighten;
-    /* width: 100%; */
-    position: relative;
-    /* right: 5px;
-    top: 2px; */
-    /* margin: 0.4rem; */
-    z-index: 1;
-    /* margin-left: 4.5rem; */
+
+.home-btn img{
+
+    width: 30px;
+    height: 30px;
+
 
 
 }
@@ -813,6 +832,26 @@ input[type="radio"]{
   }
 
   @media only screen and (max-width: 600px){
+
+    .back-btn img{
+
+        width: 30px ;
+        height: 30px;
+    
+    }
+
+    .home-btn{
+
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .home-btn img{
+
+        width: 20px;
+        height: 20px;
+    }
     .upperListCategory{
         height: fit-content;
 
@@ -1007,36 +1046,13 @@ input[type="radio"]{
     margin-top: 2.5rem;
   }
 
-  /* nav action */
-  .navList{
-    display: flex;
-    justify-content: left;
-    align-content: center;
-    align-items: center;
-    /* width: 50% ; */
-    color: whitesmoke;
-    font-weight: bolder;
-  }
-  .navItem{
-    margin: auto 1rem;
-    /* border: 1px solid #071952; */
-    padding: 0.2rem;
-  }
+  
 
+  
 
-  @media  screen and (min-width : 700px) {
+   
 
-    .navbar-toggler{
-        display: none !important;
-    }
-  }
-
-  @media  screen and (max-width : 700px) {
-
-    .navList{
-        display: none !important;
-    }
-  }
+ 
 
   .animated{
     text-decoration: none;

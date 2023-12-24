@@ -1,0 +1,83 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red-Black Menu</title>
+    <link rel="stylesheet" href="{% static 'css/red-black.css' %}">
+</head>
+<body>
+
+    <div class="menu">
+
+        <div class="menu-head">
+
+        
+        <h4 class="res-name">{{ menu.business_name }}</h4>
+        <h1>Menu</h1>
+
+        
+        </div>
+
+       <div class="menu-cont-sub">
+
+       <div class="menu-left">
+
+        {% for head in headers %}
+
+        <div class="menu-section">
+
+            <div class="item-section">
+
+                <h4 class="sub-heading">
+                    {{head.header.header_text}}
+                </h4>
+
+                <div class="sub-section">
+
+                    {% for item in head.item %}
+                     <div class="item">
+                        <p class="item-name">{{item.item_name}}</p>
+                        <p class="item-price"> {{item.price}}/-</p>
+                    </div>
+                    {% endfor %}
+                     
+            </div>
+            
+
+
+        </div>
+
+       
+        
+       </div>
+
+       {% endfor %}
+
+       </div>
+
+      
+
+       <div class="menu-right">
+
+        <img src="{% static 'assets/pizza-image.jpeg' %}" alt="">
+        <img src="{% static 'assets/pasta.jpg' %}" alt="">
+        <img src="{% static 'assets/momos-image.jpg' %}" alt="">
+        <img src="{% static 'assets/burger-image.jpg' %}" alt="">
+
+       </div>
+
+       <div class="Order">Order Now</div>
+
+       </div>
+        
+
+
+    </div>
+
+
+    
+</body>
+</html>

@@ -19,10 +19,10 @@
     />
   </head>
   <body>
-    <!-- Nav bar  start-->
-    {% include 'client/navBar.html' %}
-
     
+    <button href="#" onclick="goBack()" class="back-btn"><img src="{% static  'assets/back_png.png'%}" alt=""></button>
+    <a href="/client/psudoPanel" class="home-btn"><img src="{% static  'assets/home-btn.png'%}" alt=""></a>
+  
     
     <form
     action=""
@@ -143,6 +143,11 @@
     deleteAction = ()=> {
       confirm("Do you want to Delete this Item ? ")
     }
+
+    function goBack() {
+            // Use the history object to navigate back
+            window.history.back();
+        }
 
 
 
