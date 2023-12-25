@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Coffee template</title>
+    <link rel="stylesheet" href="{% static 'css/white-coffee.css' %}">
+</head>
+<body>
+
+    <div class="menu-container">
+
+        <div class="menu-header">
+
+            <div class="res-name">{{ menu.business_name }}</div>
+            <div class="res-contact">
+                <p><img src="{% static 'assets/phone.png' %}" alt="">976-662-9195</p>
+                <p><img src="{% static 'assets/email.png' %}" alt="">harshalwarukar12@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="menu-bottom main-cont">
+
+            
+                <h3 class="category-heading">
+                   OUR CATEGORY
+               </h3>
+    
+             
+
+            <div class="category-cont">
+
+                {% for head in headers %}
+
+                <div class="item-category">
+
+                    <div class="item-img">
+                        {% if head.header.image %}
+                    <img src="{{head.header.image.url}}" alt="">
+
+                    {% else %}
+                    <img src="{% static 'images/sadfrog.jpg' %}" alt="">
+                    {% endif %}
+
+                    </div>
+
+                    <h5 class="item-category-name"> {{head.header.header_text}}</h5>
+                    
+                </div>
+
+                {% endfor %}
+               
+            </div>
+
+            <div class="social-media-cont">
+                <div class="upper">
+
+                    Follow us on <img src="{% static 'assets/down-finger.png' %}" alt="">
+                    
+                </div>
+
+                <div class="lower">
+
+                    <img src="{% static 'assets/whatsapp-con.png' %}" alt="">
+                    <img src="{% static 'assets/insta-icon.png' %}" alt="">
+                    <img src="{% static 'assets/google-icon.png' %}" style="width: 20px; height: 20px;" alt="">
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        {% for head in headers %}
+
+        <div class="menu-bottom ">
+
+           <div class="menu-bottom-upper">
+            <h3 class=" item-heading">
+                {{head.header.header_text}}
+           </h3>
+
+           <button class="home-btn">
+            <img src="{% static 'assets/home-btn.png' %}" alt="">
+           </button>
+           </div>
+
+           <div class="items-container">
+
+            {% for item in head.item %}
+            <div class="item">
+                <div class="item-name">
+                    <img src="{% static 'assets/dot-icon.png' %}" alt="">{{item.item_name}}
+                </div>
+                <div class="item-price">
+                    {{item.price}}/-
+                </div>
+            </div>
+            {% endfor %}
+
+           
+
+           </div>
+
+           
+
+           
+
+            <div class="social-media-cont">
+                <div class="upper">
+
+                    Follow us on <img src="{% static 'assets/down-finger.png' %}" alt="">
+                    
+                </div>
+
+                <div class="lower">
+
+                    <img src="{% static 'assets/whatsapp-con.png' %}" alt="">
+                    <img src="{% static 'assets/insta-icon.png' %}" alt="">
+                    <img src="{% static 'assets/google-icon.png' %}" style="width: 20px; height: 20px;" alt="">
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        {% endfor %}
+        
+
+
+    </div>
+
+
+
+    
+    
+</body>
+
+<script>
+
+    const item_category_btns= Array.from( document.querySelectorAll(".item-category"));
+    const menu_cont =Array.from( document.querySelectorAll('.menu-bottom'));
+    console.log(item_category_btns);
+    console.log(menu_cont);
+
+    for(let i=0; i<item_category_btns.length;i++){
+
+        item_category_btns[i].addEventListener('click',()=>{
+
+            const targetCategorybtn = event.target.closest('.item-category');
+            // console.log();
+
+            menu_cont.forEach(element => {
+
+                element.style.display="none";
+                
+            });
+            menu_cont[(item_category_btns.indexOf(targetCategorybtn))+1].style.display="flex";
+            
+
+        })
+
+    const home_btn = Array.from(document.querySelectorAll(".home-btn"));
+    home_btn.forEach(element => {
+
+        element.addEventListener('click',()=>{
+
+            menu_cont.forEach(element => {
+
+                element.style.display="none";
+                document.querySelector(".main-cont").style.display="flex";
+                
+            });
+        })
+        
+    });
+    }
+
+
+
+     
+</script>
+</html>
