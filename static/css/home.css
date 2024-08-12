@@ -283,7 +283,7 @@
   position: relative;
   width:500px;
   height: 85%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   justify-content: center;
   align-items: center;
   display: flex;
